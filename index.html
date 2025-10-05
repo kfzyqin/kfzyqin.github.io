@@ -1,81 +1,676 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js" >
+<head>
 
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<meta name="description" content="The Page Description">
-		<style type="text/css">@-ms-viewport{width: device-width;}</style>
-		<title>Zhenyue Qin - Home Page</title>
-		<link rel="stylesheet" href="css/layers.min.css" media="screen">
-		<link rel="stylesheet" href="css/font-awesome.min.css" media="screen"> 
-		<link rel="stylesheet" href="style.css" media="screen">
-		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-		<![endif]-->
-		<link rel="icon" href="img/icons/qin-anime-avatar.ico">
-	</head>
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Qin Research</title>
 
-	<body class="page">
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
 
-		<header role="banner" class="transparent light">
-			<div class="row">
-				<div class="nav-inner row-content buffer-left buffer-right even clear-after">
-					<div id="brand">
-						<h1 class="reset"><!--<img src="img/logo.png" alt="logo">--><a href="index.html">Zhenyue Qin</a></h1>
-					</div><!-- brand -->
-					<a id="menu-toggle" href="#"><i class="fa fa-bars fa-lg"></i></a>
-					<!-- <nav>
-						<ul class="reset" role="navigation">
-							<li class="menu-item">
-								<a href="index.html">Home</a>
-							</li>
-							<li class="menu-item">
-								<a href="pub_list_1.html">Publication</a>
-							</li>
-							<li class="menu-item">
-								<a href="crafts_list_1.html">Crafts</a>
-							</li>
-						</ul>
-					</nav> -->
-				</div><!-- row-content -->	
-			</div><!-- row -->	
-		</header>
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
 
-		<main role="main">
-			<div id="intro-wrap" class="full-height">
-				<div id="intro" class="preload darken" data-navigation="true" data-pagination="true" data-transition="fadeUp">
-					<div class="intro-item" style="background-image: url(img/backgrounds/legendary_creatures_2.png);">
-						<div class="caption">
-							<h2> What a great pleasure to meet you 😃 </h2>
-							<p>Let us join together in a joyous celebration of life</p>
-							<a class="button white transparent" href="https://qinlab.notion.site/Hello-I-m-Zhenyue-Qin-51a60482659545c9ae7c677f6ad1649e">Know More</a>
-						</div>
-						<!-- caption -->
-<!--						<div class="photocaption">-->
-<!--							<h4>Image by <a href="https://www.artstation.com/artwork/e0X4oD">artstation</a></h4>-->
-<!--						</div>&lt;!&ndash; photocaption &ndash;&gt;-->
-					</div>									
-					<div class="intro-item" style="background-image: url(img/backgrounds/legendary_creatures_2.png);">
-						<div class="caption">
-							<h2>與卿相遇 甚愜予懷 😃</h2>
-							<p>讓吾儕共賞人生之美</p>
-							<a class="button white transparent" href="https://qinlab.notion.site/Hello-I-m-Zhenyue-Qin-51a60482659545c9ae7c677f6ad1649e">願聞其詳</a>
-						</div>
-						<!-- caption -->
-<!--						<div class="photocaption">-->
-<!--							<h4>Image by <a href="https://www.artstation.com/artwork/e0X4oD">artstation</a></h4>-->
-<!--						</div>&lt;!&ndash; photocaption &ndash;&gt;-->
-					</div>	
-				</div><!-- intro -->
-			</div><!-- intro-wrap -->
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
 
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>		
-		<script src="js/plugins.js"></script>
-		<script src="js/beetle.js"></script>
+</head>
 
-	</body>
 
+<body id="top">
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <!-- page wrap
+    ================================================== -->
+    <div id="page" class="s-pagewrap ss-home">
+
+
+        <!-- # site header 
+        ================================================== -->
+        <header id="masthead" class="s-header">
+
+            <div class="s-header__branding">
+                <p class="site-title">
+                    <a href="index.html" rel="home">Qin Research</a>
+                </p>
+            </div>
+
+            <div class="row s-header__navigation">
+
+                <nav class="s-header__nav-wrap">
+    
+                    <h3 class="s-header__nav-heading">Navigate to</h3>
+    
+                    <ul class="s-header__nav">
+                        <li class="current-menu-item"><a href="index.html" title="">Home</a></li>
+                        <li><a href="research.html" title="">Research</a></li>
+                        <li><a href="about.html" title="">About</a></li>
+                    </ul> <!-- end s-header__nav -->
+
+                </nav> <!-- end s-header__nav-wrap -->
+    
+            </div> <!-- end s-header__navigation -->
+
+            <div class="s-header__search">
+
+                <div class="s-header__search-inner">
+                    <div class="row">
+    
+                        <form role="search" method="get" class="s-header__search-form" action="#">
+                            <label>
+                                <span class="u-screen-reader-text">Search for:</span>
+                                <input type="search" class="s-header__search-field" placeholder="Search for..." value="" name="s" title="Search for:" autocomplete="off">
+                            </label>
+                            <input type="submit" class="s-header__search-submit" value="Search"> 
+                        </form>
+    
+                        <a href="#0" title="Close Search" class="s-header__search-close">Close</a>
+    
+                    </div> <!-- end row -->
+                </div> <!-- s-header__search-inner -->
+    
+            </div> <!-- end s-header__search -->
+
+            <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+
+        </header> <!-- end s-header -->
+
+
+        <!-- # site-content
+        ================================================== -->
+        <section id="content" class="s-content">
+
+
+            <!-- hero -->
+            <div class="hero">
+
+                <div class="hero__slider swiper-container">
+
+                    <div class="swiper-wrapper">
+                        <article class="hero__slide swiper-slide">
+                            <div class="hero__entry-image" style="background-image: url('resources/lmod/coverimage.png');"></div>
+                            <div class="hero__entry-text">
+                                <div class="hero__entry-text-inner">
+                                    <div class="hero__entry-meta">
+                                        <span class="cat-links">
+                                            <a href="https://aclanthology.org/2025.findings-naacl.135/">NAACL Findings 2025</a>
+                                        </span>
+                                    </div>
+                                    <h2 class="hero__entry-title">
+                                        <a href="single-standard.html">
+                                            LMOD Dataset and Benchmark
+                                        </a>
+                                    </h2>
+                                    <p class="hero__entry-desc">
+                                        This study proposes a systematic data and evaluation pipeline that repurposes existing datasets to curate a dataset for the development and evaluation of largevision-language models in ophthalmology.
+                                    </p>
+                                    <a class="hero__more-link" href="single-standard.html">Read More</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="hero__slide swiper-slide">
+                            <div class="hero__entry-image" style="background-image: url('resources/handcraft/coverimage.png');"></div>
+                            <div class="hero__entry-text">
+                                <div class="hero__entry-text-inner">
+                                    <div class="hero__entry-meta">
+                                        <span class="cat-links">
+                                            <a href="category.html">WACV 2025</a>
+                                        </span>
+                                    </div>
+                                    <h2 class="hero__entry-title">
+                                        <a href="single-standard.html">
+                                            HandCraft Framework
+                                        </a>
+                                    </h2>
+                                    <p class="hero__entry-desc">
+                                        HandCraft is a training-free framework that automatically detects and corrects anatomically incorrect hands in diffusion-generated images. 
+                                    </p>
+                                    <a class="hero__more-link" href="single-standard.html">Read More</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="hero__slide swiper-slide">
+                            <div class="hero__entry-image" style="background-image: url('resources/sov/coverimage.png');"></div>
+                            <div class="hero__entry-text">
+                                <div class="hero__entry-text-inner">
+                                    <div class="hero__entry-meta">
+                                        <span class="cat-links">
+                                            <a href="category.html">EMNLP Main 2025</a>
+                                        </span>
+                                    </div>
+                                    <h2 class="hero__entry-title">
+                                        <a href="single-standard.html">
+                                            Set-of-Vision Prompting
+                                        </a>
+                                    </h2>
+                                    <p class="hero__entry-desc">
+                                        This paper introduces Set-of-Vision (SoV) prompting, which enhances emotion recognition in Vision Large Language Models by using spatial visual cues like bounding boxes, numbers, and facial landmarks to precisely identify and analyze facial expressions while preserving image context.
+                                    </p>
+                                    <a class="hero__more-link" href="single-standard.html">Read More</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div> <!-- swiper-wrapper -->
+
+                    <div class="swiper-pagination"></div>
+    
+                </div> <!-- end hero slider -->
+
+                <a href="#bricks" class="hero__scroll-down smoothscroll">
+                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.25 6.75L4.75 12L10.25 17.25"></path>
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.25 12H5"></path>
+                    </svg>
+                    <span>Scroll</span>
+                </a>
+
+            </div> <!-- end hero -->
+
+
+            <!--  masonry -->
+            <div id="bricks" class="bricks">
+
+                <div class="masonry">
+
+                    <div class="bricks-wrapper" data-animate-block>
+                        
+                        <!-- SAPA 2025 -->
+                        <article class="brick entry" data-animate-el>
+        
+                            <div class="entry__thumb">
+                                <a href="https://www.sapa-ct.org/" class="thumb-link">
+                                    <img src="resources/sapa/coverimage.png" 
+                                        srcset="resources/sapa/coverimage.png 1x, resources/sapa/coverimage.png 2x" alt="">
+                                </a>
+                            </div> <!-- end entry__thumb -->
+        
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <div class="entry__meta">
+                                        <span class="cat-links">
+                                            <a href="https://www.sapa-ct.org/">Talk</a>
+                                        </span>
+                                        <span class="byline">
+                                            Time:
+                                            <a href="https://www.sapa-ct.org/">2025-08</a>
+                                        </span>
+                                    </div>
+                                    <h1 class="entry__title"><a href="https://www.sapa-ct.org/">Invited to Give a Lecture at SAPA</a></h1>
+                                 </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                    I was honored to give an invited lecture at Sino-American Pharmaceutical Professionals Association (SAPA) on generative AI in healthcare.
+                                    </p>
+                                </div>
+                                <a class="entry__more-link" href="https://www.sapa-ct.org/">Read More</a>
+                            </div> <!-- end entry__text -->
+                        
+                        </article> <!-- end article -->
+                        
+                        <!-- EMNLP 2025 Acceptance -->
+                        <article class="brick entry" data-animate-el>
+        
+                            <div class="entry__thumb">
+                                <a href="https://arxiv.org/abs/2502.11360" class="thumb-link">
+                                    <img src="resources/conferences/emnlp_2025_website.png" 
+                                        srcset="resources/conferences/emnlp_2025_website.png 1x, resources/conferences/emnlp_2025_website.png 2x" alt="">
+                                </a>
+                            </div> <!-- end entry__thumb -->
+        
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <div class="entry__meta">
+                                        <span class="cat-links">
+                                            <a href="https://arxiv.org/abs/2502.11360">Paper</a>
+                                        </span>
+                                        <span class="byline">
+                                            Time:
+                                            <a href="https://2025.emnlp.org/">2025-08</a>
+                                        </span>
+                                    </div>
+                                    <h1 class="entry__title"><a href="https://arxiv.org/abs/2502.11360">GeoDANO Accepted by EMNLP 2025</a></h1>
+                                 </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                    Our paper on geometry problem solving with large vision-language models has been accepted by EMNLP Findings 2025.
+                                    I'm grateful to have collaborated with an amazing team: Seunghyuk, Yang, Youngbin, Seungbeom, and Dongwoo. 
+                                    </p>
+                                </div>
+                                <a class="entry__more-link" href="https://arxiv.org/abs/2502.11360">Read More</a>
+                            </div> <!-- end entry__text -->
+                        
+                        </article> <!-- end article -->
+                        
+                        <!-- AMIA 2025 Acceptance -->
+                        <article class="brick entry" data-animate-el>
+            
+                            <div class="entry__thumb">
+                                <a href="https://amia.secure-platform.com/symposium/gallery/rounds/82021/details/19002" class="thumb-link">
+                                    <img src="resources/amia/coverimage.png" 
+                                        srcset="resources/amia/coverimage.png 1x, resources/amia/coverimage.png 2x" alt="">
+                                </a>
+                            </div> <!-- end entry__thumb -->
+            
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <div class="entry__meta">
+                                        <span class="cat-links">
+                                            <a href="https://amia.secure-platform.com/symposium/gallery/rounds/82021/details/19002">Presentation</a>
+                                        </span>
+                                        <span class="byline">
+                                            Time:
+                                            <a href="https://amia.secure-platform.com/symposium/gallery/rounds/82021/details/19002">2025-06</a>
+                                        </span>
+                                    </div>
+                                    <h1 class="entry__title"><a href="https://amia.secure-platform.com/symposium/gallery/rounds/82021/details/19002">LMOD Invited to Present at AMIA</a></h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                    LMOD was invited to present at AMIA 2025 as a podium abstract. 
+                                    I'm grateful to have collaborated with an amazing team: Yu, Dylan, Xuansheng, Ke, Yih-Chung, Ninghao, Xiuzhen, and Qingyu.
+                                    </p>
+                                </div>
+                                <a class="entry__more-link" href="https://amia.secure-platform.com/symposium/gallery/rounds/82021/details/19002">Read More</a>
+                            </div> <!-- end entry__text -->
+                            
+                        </article> <!-- end article -->
+
+                        <!-- Envisioning AI at YALE -->
+                        <article class="brick entry" data-animate-el>
+        
+                            <div class="entry__thumb">
+                                <a href="https://ai.yale.edu/symposium-2025" class="thumb-link">
+                                    <img src="resources/zq/aiatyale.jpg" 
+                                        srcset="resources/zq/aiatyale.jpg 1x, resources/zq/aiatyale.jpg 2x" alt="">
+                                </a>
+                            </div> <!-- end entry__thumb -->
+        
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <div class="entry__meta">
+                                        <span class="cat-links">
+                                            <a href="https://ai.yale.edu/symposium-2025">Presentation</a>
+                                        </span>
+                                        <span class="post-date">
+                                            Time:
+                                            <a href="https://ai.yale.edu/symposium-2025">2025-05</a>
+                                        </span>
+                                    </div>
+                                    <h1 class="entry__title"><a href="https://ai.yale.edu/symposium-2025">Invited Talk at Envisioning AI at Yale</a></h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                    I was honored to give a talk at Envisioning AI at Yale on the topic of AI in healthcare.
+                                    It was wonderful to meet and learn from so many talented researchers.
+                                    </p>
+                                </div>
+                                <a class="entry__more-link" href="https://ai.yale.edu/symposium-2025">Read More</a>
+                            </div> <!-- end entry__text -->
+                        
+                        </article> <!-- end article -->
+
+                        <!-- Present at NAACL 2025 -->
+                        <article class="brick entry" data-animate-el>
+            
+                            <div class="entry__thumb">
+                                <a href="https://aclanthology.org/2025.findings-naacl.135/" class="thumb-link">
+                                    <img src="resources/zq/naacl_2025_poster.jpg" 
+                                        srcset="resources/zq/naacl_2025_poster.jpg 1x, resources/zq/naacl_2025_poster.jpg 2x" alt="">
+                                </a>
+                            </div> <!-- end entry__thumb -->
+            
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <div class="entry__meta">
+                                        <span class="cat-links">
+                                            <a href="https://aclanthology.org/2025.findings-naacl.135/">Presentation</a>
+                                        </span>
+                                        <span class="byline">
+                                            Time:
+                                            <a href="https://aclanthology.org/2025.findings-naacl.135/">2025-05</a>
+                                        </span>
+                                    </div>
+                                    <h1 class="entry__title"><a href="https://aclanthology.org/2025.findings-naacl.135/">Present at NAACL 2025 in Albuquerque US</a></h1>
+                                 </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                        I was honored to present our work on LMOD at NAACL 2025. 
+                                        It was wonderful to meet and learn from so many talented researchers.
+                                    </p>
+                                </div>
+                                <a class="entry__more-link" href="https://aclanthology.org/2025.findings-naacl.135/">Read More</a>
+                            </div> <!-- end entry__text -->
+            
+                        </article> <!-- end entry -->
+        
+                        <!-- Present at WACV 2025 -->
+                        <article class="brick entry" data-animate-el>
+                
+                            <div class="entry__thumb">
+                                <a href="https://kfzyqin.github.io/handcraft/" class="thumb-link">
+                                    <img src="resources/zq/wacv_2025_poster.png" 
+                                        srcset="resources/zq/wacv_2025_poster.png 1x, resources/zq/wacv_2025_poster.png 2x" alt="">
+                                </a>
+                            </div> <!-- end entry__thumb -->
+                
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <div class="entry__meta">
+                                        <span class="cat-links">
+                                            <a href="https://kfzyqin.github.io/handcraft/">Presentation</a>
+                                        </span>
+                                        <span class="byline">
+                                            Time:
+                                            <a href="https://kfzyqin.github.io/handcraft/">2025-03</a>
+                                        </span>
+                                    </div>
+                                    <h1 class="entry__title"><a href="https://kfzyqin.github.io/handcraft/">Present at WACV 2025 in Tucson US</a></h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                    I was honored to present our work on HandCraft at WACV 2025. 
+                                    It was wonderful to meet and learn from so many talented researchers.
+                                    </p>
+                                </div>
+                                <a class="entry__more-link" href="https://kfzyqin.github.io/handcraft/">Read More</a>
+                            </div> <!-- end entry__text -->
+                                
+                        </article> <!-- end article -->
+                        
+                        <!-- NAACL 2025 Acceptance -->
+                        <article class="brick entry" data-animate-el>
+        
+                            <div class="entry__thumb">
+                                <a href="https://kfzyqin.github.io/lmod/" class="thumb-link">
+                                    <img src="resources/conferences/naacl_2025_balloon.png" 
+                                        srcset="resources/conferences/naacl_2025_balloon.png 1x, resources/conferences/naacl_2025_balloon.png 2x" alt="">
+                                </a>
+                            </div>  <!-- end entry__thumb -->
+        
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <div class="entry__meta">
+                                        <span class="cat-links">
+                                            <a href="https://kfzyqin.github.io/lmod/">Paper</a>
+                                        </span>
+                                        <span class="byline">
+                                            Time:
+                                            <a href="https://kfzyqin.github.io/lmod/">2025-01</a>
+                                        </span>
+                                    </div>
+                                    <h1 class="entry__title"><a href="https://kfzyqin.github.io/lmod/">LMOD Accepted by NAACL Findings 2025</a></h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                        Our paper on multimodal large models and ophthalmology benchmarks has been accepted by NAACL Findings 2025. 
+                                        I'm grateful to have collaborated with an amazing team: Yu, Dylan, Xuansheng, Ke, Yih-Chung, Ninghao, Xiuzhen, and Qingyu.  
+                                    </p>
+                                </div>
+                                <a class="entry__more-link" href="https://kfzyqin.github.io/lmod/">Read More</a>
+                            </div> <!-- end entry__text -->
+                        
+                        </article> <!-- end article -->
+                        
+                        <!-- ANU PhD Supervisor -->
+                        <article class="brick entry" data-animate-el>
+        
+                            <div class="entry__thumb">
+                                <a href="https://www.anu.edu.au/" class="thumb-link">
+                                    <img src="resources/anu/coverimage_llewellynhall_logo.jpg" 
+                                        srcset="resources/anu/coverimage_llewellynhall_logo.jpg 1x, resources/anu/coverimage_llewellynhall_logo.jpg 2x" alt="">
+                                </a>
+                            </div> <!-- end entry__thumb -->
+        
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <div class="entry__meta">
+                                        <span class="cat-links">
+                                            <a href="https://www.anu.edu.au/">Service</a>
+                                        </span>
+                                        <span class="byline">
+                                            Time:
+                                            <a href="https://www.anu.edu.au/">2025-01</a>
+                                        </span>
+                                    </div>
+                                    <h1 class="entry__title"><a href="https://www.anu.edu.au/">Become an Associate PhD Supervisor for ANU</a></h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                    I was honored to become an Associate PhD Supervisor at the Australian National University (ANU).
+                                    I look forward to supporting students as they grow and achieve their research goals.
+                                    </p>
+                                </div>
+                                <a class="entry__more-link" href="https://www.anu.edu.au/">Learn More</a>
+                            </div> <!-- end entry__text -->
+                        
+                        </article> <!-- end article -->
+
+                        <!-- NAACL 2025 Area Chair -->
+                        <article class="brick entry" data-animate-el>
+        
+                            <div class="entry__thumb">
+                                <a href="https://2025.naacl.org/" class="thumb-link">
+                                    <img src="resources/conferences/naacl_2025.png" 
+                                        srcset="resources/conferences/naacl_2025.png 1x, resources/conferences/naacl_2025.png 2x" alt="">
+                                </a>
+                            </div> <!-- end entry__thumb -->
+        
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <div class="entry__meta">
+                                        <span class="cat-links">
+                                            <a href="https://2025.naacl.org/">Service</a>
+                                        </span>
+                                        <span class="byline">
+                                            Time:
+                                            <a href="https://2025.naacl.org/">2024-12</a>
+                                        </span>
+                                    </div>
+                                    <h1 class="entry__title"><a href="https://2025.naacl.org/">Serve as an Area Chair for NAACL 2025</a></h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                        I was honored to serve as an Area Chair for NAACL 2025.
+                                        I am humbly happy to make contributions to the ACL community. 
+                                    </p>
+                                </div>
+                                <a class="entry__more-link" href="https://2025.naacl.org/">Read More</a>
+                            </div> <!-- end entry__text -->
+                        
+                        </article> <!-- end article -->
+
+                        <!-- Present at EMNLP 2024 -->
+                        <article class="brick entry" data-animate-el>
+        
+                            <div class="entry__thumb">
+                                <a href="https://wangzhifengharrison.github.io/sov_prompts_emnlp/" class="thumb-link">
+                                    <img src="resources/zq/emnlp_2024_poster.jpg" 
+                                        srcset="resources/zq/emnlp_2024_poster.jpg 1x, resources/zq/emnlp_2024_poster.jpg 2x" alt="">
+                                </a>
+                            </div> <!-- end entry__thumb -->
+        
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <div class="entry__meta">
+                                        <span class="cat-links">
+                                            <a href="https://arxiv.org/abs/2410.02244">Presentation</a>
+                                        </span>
+                                        <span class="byline">
+                                            Time:
+                                            <a href="https://arxiv.org/abs/2410.02244">2024-11</a>
+                                        </span>
+                                    </div>
+                                    <h1 class="entry__title"><a href="https://wangzhifengharrison.github.io/sov_prompts_emnlp/">Present at EMNLP 2024 in Miami US</a></h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                        I was honored to present our work on Set-of-Vision Prompting at EMNLP 2024. 
+                                        It was wonderful to meet and learn from so many talented researchers.
+                                    </p>
+                                </div>
+                                <a class="entry__more-link" href="https://wangzhifengharrison.github.io/sov_prompts_emnlp/">Read More</a>
+                            </div> <!-- end entry__text -->
+                        
+                        </article> <!-- end article -->
+
+                        <!-- WACV 2025 Acceptance -->
+                        <article class="brick entry" data-animate-el>
+        
+                            <div class="entry__thumb">
+                                <a href="https://kfzyqin.github.io/handcraft/" class="thumb-link">
+                                    <img src="resources/conferences/wacv_2025_website.png" 
+                                        srcset="resources/conferences/wacv_2025_website.png 1x, resources/conferences/wacv_2025_website.png 2x" alt="">
+                                </a>
+                            </div> <!-- end entry__thumb -->
+        
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <div class="entry__meta">
+                                        <span class="cat-links">
+                                            <a href="https://arxiv.org/abs/2411.04332">Paper</a>
+                                        </span>
+                                        <span class="byline">
+                                            Time:
+                                            <a href="https://arxiv.org/abs/2411.04332">2024-11</a>
+                                        </span>
+                                    </div>
+                                    <h1 class="entry__title"><a href="https://kfzyqin.github.io/handcraft/">HandCraft Accepted by WACV 2025</a></h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                        Our paper on diffusion models and generative models has been accepted by WACV 2025. 
+                                        I'm grateful to have collaborated with an amazing team: Yiqun, Yang, and Dylan. 
+                                    </p>
+                                </div>
+                                <a class="entry__more-link" href="https://kfzyqin.github.io/handcraft/">Read More</a>
+                            </div> <!-- end entry__text -->
+                        
+                        </article> <!-- end article -->
+
+                        <!-- EMNLP 2024 Acceptance -->
+                        <article class="brick entry" data-animate-el>
+        
+                            <div class="entry__thumb">
+                                <a href="https://wangzhifengharrison.github.io/sov_prompts_emnlp/" class="thumb-link">
+                                    <img src="resources/conferences/emnlp_2024_website.png" 
+                                        srcset="resources/conferences/emnlp_2024_website.png 1x, resources/conferences/emnlp_2024_website.png 2x" alt="">
+                                </a>
+                            </div> <!-- end entry__thumb -->
+        
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <div class="entry__meta">
+                                        <span class="cat-links">
+                                            <a href="https://2024.emnlp.org/">Paper</a> 
+                                        </span>
+                                        <span class="byline">
+                                            Time:
+                                            <a href="https://2024.emnlp.org/">2024-09</a>
+                                        </span>
+                                    </div>
+                                    <h1 class="entry__title"><a href="https://wangzhifengharrison.github.io/sov_prompts_emnlp/">Set-of-Vision Prompting Accepted by EMNLP 2024</a></h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                        Our paper on vision large language models and emotion analysis has been accepted by EMNLP Main 2024. 
+                                        I'm grateful to have collaborated with an amazing team: Qixuan, Zhifeng, Donghao, Wenjia, Sabrina, Tom, and Yang. 
+                                    </p>
+                                </div>
+                                <a class="entry__more-link" href="https://wangzhifengharrison.github.io/sov_prompts_emnlp/">Read More</a>
+                            </div> <!-- end entry__text -->
+                        
+                        </article> <!-- end article -->
+
+                    </div> <!-- end bricks-wrapper -->
+
+                </div> <!-- end masonry-->
+
+            </div> <!-- end bricks -->
+
+        </section> <!-- end s-content -->
+
+
+        <!-- # site-footer
+        ================================================== -->
+        <footer id="colophon" class="s-footer">
+
+            <div class="row s-footer__bottom">
+
+                <div class="column lg-7 md-6 tab-12">
+                    <ul class="s-footer__social">
+                        <li>
+                            <a href="mailto:kf.zy.qin@gmail.com">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="2 3 20 18">
+                                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                                <span class="u-screen-reader-text">Email</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://scholar.google.com/citations?user=z-fQRcUAAAAJ&hl=en">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
+                                </svg>
+                                <span class="u-screen-reader-text">Google Scholar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/zhenyue-qin/">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                                <span class="u-screen-reader-text">LinkedIn</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column lg-5 md-6 tab-12">
+                    <div class="ss-copyright">
+                        <span>© Copyright Qin Research</span> 
+                        <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
+                    </div>
+                </div>
+
+            </div> <!-- end s-footer__bottom -->
+           
+            <div class="ss-go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top">
+                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 10.25L12 4.75L6.75 10.25"/>
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 19.25V5.75"/>
+                    </svg>
+                </a>
+            </div> <!-- end ss-go-top -->
+
+        </footer><!-- end s-footer -->
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
 </html>
