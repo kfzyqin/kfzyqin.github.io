@@ -187,6 +187,7 @@
         // on homepage do animate on scroll
         if (pageWrap.classList.contains('ss-home')) {
             window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll();
         }
         // animate on load
         else {
