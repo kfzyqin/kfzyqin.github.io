@@ -2913,7 +2913,7 @@ img.u-pull-left {
  * ## bricks masonry 
  * ------------------------------------------------------------------- */
 .bricks {
-    --brick-padding : 4rem;
+    --brick-padding : 2.5rem;
     padding-top     : var(--vspace-5);
     padding-bottom  : var(--vspace-3);
 }
@@ -3115,28 +3115,19 @@ img.u-pull-left {
  * ------------------------------------------------------------------- */
 @media screen and (max-width: 1600px) {
     .bricks {
-        --brick-padding : 2.8rem;
+        --brick-padding : 2.2rem;
     }
 }
 
 @media screen and (max-width: 1500px) {
-    .bricks {
-        --brick-padding : 4rem;
-    }
-
-    .bricks .masonry {
-        max-width : 1280px;
-    }
-
-    .bricks-wrapper .grid-sizer,
-    .bricks-wrapper .brick {
-        width : 33.3333%;
+    .bricks-wrapper {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media screen and (max-width: 1200px) {
     .bricks {
-        --brick-padding : 2.8rem;
+        --brick-padding : 2.2rem;
     }
 }
 
