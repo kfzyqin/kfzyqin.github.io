@@ -224,12 +224,9 @@
 
                 const viewportHeight = window.innerHeight;
                 const triggerTop = (current.offsetTop + (viewportHeight * .1)) - viewportHeight;
-                const blockHeight = current.offsetHeight;
-                const blockSpace = triggerTop + blockHeight;
-                const inView = scrollY > triggerTop && scrollY <= blockSpace;
                 const isAnimated = current.classList.contains('ss-animated');
 
-                if (inView && (!isAnimated)) {
+                if (scrollY > triggerTop && !isAnimated) {
                     doAnimate(current);
                 }
 
