@@ -60,11 +60,18 @@
 
             //check if the right element clicked
             if (!e.target.closest('.has-children')) return;
-            else {
+            
+            let clickedA = e.target.closest('a');
+            
+            // If they clicked a submenu link, let it navigate.
+            if (clickedA && !clickedA.parentElement.classList.contains('has-children')) {
+                return;
+            }
 
-                if (e.target.matches('a') || e.target.closest('a')) {
-                    e.preventDefault();
-                }
+            // If they clicked the main parent link (like About), prevent navigation.
+            if (clickedA && clickedA.parentElement.classList.contains('has-children')) {
+                e.preventDefault();
+            }
 
                 //check if element contains active class
                 if (!e.target.closest('.has-children').classList.contains('sub-menu-is-open')) {
@@ -81,7 +88,6 @@
                     // remove is-active class on cliked accordion
                     e.target.closest('.has-children').classList.remove('sub-menu-is-open');
                 }
-            }
         });
 
         window.addEventListener('resize', function() {
