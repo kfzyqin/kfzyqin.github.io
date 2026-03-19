@@ -62,6 +62,10 @@
             if (!e.target.closest('.has-children')) return;
             else {
 
+                if (e.target.matches('a') || e.target.closest('a')) {
+                    e.preventDefault();
+                }
+
                 //check if element contains active class
                 if (!e.target.closest('.has-children').classList.contains('sub-menu-is-open')) {
 

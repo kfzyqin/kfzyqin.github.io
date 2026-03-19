@@ -3186,9 +3186,7 @@ img.u-pull-left {
     .bricks-wrapper .entry__thumb img {
         width      : 100%;
         height     : auto;
-        max-height : 280px;
         display    : block;
-        object-fit : cover;
     }
 
     .bricks-wrapper .entry__text {
@@ -3231,10 +3229,6 @@ img.u-pull-left {
 
     .bricks .masonry {
         width : 100%;
-    }
-
-    .bricks-wrapper .entry__thumb img {
-        max-height : 250px;
     }
 
     .bricks-wrapper .entry__text {
@@ -3280,10 +3274,6 @@ img.u-pull-left {
     .bricks-wrapper .brick {
         padding-right : 0;
         padding-left  : 0;
-    }
-
-    .bricks-wrapper .entry__thumb img {
-        max-height : 220px;
     }
 
     .bricks-wrapper .entry__title {
@@ -4075,10 +4065,12 @@ body.search-is-visible .s-header__search-inner {
     width           : 50%;
     display         : flex;
     justify-content : center;
+    align-items     : center;
     margin-left     : 50%;
-    margin-right    : 6rem;
-    padding-top     : calc(8.8rem + var(--vspace-3));
-    padding-bottom  : var(--vspace-4);
+    margin-right    : 0;
+    padding-top     : 0;
+    padding-bottom  : 0;
+    height          : 100%;
 }
 
 .hero__entry-text-inner {
@@ -4353,22 +4345,15 @@ body.search-is-visible .s-header__search-inner {
 }
 
 @media screen and (max-width: 1000px) {
-    .hero {
-        overflow : auto;
-    }
-
+    /* Keep 50/50 split, just reduce padding to fit nicely */
     .hero__entry-text {
-        width          : 100%;
-        margin         : 0 8rem;
-        padding-top    : calc(5.5 * var(--space));
-        padding-bottom : var(--vspace-4_5);
+        padding-top    : calc(6 * var(--space));
+        padding-bottom : var(--vspace-3);
+        margin-right   : 3rem;
     }
 
     .hero__entry-text-inner {
-        max-width  : 520px;
-        padding    : var(--vspace-2) var(--vspace-1_5) var(--vspace-1_5);
-        border     : 1px solid var(--color-gray-2);
-        box-shadow : 0 1px 1px rgba(0, 0, 0, 0.06), 0 2px 2px rgba(0, 0, 0, 0.06), 0 4px 4px rgba(0, 0, 0, 0.06), 0 8px 8px rgba(0, 0, 0, 0.06);
+        padding    : var(--vspace-1) 2rem var(--vspace-2) 3rem;
     }
 }
 
@@ -4388,31 +4373,50 @@ body.search-is-visible .s-header__search-inner {
     }
 
     .hero__entry-image {
-        width    : 100%;
-        height   : 35vh;
-        min-height : 250px;
-        max-height : 350px;
-        right    : 0;
-        left     : 0;
-        bottom   : auto;
-        position : relative;
+        width      : 100%;
+        height     : 100%;
+        max-height : none;
+        right      : 0;
+        left       : 0;
+        bottom     : 0;
+        top        : 0;
+        position   : absolute;
+    }
+
+    .hero__entry-image::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
     }
 
     .hero__entry-text {
-        width          : 100%;
-        margin         : 0;
-        padding-left   : 4vw;
-        padding-right  : 4vw;
-        padding-top    : var(--vspace-2);
-        padding-bottom : var(--vspace-3);
+        width           : 100%;
+        height          : 100%;
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+        margin          : 0;
+        padding         : 0 5vw;
+        z-index         : 5;
+        position        : relative;
+        box-sizing      : border-box;
     }
 
     .hero__entry-text-inner {
-        max-width    : 100%;
-        padding      : var(--vspace-1_5) var(--vspace-1_25);
-        text-align   : left;
-        border       : none;
-        box-shadow   : none;
+        max-width               : 100%;
+        padding                 : var(--vspace-1_5) var(--vspace-1_5);
+        text-align              : left;
+        border                  : 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow              : 0 10px 30px rgba(0, 0, 0, 0.15);
+        border-radius           : 16px;
+        background              : rgba(255, 255, 255, 0.85);
+        backdrop-filter         : blur(16px);
+        -webkit-backdrop-filter : blur(16px);
+        margin-top              : 0;
+        position                : relative;
     }
 
     .hero__entry-desc {
@@ -4459,12 +4463,6 @@ body.search-is-visible .s-header__search-inner {
         --text-multiplier : .5;
     }
 
-    .hero__entry-image {
-        height     : 30vh;
-        min-height : 200px;
-        max-height : 300px;
-    }
-
     .hero__entry-text {
         padding-left   : 5vw;
         padding-right  : 5vw;
@@ -4496,12 +4494,6 @@ body.search-is-visible .s-header__search-inner {
 @media screen and (max-width: 400px) {
     .hero {
         --text-multiplier : .46;
-    }
-
-    .hero__entry-image {
-        height     : 25vh;
-        min-height : 180px;
-        max-height : 250px;
     }
 
     .hero__entry-text {
