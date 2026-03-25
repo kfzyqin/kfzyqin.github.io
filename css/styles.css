@@ -5565,3 +5565,13 @@ body.search-is-visible .s-header__search-inner {
         height: 30px;
     }
 }
+
+/* ===================================================================
+ * Masonry Thumbnail Uniformity
+ * Enforce a 3:4 aspect ratio across all entry thumbnails.
+ * ------------------------------------------------------------------- */
+.entry__thumb img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
