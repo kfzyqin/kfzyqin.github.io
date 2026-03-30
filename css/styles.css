@@ -4698,6 +4698,7 @@ body.search-is-visible .s-header__search-inner {
     font-size   : var(--text-sm);
     line-height : var(--vspace-0_75);
     color       : var(--color-gray-14);
+    align-items : center;
 }
 
 .s-footer__bottom a {
@@ -4745,44 +4746,94 @@ body.search-is-visible .s-header__search-inner {
 .s-footer__social {
     list-style : none;
     display    : flex;
+    gap        : 1.5rem;
     margin     : 0;
 }
 
 .s-footer__social li {
     padding-left : 0;
-    margin-right : 1rem;
+    margin-right : 0;
     line-height  : 1;
 }
 
-.s-footer__social li:last-child {
-    margin-right : 0;
+.s-footer__social a {
+    display          : flex;
+    align-items      : center;
+    justify-content  : center;
+    height           : auto;
+    width            : auto;
+    padding          : 0.5rem 0.2rem;
+    background-color : transparent;
+    transition       : all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.s-footer__social a:hover {
+    transform  : translateY(-2px);
 }
 
 .s-footer__social svg {
-    height : 2.8rem;
-    width  : 2.8rem;
+    height     : 2.2rem; /* Slightly larger, elegant visual weight */
+    width      : 2.2rem;
+    color      : var(--color-gray-10); /* Soft elegant tone for stroke */
+    transition : color 0.3s ease;
 }
 
-.s-footer__social svg path {
-    fill : black;
-}
+/* Icons elegantly shift to brand colors on hover via currentColor stroke */
+.s-footer__social a.email-icon:hover svg { color: #ea4335; }
+.s-footer__social a.scholar-icon:hover svg { color: #4285F4; }
+.s-footer__social a.linkedin-icon:hover svg { color: #0077b5; }
 
 /* ------------------------------------------------------------------- 
  * ## copyright
  * ------------------------------------------------------------------- */
+.ss-copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.25rem;
+    font-family: var(--font-1), sans-serif;
+    font-size: calc(var(--text-size) * 0.85);
+    color: var(--color-gray-12);
+    padding-top: 0.5rem;    
+}
+
 .ss-copyright span {
     display : inline-block;
+    color: var(--color-gray-10);
+    line-height: var(--vspace-0_75);
 }
 
-.ss-copyright span::after {
-    content : "|";
-    display : inline-block;
-    padding : 0 .8rem 0 1rem;
-    color   : var(--color-gray-10);
+.ss-copyright a {
+    color : var(--color-gray-14);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
-.ss-copyright span:last-child::after {
-    display : none;
+.ss-copyright a:hover {
+    color: var(--color-1);
+}
+
+@media screen and (min-width: 801px) {
+    .s-footer__bottom .lg-5 {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .ss-copyright {
+        /* When on desktop, keep them inline if preferred, or stacked but right aligned? 
+           User specifically asked to left-align the text itself: */
+        align-items: flex-start; 
+        /* The container itself sits on the right side of the footer, but the text inside it is left aligned to its own edge */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .ss-copyright {
+        align-items: center;
+        text-align: center;
+        padding-top: 1.5rem;
+    }
 }
 
 /* ------------------------------------------------------------------- 
