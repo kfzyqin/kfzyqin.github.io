@@ -4119,7 +4119,7 @@ body.search-is-visible .s-header__search-inner {
 
 .hero__entry-image {
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     background-repeat: no-repeat;
     width: 50%;
     position: absolute;
