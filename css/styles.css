@@ -4328,7 +4328,8 @@ body.search-is-visible .s-header__search-inner {
     left: calc(100% - 3rem);
     transform-origin: left bottom;
     transform: rotate(-90deg);
-    width: 200px;
+    width: auto;
+    white-space: nowrap;
 }
 
 .hero__scroll-down svg {
