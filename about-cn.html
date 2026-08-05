@@ -313,16 +313,13 @@
                                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                                                 <h5 style="margin: 0; font-family: var(--font-1); font-size: 0.95rem; font-weight: 600; color: var(--color-1); letter-spacing: 0.02em;">实时访客地图</h5>
                                             </div>
-                                            <!-- MapMyVisitors: JS Interactive Version
-                                                 (Uncomment for production - may not work on localhost)
-                                            <div id="mapmyvisitors-widget" style="width: 250px; height: 200px; position: relative;"></div>
-                                            <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=dCkS-GM8iQe-EJutY1UwPpghVXmPvLLWv5MrqGQgLf0&cl=ffffff&w=a"></script>
-                                            -->
-
-                                            <!-- MapMyVisitors: Plain Image Version (Active - works everywhere) -->
-                                            <div style="width: 250px; height: 250px; display: flex; align-items: center; justify-content: center;">
-                                                <a href="https://mapmyvisitors.com/web/1c5fs" title="Visit tracker" target="_blank" rel="noopener">
-                                                    <img src="https://mapmyvisitors.com/map.png?d=dCkS-GM8iQe-EJutY1UwPpghVXmPvLLWv5MrqGQgLf0&cl=ffffff" alt="Visitor Map" style="max-width: 100%; max-height: 100%; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);" />
+                                            <!-- Flag Counter map (same a24d account as the Country Breakdown card).
+                                                 Replaced the MapMyVisitors widget in Aug 2026: their map service
+                                                 started returning HTTP 500 because the hits table backing it was
+                                                 missing server-side. js/visitor-map.js handles the failure case. -->
+                                            <div class="visitor-map-frame" style="width: 320px; max-width: 100%; height: 250px; display: flex; align-items: center; justify-content: center;">
+                                                <a href="https://s01.flagcounter.com/gmap/a24d/" title="访客地图" target="_blank" rel="noopener">
+                                                    <img src="https://s01.flagcounter.com/map/a24d/size_m/txt_000000/border_CCCCCC/pageviews_1/viewers_0/flags_0/" alt="访客地图" data-visitor-map data-fallback-text="访客地图暂时无法加载。" style="max-width: 100%; max-height: 100%; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);" />
                                                 </a>
                                             </div>
                                         </div>
@@ -435,6 +432,7 @@
     ================================================== -->
             <script src="js/plugins.js"></script>
             <script src="js/main.js"></script>
+            <script src="js/visitor-map.js"></script>
 
 </body>
 
