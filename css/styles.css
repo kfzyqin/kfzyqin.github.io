@@ -2933,7 +2933,7 @@ img.u-pull-left {
     width: min(60%, 600px);
     height: 1px;
     background: rgba(0, 0, 0, 0.08);
-    margin: 0 auto var(--vspace-3) auto;
+    margin: 0 auto var(--vspace-2) auto;
 }
 
 .bricks--half-top-padding {
@@ -4693,7 +4693,7 @@ body.search-is-visible .s-header__search-inner {
  *
  * ------------------------------------------------------------------- */
 .s-content {
-    padding-top: var(--vspace-5);
+    padding-top: var(--vspace-4);
 }
 
 .s-content--blog,
@@ -4735,7 +4735,7 @@ body.search-is-visible .s-header__search-inner {
 }
 
 .s-pageheader+.bricks {
-    padding-top: var(--vspace-2);
+    padding-top: var(--vspace-1);
 }
 
 /* ------------------------------------------------------------------- 
@@ -5819,11 +5819,11 @@ body.search-is-visible .s-header__search-inner {
 
 /* ===================================================================
  * Masonry Thumbnail Uniformity
- * Enforce a 3:4 aspect ratio across all entry thumbnails.
+ * Enforce a 4:5 aspect ratio across all entry thumbnails.
  * ------------------------------------------------------------------- */
 .entry__thumb img {
     width: 100%;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 5;
     object-fit: cover;
 }
 
@@ -5940,4 +5940,120 @@ body.search-is-visible .s-header__search-inner {
 .experience-details strong {
     color: var(--color-1);
     font-weight: 500;
+}
+
+/* ===================================================================
+ * # Visitor Analytics
+ *
+ * One regular column of full-width cards: the Flag Counter map on top, the
+ * country flag grid below. Both widgets are remote images whose intrinsic
+ * size grows with traffic, so neither gets a fixed box -- constraining the
+ * flag grid to a square was what shrank the flags to an unreadable size once
+ * enough countries accumulated.
+ * =================================================================== */
+.analytics-section {
+    margin-top: var(--vspace-2);
+    padding-top: var(--vspace-1);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    text-align: center;
+}
+
+.analytics-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.analytics-card {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.analytics-card:hover {
+    background: rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 12px 40px rgba(0, 30, 80, 0.05);
+    transform: translateY(-5px);
+}
+
+.analytics-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.analytics-card__header svg {
+    opacity: 0.8;
+    flex-shrink: 0;
+}
+
+.analytics-card__header h5 {
+    margin: 0;
+    font-family: var(--font-1);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-1);
+    letter-spacing: 0.02em;
+}
+
+/* Let each widget render at its natural size, capped to the card width. */
+.analytics-card__figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+}
+
+.analytics-card__figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* .visitor-map-frame carries no styling: it is purely the hook js/visitor-map.js
+   walks up to with closest() to find where to park the placeholder below. */
+
+/* Placeholder injected by js/visitor-map.js when a widget fails to load. */
+.visitor-map-fallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    width: 100%;
+    min-height: 160px;
+    border-radius: 4px;
+    background: rgba(0, 30, 80, 0.02);
+    border: 1px dashed rgba(0, 30, 80, 0.12);
+}
+
+.visitor-map-fallback svg {
+    opacity: 0.22;
+}
+
+.visitor-map-fallback span {
+    font-family: var(--font-1);
+    font-size: 0.78rem;
+    line-height: 1.5;
+    text-align: center;
+    padding: 0 1rem;
+    opacity: 0.45;
+}
+
+@media screen and (max-width: 700px) {
+    .analytics-card {
+        padding: 2rem 0;
+    }
+
+    .analytics-stack {
+        gap: 1.5rem;
+    }
 }

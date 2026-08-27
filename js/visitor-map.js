@@ -1,11 +1,15 @@
 /* ===================================================================
- * Visitor map - graceful fallback
+ * Visitor widgets - graceful fallback
  *
- * mapmyvisitors.com serves map.png from its own infrastructure, and when
- * that service is down every request returns a 500 HTML page, which the
- * browser renders as a broken-image icon. Swap in a quiet placeholder
- * instead and retry a few times so the card heals itself once the
- * provider recovers - no page reload needed.
+ * The map and the country flag grid are both remote images rendered by
+ * Flag Counter. When that service is down a request returns an error page
+ * rather than an image, which the browser draws as a broken-image icon.
+ * Swap in a quiet placeholder instead and retry a few times so the card
+ * heals itself once the provider recovers - no page reload needed.
+ *
+ * Applies to every img[data-visitor-map] inside a .visitor-map-frame.
+ * Presentation lives in css/styles.css under "# Visitor Analytics";
+ * this file only toggles visibility.
  * ------------------------------------------------------------------- */
 
 (function() {
@@ -18,19 +22,12 @@
 
         const box = document.createElement('div');
         box.className = 'visitor-map-fallback';
-        box.style.cssText = 'display: flex; flex-direction: column; align-items: center; ' +
-            'justify-content: center; gap: 0.9rem; width: 100%; height: 100%; ' +
-            'border-radius: 4px; background: rgba(0, 30, 80, 0.02); ' +
-            'border: 1px dashed rgba(0, 30, 80, 0.12);';
-
         box.innerHTML =
             '<svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--color-1)" ' +
-            'stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.22;">' +
+            'stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">' +
             '<circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line>' +
             '<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>' +
-            '</svg>' +
-            '<span style="font-family: var(--font-1); font-size: 0.78rem; line-height: 1.5; ' +
-            'text-align: center; padding: 0 1rem; opacity: 0.45;"></span>';
+            '</svg><span></span>';
 
         box.querySelector('span').textContent = message;
 
