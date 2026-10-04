@@ -7,6 +7,11 @@
  * Swap in a quiet placeholder instead and retry a few times so the card
  * heals itself once the provider recovers - no page reload needed.
  *
+ * Flag Counter can also be slow rather than down -- several seconds per
+ * image -- and the page no longer waits for it before showing. So until an
+ * image arrives its card shows a "loading" placeholder instead of an empty
+ * box that reads as broken.
+ *
  * Applies to every img[data-visitor-map] inside a .visitor-map-frame.
  * Presentation lives in css/styles.css under "# Visitor Analytics";
  * this file only toggles visibility.
@@ -35,6 +40,17 @@
 
     }; // end buildFallback
 
+    // Same three-dot motif as the page preloader.
+    const buildLoading = function(message) {
+
+        const box = document.createElement('div');
+        box.className = 'visitor-map-loading';
+        box.innerHTML = '<div class="visitor-map-loading__dots"><i></i><i></i><i></i></div><span></span>';
+        box.querySelector('span').textContent = message;
+        return box;
+
+    }; // end buildLoading
+
     const watchMap = function(img) {
 
         const frame = img.closest('.visitor-map-frame');
@@ -47,11 +63,23 @@
         fallback.style.display = 'none';
         frame.appendChild(fallback);
 
+        const loading = buildLoading(img.getAttribute('data-loading-text') || 'Loading from Flag Counter…');
+        loading.style.display = 'none';
+        frame.appendChild(loading);
+
+        // Not yet arrived: stand the placeholder in for the image. The image
+        // is not lazy, so hiding its link does not stop it from loading.
+        if (!img.complete) {
+            holder.style.display = 'none';
+            loading.style.display = 'flex';
+        }
+
         let attempt = 0;
 
         img.addEventListener('error', function() {
 
             holder.style.display = 'none';
+            loading.style.display = 'none';
             fallback.style.display = 'flex';
 
             if (attempt >= RETRY_DELAYS.length) return;
@@ -67,6 +95,7 @@
 
         img.addEventListener('load', function() {
             fallback.style.display = 'none';
+            loading.style.display = 'none';
             holder.style.display = '';
         });
 

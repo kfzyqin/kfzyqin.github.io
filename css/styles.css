@@ -6185,6 +6185,51 @@ body.search-is-visible .s-header__search-inner {
     border: 1px dashed rgba(var(--tint-rgb), 0.12);
 }
 
+/* Placeholder shown by js/visitor-map.js while a widget is still on its way.
+   Flag Counter can take several seconds; an empty card reads as broken. */
+.visitor-map-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+    width: 100%;
+    min-height: 160px;
+    border-radius: 4px;
+    background: rgba(var(--tint-rgb), 0.03);
+}
+
+.visitor-map-loading__dots {
+    display: flex;
+    gap: 1rem;
+}
+
+.visitor-map-loading__dots i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-loader-2);
+    animation: dots-fade 1.6s infinite ease;
+    animation-delay: 0.4s;
+}
+
+.visitor-map-loading__dots i:first-child {
+    background: var(--color-loader-3);
+    animation-delay: 0s;
+}
+
+.visitor-map-loading__dots i:last-child {
+    background: var(--color-loader-1);
+    animation-delay: 0.8s;
+}
+
+.visitor-map-loading span {
+    font-family: var(--font-1);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--color-text-light);
+}
+
 .visitor-map-fallback svg {
     opacity: 0.22;
 }
