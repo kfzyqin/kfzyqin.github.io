@@ -23,7 +23,7 @@
         const box = document.createElement('div');
         box.className = 'visitor-map-fallback';
         box.innerHTML =
-            '<svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--color-1)" ' +
+            '<svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" ' +
             'stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">' +
             '<circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line>' +
             '<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>' +

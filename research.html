@@ -8,16 +8,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Research - Qin Research</title>
+    <meta name="description" content="Research papers and projects by Zhenyue Qin, a Researcher at NEC Laboratories America.">
 
+    <meta name="theme-color" content="#00356B">
+
+    <!-- link previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Qin Research">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Research - Qin Research">
+    <meta property="og:description" content="Research papers and projects by Zhenyue Qin, a Researcher at NEC Laboratories America.">
+    <meta property="og:url" content="https://kfzyqin.github.io/research.html">
+    <meta property="og:image" content="https://kfzyqin.github.io/resources/zq/zq_wallpaper_hello.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Theme: the visitor's saved choice if there is one, otherwise the OS
+         setting. Runs before the stylesheet so the page never paints in the
+         wrong theme; js/main.js wires up the header toggle afterwards. -->
     <script>
-        document.documentElement.classList.remove('no-js');
-        document.documentElement.classList.add('js');
+        (function (root) {
+            root.classList.remove('no-js');
+            root.classList.add('js');
+            var theme = null;
+            try { theme = localStorage.getItem('theme'); } catch (e) {}
+            if (theme !== 'light' && theme !== 'dark') {
+                theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+            }
+            root.setAttribute('data-theme', theme);
+            var meta = document.querySelector('meta[name="theme-color"]');
+            if (meta && theme === 'dark') meta.setAttribute('content', '#0d1420');
+        })(document.documentElement);
     </script>
+    <style>html[data-theme="dark"]{background:#0d1420;color-scheme:dark}</style>
+
+    <!-- fonts
+    ================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;700&amp;display=swap">
 
     <!-- CSS
     ================================================== -->
     <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/styles.css?v=47750625">
+    <link rel="stylesheet" href="css/styles.css?v=2026100303">
 
     <!-- favicons
     ================================================== -->
@@ -79,6 +112,18 @@
 
             </div> <!-- end s-header__navigation -->
 
+            <button class="s-header__theme-toggle" type="button" aria-label="Switch theme">
+                <svg class="icon-moon" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="icon-sun" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.5"></circle>
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M12 1.75v2M12 20.25v2M4.75 4.75l1.4 1.4M17.85 17.85l1.4 1.4M1.75 12h2M20.25 12h2M4.75 19.25l1.4-1.4M17.85 6.15l1.4-1.4"></path>
+                </svg>
+            </button>
+
             <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
 
         </header> <!-- end s-header -->
@@ -112,8 +157,11 @@
                         <article class="brick entry" data-animate-el>
 
                             <div class="entry__thumb">
-                                <a href="#0" class="thumb-link">
-                                    <img src="resources/sovtr/coverimage.jpg" loading="lazy" alt="">
+                                <a class="thumb-link">
+                                    <picture>
+                                        <source srcset="resources/sovtr/coverimage.webp" type="image/webp">
+                                        <img src="resources/sovtr/coverimage.jpg" loading="lazy" alt="">
+                                    </picture>
                                 </a>
                             </div> <!-- end entry__thumb -->
 
@@ -121,14 +169,14 @@
                                 <div class="entry__header">
                                     <div class="entry__meta">
                                         <span class="cat-links">
-                                            <a href="#0">Paper</a>
+                                            <a>Paper</a>
                                         </span>
                                         <span class="byline">
                                             On:
                                             <a href="https://2026.emnlp.org/">EMNLP Findings 2026</a>
                                         </span>
                                     </div>
-                                    <h1 class="entry__title"><a href="#0">SoVTR: Set-of-Vision-Text
+                                    <h1 class="entry__title"><a>SoVTR: Set-of-Vision-Text
                                             Rewards for Attribute-Grounded Emotion Recognition in VLLMs</a></h1>
                                 </div>
                                 <div class="entry__excerpt">
@@ -142,7 +190,7 @@
                                         grounding quality on DFEW, FERV39k, and ExpW.
                                     </p>
                                 </div>
-                                <a class="entry__more-link" href="#0">Read More</a>
+                                <span class="entry__more-link entry__more-link--pending">Coming Soon</span>
                             </div> <!-- end entry__text -->
 
                         </article> <!-- end SoVTR -->
@@ -151,8 +199,11 @@
                         <article class="brick entry" data-animate-el>
 
                             <div class="entry__thumb">
-                                <a href="#0" class="thumb-link">
-                                    <img src="resources/fakenews/coverimage.jpg" loading="lazy" alt="">
+                                <a class="thumb-link">
+                                    <picture>
+                                        <source srcset="resources/fakenews/coverimage.webp" type="image/webp">
+                                        <img src="resources/fakenews/coverimage.jpg" loading="lazy" alt="">
+                                    </picture>
                                 </a>
                             </div> <!-- end entry__thumb -->
 
@@ -160,14 +211,14 @@
                                 <div class="entry__header">
                                     <div class="entry__meta">
                                         <span class="cat-links">
-                                            <a href="#0">Paper</a>
+                                            <a>Paper</a>
                                         </span>
                                         <span class="byline">
                                             On:
                                             <a href="https://2026.emnlp.org/">EMNLP Findings 2026</a>
                                         </span>
                                     </div>
-                                    <h1 class="entry__title"><a href="#0">Can Multimodal Large
+                                    <h1 class="entry__title"><a>Can Multimodal Large
                                             Language Models Generate and Detect Multimodal Social Media Fake
                                             News?</a></h1>
                                 </div>
@@ -181,7 +232,7 @@
                                         judging image authenticity.
                                     </p>
                                 </div>
-                                <a class="entry__more-link" href="#0">Read More</a>
+                                <span class="entry__more-link entry__more-link--pending">Coming Soon</span>
                             </div> <!-- end entry__text -->
 
                         </article> <!-- end Multimodal Fake News -->
@@ -191,7 +242,10 @@
 
                             <div class="entry__thumb">
                                 <a href="https://www.nature.com/articles/s41746-026-03064-9" class="thumb-link">
-                                    <img src="resources/fedllm/coverimage.jpg" loading="lazy" alt="">
+                                    <picture>
+                                        <source srcset="resources/fedllm/coverimage.webp" type="image/webp">
+                                        <img src="resources/fedllm/coverimage.jpg" loading="lazy" alt="">
+                                    </picture>
                                 </a>
                             </div> <!-- end entry__thumb -->
 
@@ -271,7 +325,10 @@
                             <div class="entry__thumb">
                                 <a href="https://openaccess.thecvf.com/content/WACV2026/papers/Zhao_DermEVAL_A_Dermatologist-Reviewed_Benchmark_for_Multimodal_Large_Language_Models_WACV_2026_paper.pdf"
                                     class="thumb-link">
-                                    <img src="resources/dermatology/derm_girl.jpg" loading="lazy" alt="">
+                                    <picture>
+                                        <source srcset="resources/dermatology/derm_girl.webp" type="image/webp">
+                                        <img src="resources/dermatology/derm_girl.jpg" loading="lazy" alt="">
+                                    </picture>
                                 </a>
                             </div> <!-- end entry__thumb -->
 
@@ -312,7 +369,10 @@
 
                             <div class="entry__thumb">
                                 <a href="https://arxiv.org/abs/2205.02071" class="thumb-link">
-                                    <img src="resources/skeletons/coverimage_anubis.jpg" loading="lazy" alt="">
+                                    <picture>
+                                        <source srcset="resources/skeletons/coverimage_anubis.webp" type="image/webp">
+                                        <img src="resources/skeletons/coverimage_anubis.jpg" loading="lazy" alt="">
+                                    </picture>
                                 </a>
                             </div> <!-- end entry__thumb -->
 
@@ -427,7 +487,10 @@
 
                             <div class="entry__thumb">
                                 <a href="https://kfzyqin.github.io/lmod/" class="thumb-link">
-                                    <img src="resources/lmod/coverimage.jpg" loading="lazy" alt="">
+                                    <picture>
+                                        <source srcset="resources/lmod/coverimage.webp" type="image/webp">
+                                        <img src="resources/lmod/coverimage.jpg" loading="lazy" alt="">
+                                    </picture>
                                 </a>
                             </div> <!-- end entry__thumb -->
 
@@ -464,7 +527,10 @@
 
                             <div class="entry__thumb">
                                 <a href="https://kfzyqin.github.io/handcraft/" class="thumb-link">
-                                    <img src="resources/handcraft/coverimage.jpg" loading="lazy" alt="">
+                                    <picture>
+                                        <source srcset="resources/handcraft/coverimage.webp" type="image/webp">
+                                        <img src="resources/handcraft/coverimage.jpg" loading="lazy" alt="">
+                                    </picture>
                                 </a>
                             </div> <!-- end entry__thumb -->
 
@@ -502,7 +568,10 @@
 
                             <div class="entry__thumb">
                                 <a href="https://aclanthology.org/2024.emnlp-main.257/" class="thumb-link">
-                                    <img src="resources/sov/coverimage.jpg" loading="lazy" alt="">
+                                    <picture>
+                                        <source srcset="resources/sov/coverimage.webp" type="image/webp">
+                                        <img src="resources/sov/coverimage.jpg" loading="lazy" alt="">
+                                    </picture>
                                 </a>
                             </div> <!-- end entry__thumb -->
 
@@ -586,7 +655,7 @@
                         <nav class="pgn">
                             <ul>
                                 <li>
-                                    <a class="pgn__prev" href="#0">
+                                    <a class="pgn__prev inactive" aria-disabled="true">
                                         <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                                 stroke-width="1.5" d="M10.25 6.75L4.75 12L10.25 17.25"></path>
@@ -692,18 +761,20 @@
 
         </footer><!-- end s-footer -->
 
+    </div> <!-- end s-pagewrap -->
+
 
         <!-- Java Script
     ================================================== -->
         <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/main.js?v=2026100303"></script>
 
     <!-- Hidden Visitor Tracker -->
-        <img src="https://github-visitor-counter-tau.vercel.app/api?username=kfzyqin" style="display: none;" alt="Hidden Visitor Tracker">
+        <img fetchpriority="low" decoding="async" src="https://github-visitor-counter-tau.vercel.app/api?username=kfzyqin" style="display: none;" alt="Hidden Visitor Tracker">
         <!-- Registers the page view against the same Flag Counter counter (a24d) the
      about page displays. Replaced a mapmyvisitors.com pixel in Aug 2026: that
      service is dead, so only about-page visits were being counted. -->
-    <img src="https://s01.flagcounter.com/count/a24d/bg_FFFFFF/txt_000000/border_CCCCCC/columns_1/maxflags_1/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" style="display: none;" alt="Hidden Visitor Counter">
+    <img fetchpriority="low" decoding="async" src="https://s01.flagcounter.com/count/a24d/bg_FFFFFF/txt_000000/border_CCCCCC/columns_1/maxflags_1/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" style="display: none;" alt="Hidden Visitor Counter">
 </body>
 
 </html>

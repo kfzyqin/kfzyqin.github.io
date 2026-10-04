@@ -8,16 +8,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>About - Qin Research</title>
+    <meta name="description" content="秦震岳，NEC 美国实验室研究员，研究 Physical AI，以视觉语言行动模型为技术，应用于自动驾驶与机器人；曾任职于耶鲁大学、腾讯与 Seeing Machines，博士毕业于澳大利亚国立大学。">
 
+    <meta name="theme-color" content="#00356B">
+
+    <!-- link previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Qin Research">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:title" content="About - Qin Research">
+    <meta property="og:description" content="秦震岳，NEC 美国实验室研究员，研究 Physical AI，以视觉语言行动模型为技术，应用于自动驾驶与机器人；曾任职于耶鲁大学、腾讯与 Seeing Machines，博士毕业于澳大利亚国立大学。">
+    <meta property="og:url" content="https://kfzyqin.github.io/about-cn.html">
+    <meta property="og:image" content="https://kfzyqin.github.io/resources/zq/zq_wallpaper_hello.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Theme: the visitor's saved choice if there is one, otherwise the OS
+         setting. Runs before the stylesheet so the page never paints in the
+         wrong theme; js/main.js wires up the header toggle afterwards. -->
     <script>
-        document.documentElement.classList.remove('no-js');
-        document.documentElement.classList.add('js');
+        (function (root) {
+            root.classList.remove('no-js');
+            root.classList.add('js');
+            var theme = null;
+            try { theme = localStorage.getItem('theme'); } catch (e) {}
+            if (theme !== 'light' && theme !== 'dark') {
+                theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+            }
+            root.setAttribute('data-theme', theme);
+            var meta = document.querySelector('meta[name="theme-color"]');
+            if (meta && theme === 'dark') meta.setAttribute('content', '#0d1420');
+        })(document.documentElement);
     </script>
+    <style>html[data-theme="dark"]{background:#0d1420;color-scheme:dark}</style>
+
+    <!-- fonts
+    ================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;700&amp;display=swap">
 
     <!-- CSS
     ================================================== -->
     <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/styles.css?v=47750625">
+    <link rel="stylesheet" href="css/styles.css?v=2026100303">
 
     <!-- favicons
     ================================================== -->
@@ -79,6 +112,18 @@
 
             </div> <!-- end s-header__navigation -->
 
+            <button class="s-header__theme-toggle" type="button" aria-label="Switch theme">
+                <svg class="icon-moon" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="icon-sun" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.5"></circle>
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M12 1.75v2M12 20.25v2M4.75 4.75l1.4 1.4M17.85 17.85l1.4 1.4M1.75 12h2M20.25 12h2M4.75 19.25l1.4-1.4M17.85 6.15l1.4-1.4"></path>
+                </svg>
+            </button>
+
             <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
 
         </header> <!-- end s-header -->
@@ -100,7 +145,7 @@
             </div> <!-- end s-pageheader-->
 
             <!-- Hairline divider matching research.html -->
-            <div style="display: block; width: min(60%, 600px); height: 1px; background: rgba(0, 0, 0, 0.08); margin: var(--vspace-1) auto var(--vspace-2) auto;"></div>
+            <div style="display: block; width: min(60%, 600px); height: 1px; background: var(--color-border); margin: var(--vspace-1) auto var(--vspace-2) auto;"></div>
 
             <div class="row entry-wrap">
                 <div class="column lg-12">
@@ -109,8 +154,10 @@
 
                         <div class="entry__media" style="text-align: center;">
                             <figure class="featured-image" style="margin: 0 auto; max-width: 900px;">
-                                <img class="about-hero-img" src="resources/zq/zq_wallpaper_hello.jpg" loading="lazy"
-                                    alt="">
+                                <picture>
+                                    <source srcset="resources/zq/zq_wallpaper_hello.webp" type="image/webp">
+                                    <img class="about-hero-img" src="resources/zq/zq_wallpaper_hello.jpg" loading="lazy" alt="">
+                                </picture>
                             </figure>
                         </div>
 
@@ -119,10 +166,11 @@
                             <div class="entry__content">
 
                                 <p class="lead">
-                                    秦震岳博士，今居 NEC 美洲实验室圣何塞分部，任研究员之职，幸从 Manmohan Chandraker 教授治学。
-                                    所治者，三维计算机视觉、视觉语言行动模型与自动驾驶之学也。
-                                    前此尝历耶鲁大学博士后研究员、腾讯高级研究员、Seeing Machines 机器智能科学家诸职。
-                                    其本科、博士皆卒业于澳大利亚国立大学。博士时获全额奖学金，本科时膺政府之奖，既卒业，则登一等荣誉。
+                                    秦震岳，治三维计算机视觉之学者也。
+                                    早岁负笈澳大利亚国立大学，自本科以迄博士，皆卒业于斯。方其为本科也，尝忝获政府之奖，以一等荣誉毕其业；及攻博士，叨蒙全额奖学金，幸受业于鲍勃·麦凯（Bob McKay）、汤姆·格迪恩（Tom Gedeon）、金东祐（Dongwoo Kim）三教授之门，始克勉竟其学。其后复问学于耶鲁大学，为博士后。
+                                    其仕也，尝供职腾讯 XR 视觉实验室（Tencent XR Vision Labs），为高级研究员，幸得请益于李宏东（Hongdong Li）教授，拾其吉光片羽；继入视觉机器（Seeing Machines），为机器智能科学家，直隶于首席科学家阿克沙伊·阿斯塔纳（Akshay Asthana）。
+                                    今卜居美国圣何塞，为 NEC 美国实验室研究员，幸得就教于曼莫汉·钱德拉克（Manmohan Chandraker）教授，高山仰止，冀得其一二。
+                                    其所格之物，物理人工智能也：以视觉语言行动模型为术，而施诸自动驾驶、机器人之属云。
                                 </p>
 
                                 <div class="row block-lg-one-half block-tab-whole">
@@ -132,7 +180,7 @@
                                         <!-- NEC Labs America -->
                                         <div class="experience-item">
                                             <div class="experience-header">
-                                                <h5>NEC 美洲实验室</h5>
+                                                <h5>NEC 美国实验室</h5>
                                             </div>
                                             <div class="experience-role">
                                                 <strong>研究员</strong>
@@ -291,13 +339,13 @@
                                              fills the card; js/visitor-map.js covers the failure case. -->
                                         <div class="analytics-card">
                                             <div class="analytics-card__header">
-                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                                                 <h5>实时访客地图</h5>
                                             </div>
                                             <div class="analytics-card__figure visitor-map-frame">
                                                 <a href="https://s01.flagcounter.com/gmap/a24d/" title="访客地图" target="_blank" rel="noopener">
                                                     <img src="https://s01.flagcounter.com/map/a24d/size_l/txt_000000/border_CCCCCC/pageviews_1/viewers_0/flags_0/"
-                                                        alt="访客地图" data-visitor-map
+                                                        alt="访客地图" data-visitor-map decoding="async" fetchpriority="low"
                                                         data-fallback-text="访客地图暂时无法加载。" />
                                                 </a>
                                             </div>
@@ -308,13 +356,13 @@
                                              accumulated, which is what made the flags unreadable. -->
                                         <div class="analytics-card">
                                             <div class="analytics-card__header">
-                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                                                 <h5>国家与地区分布</h5>
                                             </div>
                                             <div class="analytics-card__figure visitor-map-frame">
                                                 <a href="https://s01.flagcounter.com/more/a24d/" title="访客国家与地区" target="_blank" rel="noopener">
                                                     <img src="https://s01.flagcounter.com/count2/a24d/bg_FFFFFF/txt_000000/border_CCCCCC/columns_8/maxflags_250/viewers_Visitors/labels_0/pageviews_1/flags_1/percent_0/"
-                                                        alt="访客国家与地区" data-visitor-map
+                                                        alt="访客国家与地区" data-visitor-map decoding="async" fetchpriority="low"
                                                         data-fallback-text="国家与地区分布暂时无法加载。" />
                                                 </a>
                                             </div>
@@ -331,7 +379,7 @@
                 </div>
             </div> <!-- end entry-wrap -->
 
-            </section> <!-- end s-content -->
+            </div> <!-- end s-content -->
 
 
             <!-- # site-footer
@@ -410,11 +458,13 @@
 
             </footer><!-- end s-footer -->
 
+    </div> <!-- end s-pagewrap -->
+
 
             <!-- Java Script
     ================================================== -->
             <script src="js/plugins.js"></script>
-            <script src="js/main.js"></script>
+            <script src="js/main.js?v=2026100303"></script>
             <script src="js/visitor-map.js"></script>
 
 </body>

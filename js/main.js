@@ -9,27 +9,66 @@
 
 
    /* preloader
+    * Lifted as soon as the first screen can be shown, not on window load.
+    * Load waits for everything on the page -- every hero slide, the third-
+    * party visitor counters, all fonts -- none of which the visitor needs in
+    * order to start reading.
     * -------------------------------------------------- */
+    let revealed = false;
+    const revealQueue = [];
+
+    // Run fn when the preloader starts to lift (at once if it already has).
+    const whenRevealed = function(fn) {
+        if (revealed) fn();
+        else revealQueue.push(fn);
+    };
+
     const ssPreloader = function() {
 
-        const siteBody = document.querySelector('body');
         const preloader = document.querySelector('#preloader');
-        if (!preloader) return;
 
-        html.classList.add('ss-preload');
-        
-        window.addEventListener('load', function() {
+        const reveal = function() {
+            if (revealed) return;
+            revealed = true;
+
             html.classList.remove('ss-preload');
             html.classList.add('ss-loaded');
 
-            preloader.addEventListener('transitionend', function afterTransition(e) {
-                if (e.target.matches('#preloader'))  {
-                    // siteBody.classList.add('ss-show');
-                    e.target.style.display = 'none';
-                    preloader.removeEventListener(e.type, afterTransition);
-                }
-            });
-        });
+            if (preloader) {
+                preloader.addEventListener('transitionend', function afterTransition(e) {
+                    if (e.target.matches('#preloader'))  {
+                        e.target.style.display = 'none';
+                        preloader.removeEventListener(e.type, afterTransition);
+                    }
+                });
+            }
+
+            revealQueue.splice(0).forEach(function(fn) { fn(); });
+        };
+
+        if (!preloader) {
+            reveal();
+            return;
+        }
+
+        html.classList.add('ss-preload');
+
+        // On the home page the first hero photo is the first screen, so wait
+        // for that one image -- but never longer than 1.5s. Other pages are
+        // text and lazy images: lift on the next frame.
+        const heroImage = document.querySelector('.hero__entry-image');
+        const match = heroImage && /url\((['"]?)(.*?)\1\)/.exec(heroImage.style.backgroundImage);
+
+        if (match) {
+            const probe = new Image();
+            probe.onload = probe.onerror = reveal;
+            probe.src = match[2];
+            setTimeout(reveal, 1500);
+        } else {
+            requestAnimationFrame(reveal);
+        }
+
+        window.addEventListener('load', reveal);
 
     }; // end ssPreloader
 
@@ -201,8 +240,8 @@
         }
         // animate on load
         else {
-            window.addEventListener('load', function(){
-                doAnimate(animateBlocks[0]);
+            whenRevealed(function(){
+                if (animateBlocks.length) doAnimate(animateBlocks[0]);
             });
         }
 
@@ -212,7 +251,9 @@
             const p = new Promise(function(resolve, reject) {
 
                 els.forEach(function(el, index, array) {
-                    const dly = index * 200;
+                    // Capped: an uncapped 200ms step left the twelfth
+                    // card waiting 2.2s before it even started to move.
+                    const dly = Math.min(index, 6) * 70;
 
                     el.style.setProperty('--transition-delay', dly + 'ms');
                     if (index === array.length -1) resolve();
@@ -249,6 +290,17 @@
    /* swiper
     * ------------------------------------------------------ */ 
     const ssSwiper = function() {
+
+        // Only the first slide is on screen at arrival and the slider never
+        // advances by itself, so the other slides carry their photo in
+        // data-bg and fetch it once the page is showing rather than
+        // competing with the first one.
+        whenRevealed(function() {
+            document.querySelectorAll('.hero__entry-image[data-bg]').forEach(function(el) {
+                el.style.backgroundImage = "url('" + el.getAttribute('data-bg') + "')";
+                el.removeAttribute('data-bg');
+            });
+        });
 
         const mySwiper = new Swiper('.swiper-container', {
 
@@ -357,11 +409,99 @@
     }; // end ssMoveTo
 
 
+   /* theme toggle
+    * The inline script in each page head has already set <html data-theme>
+    * before first paint. This wires up the header button and keeps following
+    * the OS for as long as the visitor has not chosen otherwise.
+    * ------------------------------------------------------ */
+    const ssThemeToggle = function() {
+
+        const KEY = 'theme';
+        const button = document.querySelector('.s-header__theme-toggle');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const isChinese = (html.lang || '').toLowerCase().indexOf('zh') === 0;
+        let fadeTimer;
+
+        const systemTheme = function() {
+            return systemDark.matches ? 'dark' : 'light';
+        };
+
+        // localStorage throws in some private modes; the toggle still works
+        // for the current page, it just is not remembered.
+        const stored = function() {
+            try {
+                const value = localStorage.getItem(KEY);
+                return (value === 'light' || value === 'dark') ? value : null;
+            } catch (e) {
+                return null;
+            }
+        };
+
+        const store = function(value) {
+            try {
+                if (value) localStorage.setItem(KEY, value);
+                else localStorage.removeItem(KEY);
+            } catch (e) {}
+        };
+
+        const apply = function(theme, animate) {
+            if (animate && !reducedMotion.matches) {
+                html.classList.add('theme-switching');
+                clearTimeout(fadeTimer);
+                fadeTimer = setTimeout(function() {
+                    html.classList.remove('theme-switching');
+                }, 300);
+            }
+
+            html.setAttribute('data-theme', theme);
+
+            const themeColor = document.querySelector('meta[name="theme-color"]');
+            if (themeColor) themeColor.setAttribute('content', theme === 'dark' ? '#0d1420' : '#00356B');
+
+            if (button) {
+                const toDark = theme !== 'dark';
+                const label = isChinese
+                    ? (toDark ? '切换到深色模式' : '切换到浅色模式')
+                    : (toDark ? 'Switch to dark theme' : 'Switch to light theme');
+                button.setAttribute('aria-label', label);
+                button.setAttribute('title', label);
+            }
+        };
+
+        apply(html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light', false);
+
+        if (button) {
+            button.addEventListener('click', function() {
+                const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                // Choosing what the OS already asks for is the same as having
+                // no preference, so drop the override and go back to following.
+                store(next === systemTheme() ? null : next);
+                apply(next, true);
+            });
+        }
+
+        const onSystemChange = function() {
+            if (!stored()) apply(systemTheme(), true);
+        };
+
+        if (systemDark.addEventListener) systemDark.addEventListener('change', onSystemChange);
+        else if (systemDark.addListener) systemDark.addListener(onSystemChange);
+
+        // A switch made in another tab reaches this one too.
+        window.addEventListener('storage', function(e) {
+            if (e.key === KEY || e.key === null) apply(stored() || systemTheme(), true);
+        });
+
+    }; // end ssThemeToggle
+
+
    /* Initialize
     * ------------------------------------------------------ */
     (function ssInit() {
 
         ssPreloader();
+        ssThemeToggle();
         ssMobileMenu();
         ssSearch();
         ssMasonry();

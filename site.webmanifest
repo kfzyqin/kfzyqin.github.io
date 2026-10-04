@@ -1,0 +1,16 @@
+{
+    "name": "Qin Research",
+    "short_name": "Qin Research",
+    "description": "News and research from Zhenyue Qin.",
+    "start_url": "/",
+    "display": "browser",
+    "background_color": "#F6F8FB",
+    "theme_color": "#00356B",
+    "icons": [
+        {
+            "src": "resources/zq/zq_avatar.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ]
+}
