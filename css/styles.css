@@ -67,7 +67,6 @@
  *
  * ------------------------------------------------------------------ */
 
-
 /* ===================================================================
  * # SETTINGS
  *
@@ -84,6 +83,9 @@
     --font-1: "Inter", sans-serif;
     --font-2: "Castoro", serif;
     --font-display: "Playfair Display", "Castoro", serif;
+    /* Song (serif) face for the Chinese About page; system Song faces stand in
+       until Noto Serif SC arrives. Loaded by about-cn.html only. */
+    --font-serif-sc: "Noto Serif SC", "Songti SC", "STSong", "SimSun", "Noto Serif CJK SC", serif;
 
     /* monospace
     */
@@ -376,7 +378,6 @@
     }
 }
 
-
 /* ====================================================================
  * # NORMALIZE
  *
@@ -565,7 +566,6 @@ template {
     display: none;
 }
 
-
 /* ===================================================================
  * # BASE SETUP
  *
@@ -651,7 +651,6 @@ textarea {
     -moz-appearance: none;
     appearance: none;
 }
-
 
 /* ===================================================================
  * # GRID v4.0.0
@@ -1224,7 +1223,6 @@ textarea {
     }
 }
 
-
 /* ===================================================================
  * # UTILITY CLASSES
  *
@@ -1342,7 +1340,6 @@ textarea {
 .u-pull-right {
     float: right;
 }
-
 
 /* ===================================================================
  * # TYPOGRAPHY 
@@ -1903,7 +1900,6 @@ img,
     margin-bottom: var(--vspace-1);
 }
 
-
 /* ===================================================================
  * # PRELOADER 
  * 
@@ -2122,7 +2118,6 @@ img,
     transition: opacity .3s ease-in-out;
 }
 
-
 /* ===================================================================
  * # FORM 
  *
@@ -2303,7 +2298,6 @@ select:-webkit-autofill:focus {
     transition: background-color 5000s ease-in-out 0s;
 }
 
-
 /* ===================================================================
  * # BUTTONS
  *
@@ -2428,7 +2422,6 @@ button.btn--pill {
     border-radius: 1000px !important;
 }
 
-
 /* ===================================================================
  * # TABLE
  *
@@ -2471,7 +2464,6 @@ td:last-child {
     -webkit-overflow-scrolling: touch;
 }
 
-
 /* ===================================================================
  * # COMPONENTS
  *
@@ -2508,6 +2500,7 @@ td:last-child {
     font-family: var(--font-1);
     font-weight: 500;
     font-size: 1.4rem;
+    font-variant-numeric: tabular-nums;
     line-height: var(--vspace-1);
     display: flex;
     align-items: center;
@@ -2898,7 +2891,6 @@ td:last-child {
     color: var(--color-text-light);
 }
 
-
 /* ===================================================================
  * # PROJECT-WIDE SHARED STYLES
  *
@@ -3151,8 +3143,8 @@ img.u-pull-left {
     font-family: var(--font-display);
     font-size: var(--text-xl);
     font-weight: 500;
-    line-height: calc(var(--vspace-1) + var(--vspace-0_125));
-    letter-spacing: -0.02em;
+    line-height: 1.24;   /* research titles run to five or six lines */
+    letter-spacing: -0.01em;
     margin-top: 0;
     margin-bottom: var(--vspace-0_875);
 }
@@ -3170,19 +3162,11 @@ img.u-pull-left {
 
 .bricks-wrapper .entry__meta {
     display: block;
-    font-family: var(--font-1);
-    font-weight: 500;
-    font-size: 1.05rem;
-    text-transform: uppercase;
-    letter-spacing: .2em;
-    line-height: 1.455;
-    color: var(--color-gray-13);
     margin-bottom: var(--vspace-0_375);
 }
 
 .bricks-wrapper .entry__meta .cat-links a {
-    font-weight: 500;
-    color: var(--color-gray-14);
+    color: inherit;
     transition: color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
@@ -3192,14 +3176,14 @@ img.u-pull-left {
 }
 
 .bricks-wrapper .entry__meta .byline a {
-    font-weight: 400;
-    color: var(--color-gray-13);
+    color: inherit;
+    font-variant-numeric: tabular-nums;
     transition: color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .bricks-wrapper .entry__meta .byline a:focus,
 .bricks-wrapper .entry__meta .byline a:hover {
-    color: var(--color-text-dark);
+    color: var(--color-accent);
 }
 
 .bricks-wrapper .entry__meta .cat-links,
@@ -3242,10 +3226,6 @@ img.u-pull-left {
     justify-content: center;
     align-self: flex-start;     /* keep the pill its own width in the flex column */
     margin-top: auto;           /* and on the bottom edge of every card */
-    font-family: var(--font-1);
-    font-size: 1.1rem;
-    font-weight: 500;
-    letter-spacing: .02em;
     color: var(--color-accent);
     background-color: rgba(var(--tint-rgb), 0);
     padding: 0.55em 2.4em;
@@ -3446,7 +3426,6 @@ img.u-pull-left {
     }
 
     .bricks-wrapper .entry__meta {
-        font-size: 1rem;
         margin-bottom: var(--vspace-0_25);
     }
 }
@@ -3483,7 +3462,6 @@ img.u-pull-left {
     }
 }
 
-
 /* ===================================================================
  * # PAGE WRAP
  *
@@ -3496,7 +3474,6 @@ img.u-pull-left {
     overflow: hidden;
     position: relative;
 }
-
 
 /* ===================================================================
  * # SITE HEADER
@@ -3680,7 +3657,7 @@ img.u-pull-left {
     white-space: nowrap;
     padding: .6rem 3rem .6rem 2rem;
     font-family: var(--font-1);
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1.45rem;
     line-height: 1.8rem;
     color: rgba(255, 255, 255, 0.8);
@@ -4123,7 +4100,6 @@ body.search-is-visible .s-header__search-inner {
     }
 }
 
-
 /* ===================================================================
  * # HERO
  *
@@ -4170,7 +4146,8 @@ body.search-is-visible .s-header__search-inner {
 .hero__slider .swiper-pagination .swiper-pagination-bullet {
     display: block;
     outline: none;
-    font-weight: 300;
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
     width: auto;
     height: auto;
     background: transparent;
@@ -4327,11 +4304,7 @@ body.search-is-visible .s-header__search-inner {
 }
 
 .hero__entry-meta .cat-links a {
-    font-weight: 500;
-    font-size: var(--text-sm);
-    text-transform: uppercase;
-    letter-spacing: .2em;
-    color: var(--color-gray-14);
+    font-size: 1.25rem;   /* the hero has room for a step up from the card label */
     transition: color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
@@ -4351,7 +4324,7 @@ body.search-is-visible .s-header__search-inner {
     font-family: var(--font-display);
     font-size: calc(var(--entry-title-size) * var(--text-multiplier));
     line-height: 1.158;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.02em;
     margin-top: 0;
     margin-bottom: var(--vspace-1_5);
 }
@@ -4375,13 +4348,8 @@ body.search-is-visible .s-header__search-inner {
     justify-content: center;
     color: #ffffff;
     background-color: var(--color-1);
-    font-family: var(--font-1);
-    font-weight: 500;
-    font-size: 1.2rem;
     padding: 0.6em 2.4em;
     border-radius: 50rem;
-    text-transform: none;
-    letter-spacing: .02em;
     border: 1px solid var(--color-1);
     position: relative;
     isolation: isolate;
@@ -4467,10 +4435,6 @@ body.search-is-visible .s-header__search-inner {
     z-index: 2;
     display: flex;
     align-items: center;
-    font-size: calc(var(--text-size) * 0.5556);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: .3em;
     color: var(--color-text-dark) !important;
     position: absolute;
     bottom: 4.4rem;
@@ -4609,9 +4573,6 @@ body.search-is-visible .s-header__search-inner {
         max-width: 540px;
     }
 
-    .hero__entry-meta .cat-links a {
-        font-size: calc(var(--text-size) * 0.7778);
-    }
 
     .hero__entry-title {
         margin-bottom: var(--vspace-1_25);
@@ -4624,10 +4585,6 @@ body.search-is-visible .s-header__search-inner {
         margin-bottom: var(--vspace-0_75);
     }
 
-    .hero__more-link {
-        font-size: 1.1rem;
-        letter-spacing: .01em;
-    }
 }
 
 @media screen and (max-width: 1300px) {
@@ -4836,7 +4793,6 @@ body.search-is-visible .s-header__search-inner {
     }
 }
 
-
 /* ===================================================================
  * # SITE CONTENT
  *
@@ -4870,6 +4826,7 @@ body.search-is-visible .s-header__search-inner {
     font-family: var(--font-display);
     font-size: var(--text-display-3);
     line-height: 1.085;
+    letter-spacing: -0.02em;
     margin-top: 0;
     margin-bottom: var(--vspace-1);
 }
@@ -4947,7 +4904,6 @@ body.search-is-visible .s-header__search-inner {
         padding-top: var(--vspace-1);
     }
 }
-
 
 /* ===================================================================
  * # FOOTER
@@ -5315,7 +5271,6 @@ body.search-is-visible .s-header__search-inner {
         width: 1.6rem;
     }
 }
-
 
 /* ===================================================================
  * # BLOG STYLES 
@@ -5886,31 +5841,6 @@ body.search-is-visible .s-header__search-inner {
     }
 }
 
-/* ===================================================================
- * Experience Section Styles
- * ------------------------------------------------------------------- */
-.experience-item {
-    position: relative;
-}
-
-.experience-header {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 0;
-    position: relative;
-}
-
-.experience-logo {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    margin-right: 1rem;
-    flex-shrink: 0;
-    /* Default position - adjust the transform:translateY() value to move up/down */
-    transform: translateY(0px);
-    /* Change this value: positive = down, negative = up */
-}
-
 /* Logo positioning classes for easy adjustment */
 .logo-up-2px {
     transform: translateY(-2px);
@@ -5934,37 +5864,6 @@ body.search-is-visible .s-header__search-inner {
 
 .logo-down-6px {
     transform: translateY(6px);
-}
-
-/* Responsive adjustments for experience logos */
-@media screen and (max-width: 800px) {
-    .experience-logo {
-        width: 35px;
-        height: 35px;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .experience-header {
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    .experience-logo {
-        margin-right: 0;
-        margin-bottom: 0.5rem;
-        align-self: flex-start;
-        transform: translateY(0px);
-        /* Reset for mobile */
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .experience-logo {
-        width: 30px;
-        height: 30px;
-    }
 }
 
 /* ===================================================================
@@ -6000,96 +5899,247 @@ body.search-is-visible .s-header__search-inner {
     font-weight: 700;
 }
 
+/* The bio is written in a bookish register, so it is set in the site's book
+   face (Castoro, already loaded for the brand and nav) rather than the UI
+   sans. The Chinese page overrides the family further down. */
 .entry__content .lead {
-    font-weight: 300;
-    line-height: 2.0;
-    font-size: 2.1rem;
-    color: var(--color-gray-16);
+    font-family: var(--font-2);
+    font-weight: 400;
+    line-height: 1.85;
+    font-size: 2.0rem;
+    color: var(--color-text);
+    max-width: 72ch;           /* about 36 CJK characters on the Chinese page */
     margin-bottom: 3.5rem;
     padding-left: 1.5rem;
     border-left: 2px solid rgba(var(--tint-rgb), 0.12);
 }
 
+/* ---- Chinese About page: Song typeface for the display text ------------------
+   Headings and the bio take the serif; the timeline, service list and chips
+   stay in the UI sans. The negative tracking the Latin display face wants is
+   wrong for CJK, so it is reset here. */
+html[lang="zh"] .s-pageheader .page-title,
+html[lang="zh"] .about-section-title {
+    font-family: var(--font-serif-sc);
+    letter-spacing: 0;
+}
+
+html[lang="zh"] .about-section-title {
+    font-weight: 600;
+}
+
+html[lang="zh"] .entry__content .lead {
+    font-family: var(--font-serif-sc);
+    font-weight: 400;
+    font-size: 2.0rem;
+    line-height: 2.05;
+    letter-spacing: 0.03em;
+    text-align: justify;
+}
+
+@media screen and (max-width: 500px) {
+    .entry__content .lead,
+    html[lang="zh"] .entry__content .lead {
+        font-size: 1.8rem;
+    }
+}
+
+/* -------------------------------------------------------------------
+ * ## type roles
+ *
+ * Two recurring voices, each written once so every instance matches.
+ * ------------------------------------------------------------------- */
+
+/* Label: the small tracked capitals that tag things (card meta, hero
+   category, scroll cue, service headings, visitor-card headings). */
+.bricks-wrapper .entry__meta,
+.hero__entry-meta .cat-links a,
+.hero__scroll-down,
+.services dt,
+.services__sub,
+.analytics-card__header h5 {
+    font-family: var(--font-1);
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+}
+
+/* Pill: the rounded buttons and venue tags. */
+.hero__more-link,
+.bricks-wrapper .entry__more-link,
+.chips li {
+    font-family: var(--font-1);
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: none;
+}
+
 .about-section-title {
     font-family: var(--font-display);
-    font-size: 2.4rem;
-    font-weight: 700;
+    font-size: 2.8rem;
+    font-weight: 500;          /* same weight as the card titles */
+    line-height: 1.24;
     margin-bottom: 2rem;
     color: var(--color-accent);
     letter-spacing: -0.01em;
 }
 
-.experience-item {
-    padding: 2rem 2.4rem;
-    margin-bottom: 1.6rem;
-    border-radius: 12px;
-    background: var(--color-surface);
-    border: 1px solid rgba(var(--tint-rgb), 0.06);
-    border-left: 3px solid rgba(var(--tint-rgb), 0.15);
-    box-shadow: 0 4px 12px rgba(var(--shadow-rgb), 0.03);
-    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+/* ---- experience timeline ---------------------------------------------------
+   One column of entries, newest first: year on the left, a hairline with a
+   node per entry, organisation and role on the right. Ongoing roles get a
+   filled node. */
+.timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.experience-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 32px rgba(var(--shadow-rgb), 0.08);
-    border-color: rgba(var(--tint-rgb), 0.12);
-    border-left-color: rgba(var(--tint-rgb), 0.4);
+.timeline__item {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    column-gap: 1.6rem;
+    padding: 0;
 }
 
-.experience-header h5 {
-    font-size: 1.8rem !important;
-    font-weight: 600 !important;
-    margin: 0 0 0.6rem 0 !important;
-    padding: 0 !important;
-    line-height: 1.3 !important;
-    color: var(--color-accent);
-}
-
-.experience-role {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    font-size: 1.6rem;
-}
-
-.experience-role--multiline {
-    flex-direction: column;
-}
-
-.experience-role strong {
+.timeline__time {
+    font-family: var(--font-1);
+    font-size: 1.3rem;
     font-weight: 500;
-    color: var(--color-gray-16);
-}
-
-.experience-time {
-    font-size: 1.35rem;
-    color: var(--color-1-light);
-    background: rgba(var(--tint-rgb), 0.05);
-    padding: 0.2rem 0.8rem;
-    border-radius: 20px;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+    line-height: 2.4rem;
+    color: var(--color-text-light);
+    padding-top: 0.2rem;
     white-space: nowrap;
+}
+
+.timeline__body {
+    position: relative;
+    padding: 0.2rem 0 var(--vspace-1) 2.6rem;
+    border-left: 1px solid rgba(var(--tint-rgb), 0.18);
+}
+
+.timeline__item:last-child .timeline__body {
+    padding-bottom: 0;
+    border-left-color: transparent;
+}
+
+/* The node sits on the hairline, centred on the organisation's first line. */
+.timeline__body::before {
+    content: "";
+    position: absolute;
+    left: -5.5px;
+    top: calc(0.2rem + 1.2rem - 5px);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-body);
+    border: 1.5px solid var(--color-accent);
+    box-sizing: border-box;
+}
+
+.timeline__item--current .timeline__body::before {
+    background: var(--color-accent);
+}
+
+.timeline__org {
+    font-family: var(--font-1);
+    font-size: 1.6rem;
     font-weight: 500;
+    line-height: 2.4rem;
+    letter-spacing: -0.01em;
+    color: var(--color-accent);
+    margin: 0;
 }
 
-.experience-details {
-    margin-top: 1rem;
+.timeline__role {
     font-size: 1.5rem;
-    line-height: 1.6;
-    color: var(--color-gray-15);
+    line-height: 2.4rem;
+    color: var(--color-text);
+    margin: 0;
 }
 
-.experience-details p {
-    margin-bottom: 0.6rem;
+@media screen and (max-width: 600px) {
+    .timeline__item {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline__time {
+        padding-left: 2.6rem;
+        padding-top: 0;
+        line-height: 2rem;
+    }
+
+    .timeline__body {
+        padding-top: 0;
+    }
+
+    .timeline__body::before {
+        top: calc(1.2rem - 5px);
+    }
 }
 
-.experience-details p:last-child {
+/* ---- academic service --------------------------------------------------------- */
+.services {
+    margin: 0;
+}
+
+.services__item {
+    margin-bottom: var(--vspace-1);
+}
+
+.services__item:last-child {
     margin-bottom: 0;
 }
 
-.experience-details strong {
+.services dt,
+.services__sub {
+    display: block;
+    margin: 0 0 0.6rem;
+}
+
+.services__sub {
+    font-size: 1.05rem;
+    margin-top: 1.2rem;
+}
+
+.services__sub:first-child {
+    margin-top: 0;
+}
+
+.services dd {
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.services dd em {
+    font-style: italic;
+}
+
+/* Venue chips: wrap freely, read as a set rather than a sentence. */
+.chips {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+}
+
+.chips li {
+    line-height: 1;
     color: var(--color-accent);
-    font-weight: 500;
+    background: rgba(var(--tint-rgb), 0.08);
+    border-radius: 50rem;
+    padding: 0.5em 0.9em;
+    margin: 0;
+    white-space: nowrap;
 }
 
 /* ===================================================================
@@ -6146,11 +6196,7 @@ body.search-is-visible .s-header__search-inner {
 
 .analytics-card__header h5 {
     margin: 0;
-    font-family: var(--font-1);
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--color-accent);
-    letter-spacing: 0.02em;
+    color: var(--color-accent);   /* matches the icon beside it */
 }
 
 /* Let each widget render at its natural size, capped to the card width. */
@@ -6612,6 +6658,14 @@ button.s-header__theme-toggle:focus {
 :root[data-theme="dark"] .analytics-card:hover {
     background: rgba(var(--tint-rgb), 0.04);
     border-color: rgba(var(--tint-rgb), 0.14);
+}
+
+/* Light (300) text looks thinner still on a dark ground; bring the running
+   text up a weight. Headings and UI labels are unaffected. */
+:root[data-theme="dark"] .entry__content .lead,
+:root[data-theme="dark"] .hero__entry-desc,
+:root[data-theme="dark"] .s-footer {
+    font-weight: 400;
 }
 
 /* Cover art is drawn for a white page; on navy it glares. Dimmed at rest and
