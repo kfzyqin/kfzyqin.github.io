@@ -4614,13 +4614,10 @@ select:focus-visible,
     transform: scale(1.045);
 }
 
-/* The theme also has .bricks-wrapper .entry__title a:hover -> --color-gray-15.
-   Both fire when the pointer is over the link itself, so they are matched to the
-   same value; otherwise the title changes colour again as the cursor crosses from
-   the card onto the heading. */
-.bricks-wrapper .brick:hover .entry__title a,
+/* The title turns blue only when the pointer is on the title itself, not
+   anywhere on the card (overrides the theme's a:hover -> --color-gray-15). */
 .bricks-wrapper .entry__title a:hover,
-.bricks-wrapper .entry__title a:focus {
+.bricks-wrapper .entry__title a:focus-visible {
     color: var(--color-1-light);
 }
 
@@ -5015,15 +5012,36 @@ button.s-header__theme-toggle:focus {
     padding: 0;
 }
 
+/* Link chips are actions, so they are drawn as outlined pills (like Read More
+   and the chevron), while the venue tags on About stay as filled tints. */
+.chips li.chips__link {
+    background: transparent;
+}
+
 .chips li.chips__link a {
-    padding: 0.5em 0.9em;
+    padding: 0.5em 1em;
     border-radius: 50rem;
+    border: 1px solid rgba(var(--tint-rgb), 0.28);
+    background: transparent;
+    color: var(--color-accent);
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .chips li.chips__link a:hover,
 .chips li.chips__link a:focus-visible {
     background: var(--color-1);
+    border-color: var(--color-1);
     color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(var(--shadow-rgb), 0.16);
+}
+
+.chips li.chips__link a:active {
+    transform: none;
 }
 
 /* ---- card meta on one line ------------------------------------------------------
@@ -5162,7 +5180,11 @@ button.s-header__theme-toggle:focus {
 /* Paper cards carry up to four chips plus the chevron in a 290px column. */
 .bricks-wrapper--papers .chips li.chips__link a {
     font-size: 1.1rem;
-    padding: 0.45em 0.75em;
+    padding: 0.45em 0.85em;
+}
+
+.bricks-wrapper .entry__links {
+    gap: 0.5rem;
 }
 
 /* The chevron. Written against `button.` to beat the theme's button rules. */

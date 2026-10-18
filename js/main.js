@@ -429,6 +429,13 @@
         const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
         let openCard = null;
 
+        // A clamped block is only "clipped" when at least half a line is hidden:
+        // Playfair's ascenders overhang the line box by a few pixels on their own.
+        const isClipped = function(el) {
+            const lh = parseFloat(window.getComputedStyle(el).lineHeight) || 20;
+            return el.scrollHeight - el.clientHeight > lh * 0.5;
+        };
+
         const onEnd = function(panel, fn) {
             let done = false;
             const finish = function() {
@@ -505,17 +512,17 @@
                 // Venue: a tooltip with the full name only where the line was cut.
                 const venue = card.querySelector('.entry__meta .byline');
                 const venueText = venue && venue.querySelector('.byline__text');
-                if (venue && venueText) venue.classList.toggle('is-truncated', venueText.scrollWidth > venueText.clientWidth + 1);
+                if (venue && venueText) venue.classList.toggle('is-truncated', venueText.scrollWidth > venueText.clientWidth + 2);
                 const btn = card.querySelector('.entry__toggle');
                 if (!btn) return;
                 // Authors: measure the full list, fall back to the short form if it clips.
                 const full = card.querySelector('.entry__authors--full');
                 if (full) {
                     card.classList.remove('has-long-authors');
-                    if (full.scrollHeight > full.clientHeight + 1) card.classList.add('has-long-authors');
+                    if (isClipped(full)) card.classList.add('has-long-authors');
                 }
                 const clamped = Array.prototype.slice.call(card.querySelectorAll('.entry__title, .entry__authors--full, .entry__excerpt p'));
-                btn.hidden = !clamped.some(function(el) { return el.scrollHeight > el.clientHeight + 1; });
+                btn.hidden = !clamped.some(isClipped);
             });
         };
 
@@ -558,12 +565,15 @@
             if (title) targets.push({
                 el: title, cls: 'entry__tip--title',
                 text: function() { return title.textContent.replace(/\s+/g, ' ').trim(); },
-                clipped: function() { return title.scrollHeight > title.clientHeight + 1; }
+                clipped: function() {
+                    const lh = parseFloat(window.getComputedStyle(title).lineHeight) || 20;
+                    return title.scrollHeight - title.clientHeight > lh * 0.5;
+                }
             });
             if (venue && venueText) targets.push({
                 el: venue, cls: 'entry__tip--venue',
                 text: function() { return venue.getAttribute('data-venue') || venueText.textContent.trim(); },
-                clipped: function() { return venueText.scrollWidth > venueText.clientWidth + 1; }
+                clipped: function() { return venueText.scrollWidth > venueText.clientWidth + 2; }
             });
 
             let timer;
