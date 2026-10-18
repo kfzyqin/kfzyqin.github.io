@@ -7,7 +7,7 @@
     ================================================== -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Research - Qin Research</title>
+    <title>Research – Zhenyue Qin</title>
     <meta name="description" content="Research papers and projects by Zhenyue Qin, a Researcher at NEC Laboratories America.">
 
     <meta name="theme-color" content="#00356B">
@@ -16,10 +16,14 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Qin Research">
     <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="Research - Qin Research">
+    <meta property="og:title" content="Research – Zhenyue Qin">
     <meta property="og:description" content="Research papers and projects by Zhenyue Qin, a Researcher at NEC Laboratories America.">
     <meta property="og:url" content="https://kfzyqin.github.io/research.html">
-    <meta property="og:image" content="https://kfzyqin.github.io/resources/zq/zq_wallpaper_hello.jpg">
+    <link rel="canonical" href="https://kfzyqin.github.io/research.html">
+    <meta property="og:image" content="https://kfzyqin.github.io/resources/zq/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Zhenyue Qin">
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- Theme: the visitor's saved choice if there is one, otherwise the OS
@@ -45,23 +49,30 @@
     ================================================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;700&amp;display=swap">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;700&amp;display=swap"></noscript>
 
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/styles.css?v=2026100307">
+    <link rel="stylesheet" href="css/styles.css?v=2026101808">
 
     <!-- favicons
     ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="resources/zq/zq_avatar.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="resources/zq/zq_avatar.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="resources/zq/zq_avatar.png">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="resources/favicon/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
 
+    <!-- scripts (deferred: they run after the document is parsed, in this order)
+    ================================================== -->
+    <script src="js/plugins-core.js?v=2026101808" defer></script>
+    <script src="js/main.js?v=2026101808" defer onerror="document.documentElement.classList.add('no-js')"></script>
 </head>
 
 <body id="top">
+
+    <a class="skip-link" href="#content">Skip to content</a>
 
 
     <!-- preloader
@@ -86,7 +97,7 @@
 
             <div class="s-header__branding">
                 <p class="site-title">
-                    <a href="index.html" rel="home">Qin Research</a>
+                    <a href="/" rel="home">Qin Research</a>
                 </p>
             </div>
 
@@ -94,13 +105,13 @@
 
                 <nav class="s-header__nav-wrap">
 
-                    <h3 class="s-header__nav-heading">Navigate to</h3>
+                    <p class="s-header__nav-heading">Navigate to</p>
 
-                    <ul class="s-header__nav">
-                        <li><a href="index.html" title="">Home</a></li>
-                        <li class="current-menu-item"><a href="research.html" title="">Research</a></li>
+                    <ul class="s-header__nav" id="site-nav">
+                        <li><a href="/">Home</a></li>
+                        <li class="current-menu-item"><a href="research.html">Research</a></li>
                         <li class="has-children">
-                            <a href="about.html" title="">About</a>
+                            <a href="about.html">About</a>
                             <ul class="sub-menu">
                                 <li><a href="about.html">English</a></li>
                                 <li><a href="about-cn.html">Chinese</a></li>
@@ -124,14 +135,14 @@
                 </svg>
             </button>
 
-            <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+            <button class="s-header__menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span>Menu</span></button>
 
         </header> <!-- end s-header -->
 
 
         <!-- # site-content
         ================================================== -->
-        <section id="content" class="s-content">
+        <main id="content" class="s-content">
 
 
             <!-- pageheader -->
@@ -152,32 +163,30 @@
 
                 <div class="masonry">
 
-                    <div class="bricks-wrapper" data-animate-block>
+                    <div class="bricks-wrapper bricks-wrapper--papers" data-animate-block>
                         <!-- SoVTR -->
-                        <article class="brick entry" data-animate-el>
+                        <article class="brick entry is-pending" data-animate-el>
+                            <div class="entry__panel">
 
                             <div class="entry__thumb">
-                                <a class="thumb-link">
+                                <span class="thumb-link">
                                     <picture>
                                         <source srcset="resources/sovtr/coverimage.webp" type="image/webp">
                                         <img src="resources/sovtr/coverimage.jpg" loading="lazy" alt="">
                                     </picture>
-                                </a>
+                                </span>
                             </div> <!-- end entry__thumb -->
 
                             <div class="entry__text">
                                 <div class="entry__header">
                                     <div class="entry__meta">
                                         <span class="cat-links">
-                                            <a>Paper</a>
+                                            <span>Paper</span>
                                         </span>
-                                        <span class="byline">
-                                            On:
-                                            <a href="https://2026.emnlp.org/">EMNLP Findings 2026</a>
-                                        </span>
+                                        <span class="byline" data-venue="EMNLP Findings 2026"><span class="byline__text"><a href="https://2026.emnlp.org/">EMNLP Findings 2026</a></span></span>
                                     </div>
-                                    <h1 class="entry__title"><a>SoVTR: Set-of-Vision-Text
-                                            Rewards for Attribute-Grounded Emotion Recognition in VLLMs</a></h1>
+                                    <h2 class="entry__title"><span>SoVTR: Set-of-Vision-Text
+                                            Rewards for Attribute-Grounded Emotion Recognition in VLLMs</span></h2>
                                 </div>
                                 <div class="entry__excerpt">
                                     <p>
@@ -190,16 +199,21 @@
                                         grounding quality on DFEW, FERV39k, and ExpW.
                                     </p>
                                 </div>
-                                <span class="entry__more-link entry__more-link--pending">Coming Soon</span>
+                                <div class="entry__actions">
+                                    <span class="entry__more-link entry__more-link--pending">Coming Soon</span>
+                                    <button class="entry__toggle" type="button" aria-expanded="false" aria-label="Show the full text of this card"></button>
+                                </div>
                             </div> <!-- end entry__text -->
+                            </div>
 
                         </article> <!-- end SoVTR -->
 
                         <!-- Multimodal Fake News -->
                         <article class="brick entry" data-animate-el>
+                            <div class="entry__panel">
 
                             <div class="entry__thumb">
-                                <a class="thumb-link">
+                                <a href="https://arxiv.org/abs/2609.35809" class="thumb-link" tabindex="-1" aria-hidden="true">
                                     <picture>
                                         <source srcset="resources/fakenews/coverimage.webp" type="image/webp">
                                         <img src="resources/fakenews/coverimage.jpg" loading="lazy" alt="">
@@ -211,16 +225,15 @@
                                 <div class="entry__header">
                                     <div class="entry__meta">
                                         <span class="cat-links">
-                                            <a>Paper</a>
+                                            <a href="https://arxiv.org/abs/2609.35809">Paper</a>
                                         </span>
-                                        <span class="byline">
-                                            On:
-                                            <a href="https://2026.emnlp.org/">EMNLP Findings 2026</a>
-                                        </span>
+                                        <span class="byline" data-venue="EMNLP Findings 2026"><span class="byline__text"><a href="https://2026.emnlp.org/">EMNLP Findings 2026</a></span></span>
                                     </div>
-                                    <h1 class="entry__title"><a>Can Multimodal Large
+                                    <h2 class="entry__title"><a href="https://arxiv.org/abs/2609.35809">Can Multimodal Large
                                             Language Models Generate and Detect Multimodal Social Media Fake
-                                            News?</a></h1>
+                                            News?</a></h2>
+                                    <p class="entry__authors entry__authors--full">Jiyao Yang, Yang Liu, <strong>Zhenyue Qin</strong>, Qingyu Chen, Xiuzhen Zhang<sup>†</sup></p>
+                                                    <p class="entry__authors entry__authors--short" aria-hidden="true">Jiyao Yang, …, <strong>Zhenyue Qin</strong>, …, Xiuzhen Zhang<sup>†</sup></p>
                                 </div>
                                 <div class="entry__excerpt">
                                     <p>
@@ -232,16 +245,21 @@
                                         judging image authenticity.
                                     </p>
                                 </div>
-                                <span class="entry__more-link entry__more-link--pending">Coming Soon</span>
+                                <div class="entry__actions">
+                                    <ul class="chips entry__links"><li class="chips__link"><a href="https://arxiv.org/abs/2609.35809">arXiv</a></li><li class="chips__link"><a href="https://github.com/xiuzhenzhang/Multimodal">Code</a></li></ul>
+                                    <button class="entry__toggle" type="button" aria-expanded="false" aria-label="Show the full text of this card"></button>
+                                </div>
                             </div> <!-- end entry__text -->
+                            </div>
 
                         </article> <!-- end Multimodal Fake News -->
 
                         <!-- Federated Medical LLM -->
                         <article class="brick entry" data-animate-el>
+                            <div class="entry__panel">
 
                             <div class="entry__thumb">
-                                <a href="https://www.nature.com/articles/s41746-026-03064-9" class="thumb-link">
+                                <a href="https://www.nature.com/articles/s41746-026-03064-9" class="thumb-link" tabindex="-1" aria-hidden="true">
                                     <picture>
                                         <source srcset="resources/fedllm/coverimage.webp" type="image/webp">
                                         <img src="resources/fedllm/coverimage.jpg" loading="lazy" alt="">
@@ -255,14 +273,13 @@
                                         <span class="cat-links">
                                             <a href="https://www.nature.com/articles/s41746-026-03064-9">Paper</a>
                                         </span>
-                                        <span class="byline">
-                                            On:
-                                            <a href="https://www.nature.com/articles/s41746-026-03064-9">npj Digital Medicine 2026</a>
-                                        </span>
+                                        <span class="byline" data-venue="npj Digital Medicine 2026"><span class="byline__text"><a href="https://www.nature.com/articles/s41746-026-03064-9">npj Digital Medicine 2026</a></span></span>
                                     </div>
-                                    <h1 class="entry__title"><a href="https://www.nature.com/articles/s41746-026-03064-9">Toward Federated Large
+                                    <h2 class="entry__title"><a href="https://www.nature.com/articles/s41746-026-03064-9">Toward Federated Large
                                             Language Models in Medicine: A Parameter-Efficient Framework for
-                                            Privacy-Preserving, Multi-Institutional Adaptation</a></h1>
+                                            Privacy-Preserving, Multi-Institutional Adaptation</a></h2>
+                                    <p class="entry__authors entry__authors--full">Anran Li, Yuanyuan Chen, Wenjun Long, Yu Yin, Yan Hu, Hyunjae Kim, Weipeng Zhou, Yujia Zhou, Hongyi Peng, Yang Ren, Xuguang Ai, <strong>Zhenyue Qin</strong>, Ming Hu, Xiaoxiao Li, Han Yu, Yih-Chung Tham, Lucila Ohno-Machado, Hua Xu, Qingyu Chen<sup>†</sup></p>
+                                                    <p class="entry__authors entry__authors--short" aria-hidden="true">Anran Li, …, <strong>Zhenyue Qin</strong>, …, Qingyu Chen<sup>†</sup></p>
                                 </div>
                                 <div class="entry__excerpt">
                                     <p>
@@ -273,16 +290,21 @@
                                         patient records.
                                     </p>
                                 </div>
-                                <a class="entry__more-link" href="https://www.nature.com/articles/s41746-026-03064-9">Read More</a>
+                                <div class="entry__actions">
+                                    <ul class="chips entry__links"><li class="chips__link"><a href="https://www.nature.com/articles/s41746-026-03064-9">Paper</a></li><li class="chips__link"><a href="https://arxiv.org/abs/2601.22124">arXiv</a></li><li class="chips__link"><a href="https://github.com/Yale-BIDS-Chen-Lab/FL_LLM_Med">Code</a></li></ul>
+                                    <button class="entry__toggle" type="button" aria-expanded="false" aria-label="Show the full text of this card"></button>
+                                </div>
                             </div> <!-- end entry__text -->
+                            </div>
 
                         </article> <!-- end Federated Medical LLM -->
 
                         <!-- LMOD Plus -->
                         <article class="brick entry" data-animate-el>
+                            <div class="entry__panel">
 
                             <div class="entry__thumb">
-                                <a href="https://kfzyqin.github.io/lmod_plus/" class="thumb-link">
+                                <a href="https://kfzyqin.github.io/lmod_plus/" class="thumb-link" tabindex="-1" aria-hidden="true">
                                     <picture>
                                         <source srcset="resources/lmod_plus/coverimage.webp" type="image/webp">
                                         <img src="resources/lmod_plus/coverimage.jpg" loading="lazy" alt="">
@@ -296,15 +318,11 @@
                                         <span class="cat-links">
                                             <a href="https://dl.acm.org/doi/10.1145/3801746">Paper</a>
                                         </span>
-                                        <span class="byline">
-                                            On:
-                                            <a href="https://dl.acm.org/doi/10.1145/3801746">ACM Transactions on
-                                                Computing for Healthcare</a>
-                                        </span>
+                                        <span class="byline" data-venue="ACM Transactions on Computing for Healthcare"><span class="byline__text"><a href="https://dl.acm.org/doi/10.1145/3801746">ACM Transactions on Computing for Healthcare</a></span></span>
                                     </div>
-                                    <h1 class="entry__title"><a href="https://dl.acm.org/doi/10.1145/3801746">LMOD+: A
-                                            Multimodal Dataset and Benchmark for Multimodal Large Language Models in
-                                            Ophthalmology</a></h1>
+                                    <h2 class="entry__title"><a href="https://kfzyqin.github.io/lmod_plus/">LMOD+: A Comprehensive Multimodal Dataset and Benchmark for Developing and Evaluating Multimodal Large Language Models in Ophthalmology</a></h2>
+                                    <p class="entry__authors entry__authors--full"><strong>Zhenyue Qin</strong><sup>*</sup>, Yang Liu<sup>*</sup>, Yu Yin, Jinyu Ding, Haoran Zhang, Anran Li, Dylan Campbell, Xuansheng Wu, Ke Zou, Tiarnan D. L. Keenan, Emily Y. Chew, Zhiyong Lu, Yih-Chung Tham, Ninghao Liu, Xiuzhen Zhang, Qingyu Chen<sup>†</sup></p>
+                                                    <p class="entry__authors entry__authors--short" aria-hidden="true"><strong>Zhenyue Qin</strong><sup>*</sup>, …, Qingyu Chen<sup>†</sup></p>
                                 </div>
                                 <div class="entry__excerpt">
                                     <p>
@@ -314,17 +332,22 @@
                                         evaluation of 24 state-of-the-art MLLMs.
                                     </p>
                                 </div>
-                                <a class="entry__more-link" href="https://kfzyqin.github.io/lmod_plus/">Read More</a>
+                                <div class="entry__actions">
+                                    <ul class="chips entry__links"><li class="chips__link"><a href="https://dl.acm.org/doi/10.1145/3801746">Paper</a></li><li class="chips__link"><a href="https://arxiv.org/abs/2509.25620">arXiv</a></li><li class="chips__link"><a href="https://kfzyqin.github.io/lmod_plus/">Project</a></li></ul>
+                                    <button class="entry__toggle" type="button" aria-expanded="false" aria-label="Show the full text of this card"></button>
+                                </div>
                             </div> <!-- end entry__text -->
+                            </div>
 
                         </article> <!-- end LMOD Plus -->
 
                         <!-- DermEVAL -->
                         <article class="brick entry" data-animate-el>
+                            <div class="entry__panel">
 
                             <div class="entry__thumb">
                                 <a href="https://openaccess.thecvf.com/content/WACV2026/papers/Zhao_DermEVAL_A_Dermatologist-Reviewed_Benchmark_for_Multimodal_Large_Language_Models_WACV_2026_paper.pdf"
-                                    class="thumb-link">
+                                    class="thumb-link" tabindex="-1" aria-hidden="true">
                                     <picture>
                                         <source srcset="resources/dermatology/derm_girl.webp" type="image/webp">
                                         <img src="resources/dermatology/derm_girl.jpg" loading="lazy" alt="">
@@ -339,15 +362,14 @@
                                             <a
                                                 href="https://openaccess.thecvf.com/content/WACV2026/papers/Zhao_DermEVAL_A_Dermatologist-Reviewed_Benchmark_for_Multimodal_Large_Language_Models_WACV_2026_paper.pdf">Paper</a>
                                         </span>
-                                        <span class="byline">
-                                            On:
-                                            <a href="https://wacv.thecvf.com/">WACV 2026</a>
-                                        </span>
+                                        <span class="byline" data-venue="WACV 2026"><span class="byline__text"><a href="https://wacv.thecvf.com/">WACV 2026</a></span></span>
                                     </div>
-                                    <h1 class="entry__title"><a
+                                    <h2 class="entry__title"><a
                                             href="https://openaccess.thecvf.com/content/WACV2026/papers/Zhao_DermEVAL_A_Dermatologist-Reviewed_Benchmark_for_Multimodal_Large_Language_Models_WACV_2026_paper.pdf">DermEVAL:
                                             A Dermatologist-Reviewed Benchmark for Multimodal Large Language Models</a>
-                                    </h1>
+                                    </h2>
+                                    <p class="entry__authors entry__authors--full">Hongjin Zhao, Weihao Li, <strong>Zhenyue Qin</strong>, Ge-Peng Ji, Yang Liu, Tom Gedeon, Nick Barnes</p>
+                                                    <p class="entry__authors entry__authors--short" aria-hidden="true">Hongjin Zhao, …, <strong>Zhenyue Qin</strong>, …, Nick Barnes</p>
                                 </div>
                                 <div class="entry__excerpt">
                                     <p>
@@ -357,20 +379,23 @@
                                         report generation tasks.
                                     </p>
                                 </div>
-                                <a class="entry__more-link"
-                                    href="https://openaccess.thecvf.com/content/WACV2026/papers/Zhao_DermEVAL_A_Dermatologist-Reviewed_Benchmark_for_Multimodal_Large_Language_Models_WACV_2026_paper.pdf">Read
-                                    More</a>
+                                <div class="entry__actions">
+                                    <ul class="chips entry__links"><li class="chips__link"><a href="https://openaccess.thecvf.com/content/WACV2026/html/Zhao_DermEVAL_A_Dermatologist-Reviewed_Benchmark_for_Multimodal_Large_Language_Models_WACV_2026_paper.html">Paper</a></li></ul>
+                                    <button class="entry__toggle" type="button" aria-expanded="false" aria-label="Show the full text of this card"></button>
+                                </div>
                             </div> <!-- end entry__text -->
+                            </div>
 
                         </article> <!-- end DermEVAL -->
 
                         <!-- ANUBIS -->
                         <article class="brick entry" data-animate-el>
+                            <div class="entry__panel">
 
                             <div class="entry__thumb">
-                                <a href="https://arxiv.org/abs/2205.02071" class="thumb-link">
+                                <a href="https://arxiv.org/abs/2205.02071" class="thumb-link" tabindex="-1" aria-hidden="true">
                                     <picture>
-                                        <source srcset="resources/skeletons/coverimage_anubis.webp" type="image/webp">
+                                        <source srcset="resources/skeletons/coverimage_anubis_card.webp" type="image/webp">
                                         <img src="resources/skeletons/coverimage_anubis.jpg" loading="lazy" alt="">
                                     </picture>
                                 </a>
@@ -380,35 +405,36 @@
                                 <div class="entry__header">
                                     <div class="entry__meta">
                                         <span class="cat-links">
-                                            <a href="https://arxiv.org/abs/2205.02071">Paper</a>
+                                            <a href="https://doi.org/10.1016/j.patcog.2026.114140">Paper</a>
                                         </span>
-                                        <span class="byline">
-                                            On:
-                                            <a href="https://arxiv.org/abs/2205.02071">Pattern Recognition</a>
-                                        </span>
+                                        <span class="byline" data-venue="Pattern Recognition"><span class="byline__text"><a href="https://arxiv.org/abs/2205.02071">Pattern Recognition</a></span></span>
                                     </div>
-                                    <h1 class="entry__title"><a href="https://arxiv.org/abs/2205.02071">ANUBIS:
-                                            Representation-Centric Survey of Skeletal Action Recognition and the ANUBIS
-                                            Benchmark</a></h1>
+                                    <h2 class="entry__title"><a href="https://arxiv.org/abs/2205.02071">Representation-Centric Survey of Supervised Skeletal Action Recognition and the New Benchmark</a></h2>
+                                    <p class="entry__authors entry__authors--full">Yang Liu<sup>*</sup>, Jiyao Yang<sup>*</sup>, Madhawa Perera, Pan Ji, Dongwoo Kim, Min Xu, Tianyang Wang, Saeed Anwar, Tom Gedeon, Lei Wang<sup>†</sup>, <strong>Zhenyue Qin</strong><sup>†</sup></p>
+                                                    <p class="entry__authors entry__authors--short" aria-hidden="true">Yang Liu<sup>*</sup>, …, <strong>Zhenyue Qin</strong><sup>†</sup></p>
                                 </div>
                                 <div class="entry__excerpt">
                                     <p>
                                         This paper presents a representation-centric survey of skeleton-based action
                                         recognition (joints, bones, motion, derived features),
-                                        introduces the ANUBIS dataset: a 102-class, multi-view (including back-view),
-                                        multi-person dataset, and benchmarks existing methods.
+                                        introduces ANUBIS, a 102-class, multi-view (including back-view), multi-person dataset, and benchmarks existing methods.
                                     </p>
                                 </div>
-                                <a class="entry__more-link" href="https://arxiv.org/abs/2205.02071">Read More</a>
+                                <div class="entry__actions">
+                                    <ul class="chips entry__links"><li class="chips__link"><a href="https://doi.org/10.1016/j.patcog.2026.114140">Paper</a></li><li class="chips__link"><a href="https://arxiv.org/abs/2205.02071">arXiv</a></li><li class="chips__link"><a href="https://github.com/yliu1082/ANUBIS-Sourcecode">Code</a></li><li class="chips__link"><a href="https://yliu1082.github.io/ANUBIS/">Project</a></li></ul>
+                                    <button class="entry__toggle" type="button" aria-expanded="false" aria-label="Show the full text of this card"></button>
+                                </div>
                             </div> <!-- end entry__text -->
+                            </div>
 
                         </article> <!-- end ANUBIS -->
 
                         <!-- Geometry Survey -->
                         <article class="brick entry" data-animate-el>
+                            <div class="entry__panel">
 
                             <div class="entry__thumb">
-                                <a href="https://arxiv.org/abs/2505.14340" class="thumb-link">
+                                <a href="https://aclanthology.org/2026.findings-eacl.7/" class="thumb-link" tabindex="-1" aria-hidden="true">
                                     <picture>
                                         <source srcset="resources/geometry/coverimage.webp" type="image/webp">
                                         <img src="resources/geometry/coverimage.jpg" loading="lazy" alt="">
@@ -420,15 +446,14 @@
                                 <div class="entry__header">
                                     <div class="entry__meta">
                                         <span class="cat-links">
-                                            <a href="https://arxiv.org/abs/2505.14340">Paper</a>
+                                            <a href="https://aclanthology.org/2026.findings-eacl.7/">Paper</a>
                                         </span>
-                                        <span class="byline">
-                                            On:
-                                            <a href="https://2026.eacl.org/">EACL Findings 2026</a>
-                                        </span>
+                                        <span class="byline" data-venue="EACL Findings 2026"><span class="byline__text"><a href="https://2026.eacl.org/">EACL Findings 2026</a></span></span>
                                     </div>
-                                    <h1 class="entry__title"><a href="https://arxiv.org/abs/2505.14340">Plane Geometry
-                                            Problem Solving with Multi-modal Reasoning: A Survey</a></h1>
+                                    <h2 class="entry__title"><a href="https://aclanthology.org/2026.findings-eacl.7/">Plane Geometry
+                                            Problem Solving with Multi-modal Reasoning: A Survey</a></h2>
+                                    <p class="entry__authors entry__authors--full">Seunghyuk Cho, <strong>Zhenyue Qin</strong>, Yang Liu, Youngbin Choi, Seungbeom Lee, Dongwoo Kim<sup>†</sup></p>
+                                                    <p class="entry__authors entry__authors--short" aria-hidden="true">Seunghyuk Cho, <strong>Zhenyue Qin</strong>, …, Dongwoo Kim<sup>†</sup></p>
                                 </div>
                                 <div class="entry__excerpt">
                                     <p>
@@ -438,16 +463,21 @@
                                         benchmark data leakage) with directions for future research.
                                     </p>
                                 </div>
-                                <a class="entry__more-link" href="https://arxiv.org/abs/2505.14340">Read More</a>
+                                <div class="entry__actions">
+                                    <ul class="chips entry__links"><li class="chips__link"><a href="https://aclanthology.org/2026.findings-eacl.7/">Paper</a></li><li class="chips__link"><a href="https://arxiv.org/abs/2505.14340">arXiv</a></li></ul>
+                                    <button class="entry__toggle" type="button" aria-expanded="false" aria-label="Show the full text of this card"></button>
+                                </div>
                             </div> <!-- end entry__text -->
+                            </div>
 
                         </article> <!-- end Geometry Survey -->
 
                         <!-- Geodano -->
                         <article class="brick entry" data-animate-el>
+                            <div class="entry__panel">
 
                             <div class="entry__thumb">
-                                <a href="https://arxiv.org/abs/2502.11360" class="thumb-link">
+                                <a href="https://aclanthology.org/2025.findings-emnlp.414/" class="thumb-link" tabindex="-1" aria-hidden="true">
                                     <picture>
                                         <source srcset="resources/geodano/coverimage.webp" type="image/webp">
                                         <img src="resources/geodano/coverimage.jpg" loading="lazy" alt="">
@@ -459,15 +489,14 @@
                                 <div class="entry__header">
                                     <div class="entry__meta">
                                         <span class="cat-links">
-                                            <a href="https://arxiv.org/abs/2502.11360">Paper</a>
+                                            <a href="https://aclanthology.org/2025.findings-emnlp.414/">Paper</a>
                                         </span>
-                                        <span class="byline">
-                                            On:
-                                            <a href="https://2025.emnlp.org/">EMNLP Findings 2025</a>
-                                        </span>
+                                        <span class="byline" data-venue="EMNLP Findings 2025"><span class="byline__text"><a href="https://2025.emnlp.org/">EMNLP Findings 2025</a></span></span>
                                     </div>
-                                    <h1 class="entry__title"><a href="https://arxiv.org/abs/2502.11360">GeoDANO:
-                                            Geometric VLM with Domain Agnostic Vision Encoder</a></h1>
+                                    <h2 class="entry__title"><a href="https://aclanthology.org/2025.findings-emnlp.414/">GeoDANO:
+                                            Geometric VLM with Domain Agnostic Vision Encoder</a></h2>
+                                    <p class="entry__authors entry__authors--full">Seunghyuk Cho, <strong>Zhenyue Qin</strong>, Yang Liu, Youngbin Choi, Seungbeom Lee, Dongwoo Kim<sup>†</sup></p>
+                                                    <p class="entry__authors entry__authors--short" aria-hidden="true">Seunghyuk Cho, <strong>Zhenyue Qin</strong>, …, Dongwoo Kim<sup>†</sup></p>
                                 </div>
                                 <div class="entry__excerpt">
                                     <p>
@@ -477,16 +506,21 @@
                                         across styles, outperforming specialized and generalist baselines on MathVerse.
                                     </p>
                                 </div>
-                                <a class="entry__more-link" href="https://arxiv.org/abs/2502.11360">Read More</a>
+                                <div class="entry__actions">
+                                    <ul class="chips entry__links"><li class="chips__link"><a href="https://aclanthology.org/2025.findings-emnlp.414/">Paper</a></li><li class="chips__link"><a href="https://arxiv.org/abs/2502.11360">arXiv</a></li><li class="chips__link"><a href="https://github.com/ml-postech/GeoDANO">Code</a></li></ul>
+                                    <button class="entry__toggle" type="button" aria-expanded="false" aria-label="Show the full text of this card"></button>
+                                </div>
                             </div> <!-- end entry__text -->
+                            </div>
 
                         </article> <!-- end Geodano -->
 
                         <!-- LMOD -->
                         <article class="brick entry" data-animate-el>
+                            <div class="entry__panel">
 
                             <div class="entry__thumb">
-                                <a href="https://kfzyqin.github.io/lmod/" class="thumb-link">
+                                <a href="https://kfzyqin.github.io/lmod/" class="thumb-link" tabindex="-1" aria-hidden="true">
                                     <picture>
                                         <source srcset="resources/lmod/coverimage.webp" type="image/webp">
                                         <img src="resources/lmod/coverimage.jpg" loading="lazy" alt="">
@@ -498,35 +532,38 @@
                                 <div class="entry__header">
                                     <div class="entry__meta">
                                         <span class="cat-links">
-                                            <a href="https://kfzyqin.github.io/lmod/">Paper</a>
+                                            <a href="https://aclanthology.org/2025.findings-naacl.135/">Paper</a>
                                         </span>
-                                        <span class="byline">
-                                            On:
-                                            <a href="https://aclanthology.org/2025.findings-naacl.135/">NAACL Findings
-                                                2025</a>
-                                        </span>
+                                        <span class="byline" data-venue="NAACL Findings 2025"><span class="byline__text"><a href="https://aclanthology.org/2025.findings-naacl.135/">NAACL Findings 2025</a></span></span>
                                     </div>
-                                    <h1 class="entry__title"><a href="https://kfzyqin.github.io/lmod/">LMOD: A Large
+                                    <h2 class="entry__title"><a href="https://kfzyqin.github.io/lmod/">LMOD: A Large
                                             Multimodal Ophthalmology Dataset and Benchmark for Large Vision-Language
-                                            Models</a></h1>
+                                            Models</a></h2>
+                                    <p class="entry__authors entry__authors--full"><strong>Zhenyue Qin</strong><sup>*</sup>, Yu Yin<sup>*</sup>, Dylan Campbell, Xuansheng Wu, Ke Zou, Yih-Chung Tham, Ninghao Liu, Xiuzhen Zhang, Qingyu Chen<sup>†</sup></p>
+                                                    <p class="entry__authors entry__authors--short" aria-hidden="true"><strong>Zhenyue Qin</strong><sup>*</sup>, …, Qingyu Chen<sup>†</sup></p>
                                 </div>
                                 <div class="entry__excerpt">
                                     <p>
                                         This study proposes a systematic data and evaluation pipeline that repurposes
                                         existing datasets to curate a dataset for the development and evaluation of
-                                        largevision-language models in ophthalmology.
+                                        large vision-language models in ophthalmology.
                                     </p>
                                 </div>
-                                <a class="entry__more-link" href="https://kfzyqin.github.io/lmod/">Read More</a>
+                                <div class="entry__actions">
+                                    <ul class="chips entry__links"><li class="chips__link"><a href="https://aclanthology.org/2025.findings-naacl.135/">Paper</a></li><li class="chips__link"><a href="https://arxiv.org/abs/2410.01620">arXiv</a></li><li class="chips__link"><a href="https://kfzyqin.github.io/lmod/">Project</a></li></ul>
+                                    <button class="entry__toggle" type="button" aria-expanded="false" aria-label="Show the full text of this card"></button>
+                                </div>
                             </div> <!-- end entry__text -->
+                            </div>
 
                         </article> <!-- end LMOD -->
 
                         <!-- HandCraft -->
                         <article class="brick entry" data-animate-el>
+                            <div class="entry__panel">
 
                             <div class="entry__thumb">
-                                <a href="https://kfzyqin.github.io/handcraft/" class="thumb-link">
+                                <a href="https://kfzyqin.github.io/handcraft/" class="thumb-link" tabindex="-1" aria-hidden="true">
                                     <picture>
                                         <source srcset="resources/handcraft/coverimage.webp" type="image/webp">
                                         <img src="resources/handcraft/coverimage.jpg" loading="lazy" alt="">
@@ -538,36 +575,38 @@
                                 <div class="entry__header">
                                     <div class="entry__meta">
                                         <span class="cat-links">
-                                            <a href="https://kfzyqin.github.io/handcraft/">Paper</a>
+                                            <a href="https://openaccess.thecvf.com/content/WACV2025/html/Qin_HandCraft_Anatomically_Correct_Restoration_of_Malformed_Hands_in_Diffusion_Generated_WACV_2025_paper.html">Paper</a>
                                         </span>
-                                        <span class="post-date">
-                                            On:
-                                            <a
-                                                href="https://openaccess.thecvf.com/content/WACV2025/papers/Qin_HandCraft_Anatomically_Correct_Restoration_of_Malformed_Hands_in_Diffusion_Generated_WACV_2025_paper.pdf">WACV
-                                                2025</a>
-                                        </span>
+                                        <span class="byline" data-venue="WACV 2025"><span class="byline__text"><a href="https://openaccess.thecvf.com/content/WACV2025/papers/Qin_HandCraft_Anatomically_Correct_Restoration_of_Malformed_Hands_in_Diffusion_Generated_WACV_2025_paper.pdf">WACV 2025</a></span></span>
                                     </div>
-                                    <h1 class="entry__title"><a href="https://kfzyqin.github.io/handcraft/">HandCraft:
+                                    <h2 class="entry__title"><a href="https://kfzyqin.github.io/handcraft/">HandCraft:
                                             Anatomically Correct Restoration of Malformed Hands in Diffusion Generated
-                                            Images</a></h1>
+                                            Images</a></h2>
+                                    <p class="entry__authors entry__authors--full"><strong>Zhenyue Qin</strong><sup>*†</sup>, Yiqun Zhang<sup>*</sup>, Yang Liu, Dylan Campbell<sup>†</sup></p>
+                                                    <p class="entry__authors entry__authors--short" aria-hidden="true"><strong>Zhenyue Qin</strong><sup>*†</sup>, …, Dylan Campbell<sup>†</sup></p>
                                 </div>
                                 <div class="entry__excerpt">
                                     <p>
                                         HandCraft is a plug-and-play framework that detects malformed hands in
                                         diffusion-generated images and restores them by aligning a parametric hand
-                                        template (mask + depth) to condition ControlNet, requiring no model retraining
+                                        template (mask + depth) to condition ControlNet, requiring no model retraining.
                                     </p>
                                 </div>
-                                <a class="entry__more-link" href="https://kfzyqin.github.io/handcraft/">Read More</a>
+                                <div class="entry__actions">
+                                    <ul class="chips entry__links"><li class="chips__link"><a href="https://openaccess.thecvf.com/content/WACV2025/html/Qin_HandCraft_Anatomically_Correct_Restoration_of_Malformed_Hands_in_Diffusion_Generated_WACV_2025_paper.html">Paper</a></li><li class="chips__link"><a href="https://arxiv.org/abs/2411.04332">arXiv</a></li><li class="chips__link"><a href="https://huggingface.co/spaces/zhenyueqin/handcraft/tree/main">Code</a></li><li class="chips__link"><a href="https://kfzyqin.github.io/handcraft/">Project</a></li></ul>
+                                    <button class="entry__toggle" type="button" aria-expanded="false" aria-label="Show the full text of this card"></button>
+                                </div>
                             </div> <!-- end entry__text -->
+                            </div>
 
                         </article> <!-- end HandCraft -->
 
                         <!-- SoV -->
                         <article class="brick entry" data-animate-el>
+                            <div class="entry__panel">
 
                             <div class="entry__thumb">
-                                <a href="https://aclanthology.org/2024.emnlp-main.257/" class="thumb-link">
+                                <a href="https://aclanthology.org/2024.emnlp-main.257/" class="thumb-link" tabindex="-1" aria-hidden="true">
                                     <picture>
                                         <source srcset="resources/sov/coverimage.webp" type="image/webp">
                                         <img src="resources/sov/coverimage.jpg" loading="lazy" alt="">
@@ -581,15 +620,14 @@
                                         <span class="cat-links">
                                             <a href="https://aclanthology.org/2024.emnlp-main.257/">Paper</a>
                                         </span>
-                                        <span class="byline">
-                                            On:
-                                            <a href="https://aclanthology.org/2024.emnlp-main.257/">EMNLP Main 2024</a>
-                                        </span>
+                                        <span class="byline" data-venue="EMNLP Main 2024"><span class="byline__text"><a href="https://aclanthology.org/2024.emnlp-main.257/">EMNLP Main 2024</a></span></span>
                                     </div>
-                                    <h1 class="entry__title"><a
+                                    <h2 class="entry__title"><a
                                             href="https://aclanthology.org/2024.emnlp-main.257/">Visual Prompting in
                                             LLMs for Enhancing Emotion Recognition
-                                        </a></h1>
+                                        </a></h2>
+                                    <p class="entry__authors entry__authors--full">Qixuan Zhang<sup>*</sup>, Zhifeng Wang<sup>*</sup>, Dylan Zhang, Wenjia Niu, Sabrina Caldwell, Tom Gedeon, Yang Liu<sup>†</sup>, <strong>Zhenyue Qin</strong><sup>†</sup></p>
+                                                    <p class="entry__authors entry__authors--short" aria-hidden="true">Qixuan Zhang<sup>*</sup>, …, <strong>Zhenyue Qin</strong><sup>†</sup></p>
                                 </div>
                                 <div class="entry__excerpt">
                                     <p>
@@ -599,17 +637,21 @@
                                         facial expressions while preserving image context.
                                     </p>
                                 </div>
-                                <a class="entry__more-link" href="https://aclanthology.org/2024.emnlp-main.257/">Read
-                                    More</a>
+                                <div class="entry__actions">
+                                    <ul class="chips entry__links"><li class="chips__link"><a href="https://aclanthology.org/2024.emnlp-main.257/">Paper</a></li><li class="chips__link"><a href="https://arxiv.org/abs/2410.02244">arXiv</a></li><li class="chips__link"><a href="https://github.com/anonOrchid/CCFERD">Code</a></li></ul>
+                                    <button class="entry__toggle" type="button" aria-expanded="false" aria-label="Show the full text of this card"></button>
+                                </div>
                             </div> <!-- end entry__text -->
+                            </div>
 
                         </article> <!-- end SoV -->
 
                         <!-- PSGNN -->
                         <article class="brick entry" data-animate-el>
+                            <div class="entry__panel">
 
                             <div class="entry__thumb">
-                                <a href="https://ieeexplore.ieee.org/document/10478451" class="thumb-link">
+                                <a href="https://ieeexplore.ieee.org/document/10478451" class="thumb-link" tabindex="-1" aria-hidden="true">
                                     <picture>
                                         <source srcset="resources/psgnn/coverimage.webp" type="image/webp">
                                         <img src="resources/psgnn/coverimage.jpg" loading="lazy" alt="">
@@ -623,14 +665,13 @@
                                         <span class="cat-links">
                                             <a href="https://ieeexplore.ieee.org/document/10478451">Paper</a>
                                         </span>
-                                        <span class="byline">
-                                            On:
-                                            <a href="https://ieeexplore.ieee.org/document/10478451">TNNLS 2024</a>
-                                        </span>
+                                        <span class="byline" data-venue="TNNLS 2024"><span class="byline__text"><a href="https://ieeexplore.ieee.org/document/10478451">TNNLS 2024</a></span></span>
                                     </div>
-                                    <h1 class="entry__title"><a
+                                    <h2 class="entry__title"><a
                                             href="https://ieeexplore.ieee.org/document/10478451">Position-Sensing Graph
-                                            Neural Networks: Proactively Learning Nodes Relative Positions</a></h1>
+                                            Neural Networks: Proactively Learning Nodes Relative Positions</a></h2>
+                                    <p class="entry__authors entry__authors--full">Yiqun Zhang<sup>*</sup>, <strong>Zhenyue Qin</strong><sup>*</sup>, Saeed Anwar, Dongwoo Kim<sup>†</sup>, Yang Liu, Pan Ji, Tom Gedeon<sup>†</sup></p>
+                                                    <p class="entry__authors entry__authors--short" aria-hidden="true">Yiqun Zhang<sup>*</sup>, <strong>Zhenyue Qin</strong><sup>*</sup>, …, Tom Gedeon<sup>†</sup></p>
                                 </div>
                                 <div class="entry__excerpt">
                                     <p>
@@ -639,51 +680,202 @@
                                         selection, enabling better position-awareness.
                                     </p>
                                 </div>
-                                <a class="entry__more-link" href="https://ieeexplore.ieee.org/document/10478451">Read
-                                    More</a>
+                                <div class="entry__actions">
+                                    <ul class="chips entry__links"><li class="chips__link"><a href="https://ieeexplore.ieee.org/document/10478451">Paper</a></li><li class="chips__link"><a href="https://arxiv.org/abs/2105.11346">arXiv</a></li><li class="chips__link"><a href="https://github.com/ZhenyueQin/PSGNN">Code</a></li></ul>
+                                    <button class="entry__toggle" type="button" aria-expanded="false" aria-label="Show the full text of this card"></button>
+                                </div>
                             </div> <!-- end entry__text -->
+                            </div>
 
                         </article> <!-- end PSGNN -->
 
+
+                        <!-- Skeleton Privacy -->
+                        <article class="brick entry" data-animate-el>
+                            <div class="entry__panel">
+
+                            <div class="entry__thumb">
+                                <a href="https://doi.org/10.1609/aaai.v37i12.26754" class="thumb-link" tabindex="-1" aria-hidden="true">
+                                    <picture>
+                                        <source srcset="resources/skeletons/coverimage_privacy.webp" type="image/webp">
+                                        <img src="resources/skeletons/coverimage_privacy.jpg" loading="lazy" alt="">
+                                    </picture>
+                                </a>
+                            </div> <!-- end entry__thumb -->
+
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <div class="entry__meta">
+                                        <span class="cat-links">
+                                            <a
+                                                href="https://ojs.aaai.org/index.php/AAAI/article/view/26754/26526">Paper</a>
+                                        </span>
+                                        <span class="byline" data-venue="AAAI 2023"><span class="byline__text"><a href="https://aaai-23.aaai.org/">AAAI 2023</a></span></span>
+                                    </div>
+                                    <h2 class="entry__title"><a
+                                            href="https://ojs.aaai.org/index.php/AAAI/article/view/26754/26526">Anonymization
+                                            for Skeleton Action Recognition</a></h2>
+                                    <p class="entry__authors entry__authors--full">Saemi Moon<sup>*</sup>, Myeonghyeon Kim<sup>*</sup>, <strong>Zhenyue Qin</strong>, Yang Liu, Dongwoo Kim</p>
+                                                    <p class="entry__authors entry__authors--short" aria-hidden="true">Saemi Moon<sup>*</sup>, …, <strong>Zhenyue Qin</strong>, …, Dongwoo Kim</p>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                        This paper shows skeleton datasets leak sensitive attributes (≈87% gender, ≈80%
+                                        re-ID) and proposes an adversarial anonymization framework that suppresses
+                                        private cues while largely preserving action recognition accuracy.
+                                    </p>
+                                </div>
+                                <div class="entry__actions">
+                                    <ul class="chips entry__links"><li class="chips__link"><a href="https://doi.org/10.1609/aaai.v37i12.26754">Paper</a></li><li class="chips__link"><a href="https://arxiv.org/abs/2111.15129">arXiv</a></li><li class="chips__link"><a href="https://github.com/ml-postech/Skeleton-anonymization/">Code</a></li></ul>
+                                    <button class="entry__toggle" type="button" aria-expanded="false" aria-label="Show the full text of this card"></button>
+                                </div>
+                            </div> <!-- end entry__text -->
+                            </div>
+
+                        </article> <!-- end Skeleton Privacy -->
+
+                        <!-- Denoising Sensors -->
+                        <article class="brick entry" data-animate-el>
+                            <div class="entry__panel">
+
+                            <div class="entry__thumb">
+                                <a href="https://www.mdpi.com/1424-8220/22/24/9844" class="thumb-link" tabindex="-1" aria-hidden="true">
+                                    <picture>
+                                        <source srcset="resources/denoising/coverimage_sensors.webp" type="image/webp">
+                                        <img src="resources/denoising/coverimage_sensors.jpg" loading="lazy" alt="">
+                                    </picture>
+                                </a>
+                            </div> <!-- end entry__thumb -->
+
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <div class="entry__meta">
+                                        <span class="cat-links">
+                                            <a href="https://www.mdpi.com/1424-8220/22/24/9844">Paper</a>
+                                        </span>
+                                        <span class="byline" data-venue="Sensors 2022"><span class="byline__text"><a href="https://www.mdpi.com/journal/sensors">Sensors 2022</a></span></span>
+                                    </div>
+                                    <h2 class="entry__title"><a
+                                            href="https://www.mdpi.com/1424-8220/22/24/9844">Disentangling Noise from
+                                            Images: A Flow-Based Image Denoising Neural Network</a></h2>
+                                    <p class="entry__authors entry__authors--full">Yang Liu, Saeed Anwar<sup>†</sup>, <strong>Zhenyue Qin</strong>, Pan Ji, Sabrina Caldwell, Tom Gedeon</p>
+                                                    <p class="entry__authors entry__authors--short" aria-hidden="true">Yang Liu, …, <strong>Zhenyue Qin</strong>, …, Tom Gedeon</p>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                        Treating denoising as distribution disentanglement, the paper introduces FDN: an
+                                        invertible normalizing-flow network that learns noisy-image distributions and
+                                        masks noise latents to reconstruct clean images, achieving state-of-the-art
+                                        AWGN/SIDD results efficiently.
+                                    </p>
+                                </div>
+                                <div class="entry__actions">
+                                    <ul class="chips entry__links"><li class="chips__link"><a href="https://www.mdpi.com/1424-8220/22/24/9844">Paper</a></li><li class="chips__link"><a href="https://arxiv.org/abs/2105.04746">arXiv</a></li><li class="chips__link"><a href="https://github.com/Yang-Liu1082/FDN">Code</a></li></ul>
+                                    <button class="entry__toggle" type="button" aria-expanded="false" aria-label="Show the full text of this card"></button>
+                                </div>
+                            </div> <!-- end entry__text -->
+                            </div>
+
+                        </article> <!-- end Denoising Sensors -->
+
+                        <!-- Skeleton Temporal -->
+                        <article class="brick entry" data-animate-el>
+                            <div class="entry__panel">
+
+                            <div class="entry__thumb">
+                                <a href="https://arxiv.org/abs/2205.14405" class="thumb-link" tabindex="-1" aria-hidden="true">
+                                    <picture>
+                                        <source srcset="resources/skeletons/coverimage_temporal.webp" type="image/webp">
+                                        <img src="resources/skeletons/coverimage_temporal.jpg" loading="lazy" alt="">
+                                    </picture>
+                                </a>
+                            </div> <!-- end entry__thumb -->
+
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <div class="entry__meta">
+                                        <span class="cat-links">
+                                            <a href="https://doi.org/10.1007/978-3-031-25072-9_39">Paper</a>
+                                        </span>
+                                        <span class="byline" data-venue="ECCV-RWS 2022"><span class="byline__text"><a href="https://arxiv.org/abs/2205.14405">ECCV-RWS 2022</a></span></span>
+                                    </div>
+                                    <h2 class="entry__title"><a href="https://arxiv.org/abs/2205.14405">Strengthening
+                                            Skeletal Action Recognizers via Leveraging Temporal Patterns</a></h2>
+                                    <p class="entry__authors entry__authors--full"><strong>Zhenyue Qin</strong><sup>†</sup>, Pan Ji, Dongwoo Kim, Yang Liu, Saeed Anwar, Tom Gedeon</p>
+                                                    <p class="entry__authors entry__authors--short" aria-hidden="true"><strong>Zhenyue Qin</strong><sup>†</sup>, …, Tom Gedeon</p>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                        The paper introduces two plug-and-play temporal modules: Discrete Cosine
+                                        Encoding (injecting frequency-aware, noise-robust features) and Chronological
+                                        Loss (enforcing frame order) that consistently improve diverse skeleton-based
+                                        action recognizers.
+                                    </p>
+                                </div>
+                                <div class="entry__actions">
+                                    <ul class="chips entry__links"><li class="chips__link"><a href="https://doi.org/10.1007/978-3-031-25072-9_39">Paper</a></li><li class="chips__link"><a href="https://arxiv.org/abs/2205.14405">arXiv</a></li></ul>
+                                    <button class="entry__toggle" type="button" aria-expanded="false" aria-label="Show the full text of this card"></button>
+                                </div>
+                            </div> <!-- end entry__text -->
+                            </div>
+
+                        </article> <!-- end Skeleton Temporal -->
+
+                        <!-- Angular Encoding -->
+                        <article class="brick entry" data-animate-el>
+                            <div class="entry__panel">
+
+                            <div class="entry__thumb">
+                                <a href="https://ieeexplore.ieee.org/abstract/document/9895208" class="thumb-link" tabindex="-1" aria-hidden="true">
+                                    <picture>
+                                        <source srcset="resources/skeletons/coverimage_angular.webp" type="image/webp">
+                                        <img src="resources/skeletons/coverimage_angular.jpg" loading="lazy" alt="">
+                                    </picture>
+                                </a>
+                            </div> <!-- end entry__thumb -->
+
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <div class="entry__meta">
+                                        <span class="cat-links">
+                                            <a href="https://ieeexplore.ieee.org/abstract/document/9895208">Paper</a>
+                                        </span>
+                                        <span class="byline" data-venue="TNNLS 2022"><span class="byline__text"><a href="https://ieeexplore.ieee.org/abstract/document/9895208">TNNLS 2022</a></span></span>
+                                    </div>
+                                    <h2 class="entry__title"><a
+                                            href="https://ieeexplore.ieee.org/abstract/document/9895208">Fusing
+                                            Higher-Order Features in Graph Neural Networks for Skeleton-Based Action
+                                            Recognition</a></h2>
+                                    <p class="entry__authors entry__authors--full"><strong>Zhenyue Qin</strong><sup>†</sup>, Yang Liu<sup>†</sup>, Pan Ji, Dongwoo Kim, Lei Wang, Bob McKay, Saeed Anwar, Tom Gedeon</p>
+                                                    <p class="entry__authors entry__authors--short" aria-hidden="true"><strong>Zhenyue Qin</strong><sup>†</sup>, …, Tom Gedeon</p>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                        The paper introduces Angular Encoding (AGE): higher-order angular features in
+                                        static and velocity domains that fuse seamlessly with spatio-temporal GCN
+                                        backbones to better disambiguate similar motions, yielding state-of-the-art
+                                        accuracy with fewer parameters and lower inference cost.
+                                    </p>
+                                </div>
+                                <div class="entry__actions">
+                                    <ul class="chips entry__links"><li class="chips__link"><a href="https://ieeexplore.ieee.org/abstract/document/9895208">Paper</a></li><li class="chips__link"><a href="https://arxiv.org/abs/2105.01563">arXiv</a></li><li class="chips__link"><a href="https://github.com/ZhenyueQin/Angular-Skeleton-Encoding">Code</a></li></ul>
+                                    <button class="entry__toggle" type="button" aria-expanded="false" aria-label="Show the full text of this card"></button>
+                                </div>
+                            </div> <!-- end entry__text -->
+                            </div>
+
+                        </article> <!-- end Angular Encoding -->
+
                     </div> <!-- end bricks-wrapper -->
+
+                    <p class="bricks__legend"><sup>*</sup> equal contribution <span aria-hidden="true">·</span> <sup>†</sup> correspondence</p>
 
                 </div> <!-- end masonry-->
 
-                <!-- pagination -->
-                <div class="row pagination">
-                    <div class="column lg-12">
-                        <nav class="pgn">
-                            <ul>
-                                <li>
-                                    <a class="pgn__prev inactive" aria-disabled="true">
-                                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="1.5" d="M10.25 6.75L4.75 12L10.25 17.25"></path>
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="1.5" d="M19.25 12H5"></path>
-                                        </svg>
-                                    </a>
-                                </li>
-                                <li><span class="pgn__num current">1</span></li>
-                                <li><a class="pgn__num" href="research-page-2.html">2</a></li>
-                                <li>
-                                    <a class="pgn__next" href="research-page-2.html">
-                                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="1.5" d="M13.75 6.75L19.25 12L13.75 17.25"></path>
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="1.5" d="M19 12H4.75"></path>
-                                        </svg>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav> <!-- end pgn -->
-                    </div> <!-- end column -->
-                </div> <!-- end pagination -->
 
             </div> <!-- end bricks -->
 
-        </section> <!-- end s-content -->
+        </main> <!-- end s-content -->
 
 
         <!-- # site-footer
@@ -697,8 +889,8 @@
                         <li>
                             <a href="mailto:kf.zy.qin@gmail.com" class="email-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true" focusable="false">
                                     <path
                                         d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
                                     </path>
@@ -710,8 +902,8 @@
                         <li>
                             <a href="https://scholar.google.com/citations?user=z-fQRcUAAAAJ&hl=en" class="scholar-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true" focusable="false">
                                     <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
                                     <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
                                 </svg>
@@ -721,8 +913,8 @@
                         <li>
                             <a href="https://www.linkedin.com/in/zhenyue-qin/" class="linkedin-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                    stroke-linejoin="round">
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true" focusable="false">
                                     <path
                                         d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
                                     </path>
@@ -732,25 +924,33 @@
                                 <span class="u-screen-reader-text">LinkedIn</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="https://github.com/kfzyqin" class="github-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                                <span class="u-screen-reader-text">GitHub</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="column lg-5 md-6 tab-12">
                     <div class="ss-copyright">
-                        <span><span
-                                style="display: inline-block; width: 1.5em;"><span
-                                    style="font-size: 1.15em;">♡</span></span>Celebrate life to the fullest</span>
-                        <span><span style="display: inline-block; width: 1.5em;">©</span>Copyright Zhenyue Qin</span>
-                        <span><span style="display: inline-block; width: 1.5em;">✎</span>Design by <a
-                                href="https://www.styleshout.com/"
-                                style="color: inherit; font-weight: inherit; text-decoration: none;">StyleShout</a></span>
+                        <span><span class="ss-copyright__glyph ss-copyright__glyph--heart" aria-hidden="true">♡</span>Celebrate life to the fullest</span>
+                        <span><span class="ss-copyright__glyph" aria-hidden="true">©</span>Zhenyue Qin</span>
+                        <span><span class="ss-copyright__glyph" aria-hidden="true">✎</span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
                     </div>
                 </div>
 
             </div> <!-- end s-footer__bottom -->
 
             <div class="ss-go-top">
-                <a class="smoothscroll" title="Back to Top" href="#top">
-                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <a class="smoothscroll" aria-label="Back to top" href="#top">
+                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                             d="M17.25 10.25L12 4.75L6.75 10.25" />
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -764,17 +964,13 @@
     </div> <!-- end s-pagewrap -->
 
 
-        <!-- Java Script
-    ================================================== -->
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js?v=2026100307"></script>
 
     <!-- Hidden Visitor Tracker -->
-        <img fetchpriority="low" decoding="async" src="https://github-visitor-counter-tau.vercel.app/api?username=kfzyqin" style="display: none;" alt="Hidden Visitor Tracker">
+        <img class="u-hidden" fetchpriority="low" decoding="async" src="https://github-visitor-counter-tau.vercel.app/api?username=kfzyqin" alt="">
         <!-- Registers the page view against the same Flag Counter counter (a24d) the
      about page displays. Replaced a mapmyvisitors.com pixel in Aug 2026: that
      service is dead, so only about-page visits were being counted. -->
-    <img fetchpriority="low" decoding="async" src="https://s01.flagcounter.com/count/a24d/bg_FFFFFF/txt_000000/border_CCCCCC/columns_1/maxflags_1/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" style="display: none;" alt="Hidden Visitor Counter">
+    <img class="u-hidden" fetchpriority="low" decoding="async" src="https://s01.flagcounter.com/count/a24d/bg_FFFFFF/txt_000000/border_CCCCCC/columns_1/maxflags_1/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="">
 </body>
 
 </html>

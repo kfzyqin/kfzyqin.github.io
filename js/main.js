@@ -31,7 +31,6 @@
             if (revealed) return;
             revealed = true;
 
-            html.classList.remove('ss-preload');
             html.classList.add('ss-loaded');
 
             if (preloader) {
@@ -50,8 +49,6 @@
             reveal();
             return;
         }
-
-        html.classList.add('ss-preload');
 
         // On the home page the first hero photo is the first screen, so wait
         // for that one image -- but never longer than 1.5s. Other pages are
@@ -80,62 +77,64 @@
         const toggleButton = document.querySelector('.s-header__menu-toggle');
         const mainNavWrap = document.querySelector('.s-header__nav-wrap');
         const mainNav = document.querySelector('.s-header__nav');
-        const parentMenus = mainNav.querySelectorAll('.has-children');
         const siteBody = document.querySelector('body');
 
-        if (!(toggleButton && mainNavWrap)) return;
+        if (!(toggleButton && mainNavWrap && mainNav)) return;
+
+        const parentMenus = mainNav.querySelectorAll('.has-children');
+
+        // Below 1201px the nav is the full-screen panel and "About" is an
+        // accordion header; above it the sub-menu opens on hover/focus and
+        // "About" is an ordinary link. The click handling below must only
+        // apply in the first case, or the About link never navigates.
+        const isMobileMenu = function() {
+            return !window.matchMedia('(min-width: 1201px)').matches;
+        };
+
+        const setOpen = function(open) {
+            toggleButton.classList.toggle('is-clicked', open);
+            siteBody.classList.toggle('menu-is-open', open);
+            toggleButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+        };
 
         toggleButton.addEventListener('click', function(e) {
             e.preventDefault();
-            toggleButton.classList.toggle('is-clicked');
-            siteBody.classList.toggle('menu-is-open');
-
-            scrollLock.getScrollState() ? scrollLock.disablePageScroll(mainNavWrap) : scrollLock.enablePageScroll(mainNavWrap);
+            const open = !toggleButton.classList.contains('is-clicked');
+            setOpen(open);
+            if (typeof scrollLock !== 'undefined') {
+                if (open) scrollLock.disablePageScroll(mainNavWrap);
+                else scrollLock.enablePageScroll(mainNavWrap);
+            }
         });
 
-        // open (or close) submenu items in mobile view menu. 
+        // open (or close) submenu items in mobile view menu.
         // close all the other open submenu items.
         mainNav.addEventListener('click', function(e) {
 
-            //check if the right element clicked
-            if (!e.target.closest('.has-children')) return;
-            
-            let clickedA = e.target.closest('a');
-            
-            // If they clicked a submenu link, let it navigate.
-            if (clickedA && !clickedA.parentElement.classList.contains('has-children')) {
-                return;
-            }
+            if (!isMobileMenu()) return;
 
-            // If they clicked the main parent link (like About), prevent navigation.
-            if (clickedA && clickedA.parentElement.classList.contains('has-children')) {
-                e.preventDefault();
-            }
+            const parent = e.target.closest('.has-children');
+            if (!parent) return;
 
-                //check if element contains active class
-                if (!e.target.closest('.has-children').classList.contains('sub-menu-is-open')) {
+            const clickedA = e.target.closest('a');
 
-                    parentMenus.forEach(function(current) {
-                        current.classList.remove('sub-menu-is-open');
-                    });
+            // A sub-menu link navigates; the parent link toggles the accordion.
+            if (clickedA && !clickedA.parentElement.classList.contains('has-children')) return;
+            if (clickedA) e.preventDefault();
 
-                    // add is-active class on cliked accordion
-                    e.target.closest('.has-children').classList.add('sub-menu-is-open');
-
-                } else {
-
-                    // remove is-active class on cliked accordion
-                    e.target.closest('.has-children').classList.remove('sub-menu-is-open');
-                }
+            const open = !parent.classList.contains('sub-menu-is-open');
+            parentMenus.forEach(function(current) {
+                current.classList.remove('sub-menu-is-open');
+            });
+            if (open) parent.classList.add('sub-menu-is-open');
         });
 
         window.addEventListener('resize', function() {
 
             // above 1200px
-            if (window.matchMedia('(min-width: 1201px)').matches) {
-                if (siteBody.classList.contains('menu-is-open')) siteBody.classList.remove('menu-is-open');
-                if (toggleButton.classList.contains('is-clicked')) toggleButton.classList.remove('is-clicked');
-                if (!scrollLock.getScrollState()) scrollLock.enablePageScroll();
+            if (!isMobileMenu()) {
+                if (siteBody.classList.contains('menu-is-open')) setOpen(false);
+                if (typeof scrollLock !== 'undefined' && !scrollLock.getScrollState()) scrollLock.enablePageScroll();
 
                 parentMenus.forEach(function(current) {
                     current.classList.remove('sub-menu-is-open');
@@ -146,84 +145,9 @@
     }; // end ssMobileMenu
 
 
-    /* search
-    * ------------------------------------------------------ */
-    const ssSearch = function() {
+ 
 
-        const searchWrap = document.querySelector('.s-header__search');
-        const searchTrigger = document.querySelector('.s-header__search-trigger');
-
-        if (!(searchWrap && searchTrigger)) return;
-
-        const searchField = searchWrap.querySelector('.s-header__search-field');
-        const closeSearch = searchWrap.querySelector('.s-header__search-close');
-        const siteBody = document.querySelector('body');
-
-        searchTrigger.addEventListener('click', function(e) {
-
-            e.preventDefault();
-            e.stopPropagation();
-            siteBody.classList.add('search-is-visible');
-
-            scrollLock.getScrollState() ? scrollLock.disablePageScroll(searchWrap) : scrollLock.enablePageScroll(searchWrap);
-
-            setTimeout(function(){
-                searchWrap.querySelector('.s-header__search-field').focus();
-            }, 100);
-        });
-
-        closeSearch.addEventListener('click', function(e) {
-
-            e.stopPropagation();
-
-            if(siteBody.classList.contains('search-is-visible')) {
-
-                siteBody.classList.remove('search-is-visible');
-                setTimeout(function(){
-                    searchWrap.querySelector('.s-header__search-field').blur();
-                }, 100);
-
-                scrollLock.getScrollState() ? scrollLock.disablePageScroll(searchWrap) : scrollLock.enablePageScroll(searchWrap);
-            }
-        });
-
-        searchWrap.addEventListener('click', function(e) {
-            if( !(e.target.matches('.s-header__search-inner')) ) {
-                closeSearch.dispatchEvent(new Event('click'));
-            }
-        });
-
-        searchField.addEventListener('click', function(e) {
-            e.stopPropagation();
-        })
-
-        searchField.setAttribute('placeholder', 'Search for...');
-        searchField.setAttribute('autocomplete', 'off');
-
-    }; // end ssSearch
-
-
-    /* masonry
-    * ------------------------------------------------------ */
-    const ssMasonry = function() {
-
-        // Disable Masonry layout - using CSS Grid instead
-        // const containerBricks = document.querySelector('.bricks-wrapper');
-        // if (!containerBricks) return;
-
-        // imagesLoaded(containerBricks, function() {
-
-        //     const msnry = new Masonry(containerBricks, {
-        //         itemSelector: '.entry',
-        //         columnWidth: '.grid-sizer',
-        //         percentPosition: true,
-        //         resize: true
-        //     });
-
-        // });
-
-    }; // end ssMasonry
-
+ 
 
    /* animate masonry elements if in viewport
     * ------------------------------------------------------ */
@@ -291,6 +215,9 @@
     * ------------------------------------------------------ */ 
     const ssSwiper = function() {
 
+        // Only the home page has a slider, and swiper.js is only loaded there.
+        if (typeof Swiper === 'undefined' || !document.querySelector('.swiper-container')) return;
+
         // Only the first slide is on screen at arrival and the slider never
         // advances by itself, so the other slides carry their photo in
         // data-bg and fetch it once the page is showing rather than
@@ -310,37 +237,27 @@
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true, 
+                // Custom bullets lose Swiper's own a11y attributes, so add them back.
                 renderBullet: function (index, className) {
-                    return '<span class="' + className + '">' + (index + 1) + '</span>';
+                    return '<span class="' + className + '" role="button" tabindex="0" aria-label="Go to slide ' + (index + 1) + '">' + (index + 1) + '</span>';
                 }
             }
 
         });
 
-    }; // end ssSwiper
-
-
-   /* alert boxes
-    * ------------------------------------------------------ */
-    const ssAlertBoxes = function() {
-
-        const boxes = document.querySelectorAll('.alert-box');
-  
-        boxes.forEach(function(box){
-
-            box.addEventListener('click', function(event) {
-                if (event.target.matches('.alert-box__close')) {
-                    event.stopPropagation();
-                    event.target.parentElement.classList.add('hideit');
-
-                    setTimeout(function(){
-                        box.style.display = 'none';
-                    }, 500)
+        // Swiper 6's a11y module activates bullets on Enter only; a
+        // role="button" must also answer to Space, without scrolling the page.
+        const paginationEl = document.querySelector('.swiper-pagination');
+        if (paginationEl) {
+            paginationEl.addEventListener('keydown', function(e) {
+                if ((e.key === ' ' || e.key === 'Spacebar') && e.target.classList.contains('swiper-pagination-bullet')) {
+                    e.preventDefault();
+                    e.target.click();
                 }
             });
-        })
+        }
 
-    }; // end ssAlertBoxes
+    }; // end ssSwiper
 
 
     /* Back to Top
@@ -394,7 +311,10 @@
         }
 
         const triggers = document.querySelectorAll('.smoothscroll');
-        
+
+        // With reduced motion the links fall back to plain anchor jumps.
+        if (typeof MoveTo === 'undefined' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
         const moveTo = new MoveTo({
             tolerance: 0,
             duration: 1200,
@@ -496,20 +416,204 @@
     }; // end ssThemeToggle
 
 
+   /* cards: open the full text in place, over the grid
+    * The card keeps its slot (its height is pinned while open); the inner
+    * panel goes absolute and its height is tweened from the card height to
+    * the content height, so nothing below it moves.
+    * ------------------------------------------------------ */
+    const ssCardToggles = function() {
+
+        const cards = Array.prototype.slice.call(document.querySelectorAll('.bricks-wrapper .brick'));
+        if (!cards.length) return;
+
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+        let openCard = null;
+
+        const onEnd = function(panel, fn) {
+            let done = false;
+            const finish = function() {
+                if (done) return;
+                done = true;
+                panel.removeEventListener('transitionend', handler);
+                fn();
+            };
+            const handler = function(e) { if (e.propertyName === 'height') finish(); };
+            panel.addEventListener('transitionend', handler);
+            setTimeout(finish, reduced.matches ? 0 : 520);
+        };
+
+        const open = function(card) {
+            const panel = card.querySelector('.entry__panel');
+            const btn = card.querySelector('.entry__toggle');
+            if (!panel || card.classList.contains('is-open')) return;
+            if (openCard && openCard !== card) close(openCard);
+
+            const h0 = card.offsetHeight;
+            card.style.height = h0 + 'px';          // keep the grid slot as it is
+            card.classList.add('is-open', 'is-expanded');
+            panel.style.height = h0 + 'px';
+            void panel.offsetHeight;                 // commit the start height
+            panel.style.height = panel.scrollHeight + 'px';
+            if (btn) btn.setAttribute('aria-expanded', 'true');
+            openCard = card;
+            onEnd(panel, function() { if (card.classList.contains('is-open')) panel.style.height = 'auto'; });
+        };
+
+        const close = function(card) {
+            const panel = card.querySelector('.entry__panel');
+            const btn = card.querySelector('.entry__toggle');
+            if (!panel || !card.classList.contains('is-open')) return;
+
+            panel.style.height = panel.offsetHeight + 'px';
+            void panel.offsetHeight;
+            panel.style.height = card.offsetHeight + 'px';
+            card.classList.remove('is-expanded');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+            if (openCard === card) openCard = null;
+            onEnd(panel, function() {
+                card.classList.remove('is-open');
+                panel.style.height = '';
+                card.style.height = '';
+            });
+        };
+
+        cards.forEach(function(card) {
+            const btn = card.querySelector('.entry__toggle');
+            if (!btn) return;
+            btn.addEventListener('click', function() {
+                if (card.classList.contains('is-open')) close(card);
+                else open(card);
+            });
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && openCard) {
+                const btn = openCard.querySelector('.entry__toggle');
+                close(openCard);
+                if (btn) btn.focus();
+            }
+        });
+
+        document.addEventListener('click', function(e) {
+            if (openCard && !openCard.contains(e.target)) close(openCard);
+        });
+
+        // Show the chevron only where something is actually clamped.
+        const measure = function() {
+            cards.forEach(function(card) {
+                if (card.classList.contains('is-open')) return;
+                // Venue: a tooltip with the full name only where the line was cut.
+                const venue = card.querySelector('.entry__meta .byline');
+                const venueText = venue && venue.querySelector('.byline__text');
+                if (venue && venueText) venue.classList.toggle('is-truncated', venueText.scrollWidth > venueText.clientWidth + 1);
+                const btn = card.querySelector('.entry__toggle');
+                if (!btn) return;
+                // Authors: measure the full list, fall back to the short form if it clips.
+                const full = card.querySelector('.entry__authors--full');
+                if (full) {
+                    card.classList.remove('has-long-authors');
+                    if (full.scrollHeight > full.clientHeight + 1) card.classList.add('has-long-authors');
+                }
+                const clamped = Array.prototype.slice.call(card.querySelectorAll('.entry__title, .entry__authors--full, .entry__excerpt p'));
+                btn.hidden = !clamped.some(function(el) { return el.scrollHeight > el.clientHeight + 1; });
+            });
+        };
+
+        measure();
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+        window.addEventListener('load', measure);
+
+        let timer;
+        window.addEventListener('resize', function() {
+            clearTimeout(timer);
+            timer = setTimeout(measure, 150);
+        });
+
+    }; // end ssCardToggles
+
+
+   /* cards: full text of a clipped title or venue, on hover/focus
+    * A small surface card rises in above the clipped element. Only wired
+    * where js found an ellipsis; the open panel shows everything anyway.
+    * ------------------------------------------------------ */
+    const ssCardTips = function() {
+
+        const cards = Array.prototype.slice.call(document.querySelectorAll('.bricks-wrapper .brick'));
+        if (!cards.length) return;
+
+        cards.forEach(function(card) {
+            const header = card.querySelector('.entry__header');
+            if (!header) return;
+
+            const tip = document.createElement('div');
+            tip.className = 'entry__tip';
+            tip.setAttribute('aria-hidden', 'true');
+            header.appendChild(tip);
+
+            const title = header.querySelector('.entry__title');
+            const venue = header.querySelector('.byline');
+            const venueText = venue && venue.querySelector('.byline__text');
+
+            const targets = [];
+            if (title) targets.push({
+                el: title, cls: 'entry__tip--title',
+                text: function() { return title.textContent.replace(/\s+/g, ' ').trim(); },
+                clipped: function() { return title.scrollHeight > title.clientHeight + 1; }
+            });
+            if (venue && venueText) targets.push({
+                el: venue, cls: 'entry__tip--venue',
+                text: function() { return venue.getAttribute('data-venue') || venueText.textContent.trim(); },
+                clipped: function() { return venueText.scrollWidth > venueText.clientWidth + 1; }
+            });
+
+            let timer;
+
+            const hide = function() {
+                clearTimeout(timer);
+                tip.classList.remove('is-visible');
+                card.classList.remove('has-tip');
+            };
+
+            const show = function(t) {
+                if (card.classList.contains('is-open') || !t.clipped()) return;
+                tip.textContent = t.text();
+                tip.className = 'entry__tip ' + t.cls;
+                // Place it just above the element, measured before it is shown.
+                tip.style.top = Math.round(t.el.offsetTop - tip.offsetHeight - 8) + 'px';
+                card.classList.add('has-tip');
+                tip.classList.add('is-visible');
+            };
+
+            targets.forEach(function(t) {
+                t.el.addEventListener('mouseenter', function() {
+                    clearTimeout(timer);
+                    timer = setTimeout(function() { show(t); }, 120);
+                });
+                t.el.addEventListener('mouseleave', hide);
+                t.el.addEventListener('focusin', function() { show(t); });
+                t.el.addEventListener('focusout', hide);
+            });
+
+            card.addEventListener('click', hide);
+        });
+
+    }; // end ssCardTips
+
+
    /* Initialize
     * ------------------------------------------------------ */
     (function ssInit() {
 
-        ssPreloader();
-        ssThemeToggle();
-        ssMobileMenu();
-        ssSearch();
-        ssMasonry();
-        ssAnimateBricks();
-        ssSwiper();
-        ssAlertBoxes();
-        ssBackToTop();
-        ssMoveTo();
+        // Each module runs on its own: an error in one (a missing library, an
+        // unexpected page) must not stop the preloader lifting or the theme
+        // toggle working.
+        [ssPreloader, ssThemeToggle, ssMobileMenu, ssAnimateBricks, ssCardToggles, ssCardTips, ssSwiper, ssBackToTop, ssMoveTo].forEach(function(mod) {
+            try {
+                mod();
+            } catch (err) {
+                if (window.console) console.error(err);
+            }
+        });
 
     })();
 

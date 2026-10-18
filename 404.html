@@ -7,8 +7,9 @@
     ================================================== -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Page Not Found - Qin Research</title>
+    <title>Page Not Found – Zhenyue Qin</title>
     <meta name="robots" content="noindex">
+    <link rel="canonical" href="https://kfzyqin.github.io/404.html">
 
     <meta name="theme-color" content="#00356B">
 
@@ -36,23 +37,30 @@
     ================================================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;700&amp;display=swap">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;700&amp;display=swap"></noscript>
 
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="/css/vendor.css">
-    <link rel="stylesheet" href="/css/styles.css?v=2026100307">
+    <link rel="stylesheet" href="/css/styles.css?v=2026101808">
 
     <!-- favicons
     ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/resources/zq/zq_avatar.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/resources/zq/zq_avatar.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/resources/zq/zq_avatar.png">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/resources/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/resources/favicon/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/resources/favicon/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
 
+    <!-- scripts (deferred: they run after the document is parsed, in this order)
+    ================================================== -->
+    <script src="/js/plugins-core.js?v=2026101808" defer></script>
+    <script src="/js/main.js?v=2026101808" defer onerror="document.documentElement.classList.add('no-js')"></script>
 </head>
 
 <body id="top">
+
+    <a class="skip-link" href="#content">Skip to content</a>
 
 
     <!-- preloader
@@ -85,13 +93,13 @@
 
                 <nav class="s-header__nav-wrap">
 
-                    <h3 class="s-header__nav-heading">Navigate to</h3>
+                    <p class="s-header__nav-heading">Navigate to</p>
 
-                    <ul class="s-header__nav">
-                        <li><a href="/" title="">Home</a></li>
-                        <li><a href="/research.html" title="">Research</a></li>
+                    <ul class="s-header__nav" id="site-nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/research.html">Research</a></li>
                         <li class="has-children">
-                            <a href="/about.html" title="">About</a>
+                            <a href="/about.html">About</a>
                             <ul class="sub-menu">
                                 <li><a href="/about.html">English</a></li>
                                 <li><a href="/about-cn.html">Chinese</a></li>
@@ -115,26 +123,29 @@
                 </svg>
             </button>
 
-            <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+            <button class="s-header__menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span>Menu</span></button>
 
         </header> <!-- end s-header -->
 
 
         <!-- # site-content
         ================================================== -->
-        <div id="content" class="s-content error-404">
+        <main id="content" class="s-content error-404">
 
             <div class="s-pageheader">
                 <div class="row">
                     <div class="column large-12">
-                        <h1 class="page-title">404</h1>
+                        <h1 class="page-title">
+                            <span class="page-title__small-type">Page not found</span>
+                            404
+                        </h1>
                         <p class="error-404__text">This page does not exist, or it has moved.</p>
                         <a class="hero__more-link" href="/">Back to Home</a>
                     </div>
                 </div>
             </div> <!-- end s-pageheader-->
 
-        </div> <!-- end s-content -->
+        </main> <!-- end s-content -->
 
 
             <!-- # site-footer
@@ -148,8 +159,8 @@
                             <li>
                                 <a href="mailto:kf.zy.qin@gmail.com" class="email-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" aria-hidden="true" focusable="false">
                                         <path
                                             d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
                                         </path>
@@ -162,8 +173,8 @@
                                 <a href="https://scholar.google.com/citations?user=z-fQRcUAAAAJ&hl=en"
                                     class="scholar-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" aria-hidden="true" focusable="false">
                                         <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
                                         <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
                                     </svg>
@@ -173,8 +184,8 @@
                             <li>
                                 <a href="https://www.linkedin.com/in/zhenyue-qin/" class="linkedin-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" aria-hidden="true" focusable="false">
                                         <path
                                             d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
                                         </path>
@@ -184,25 +195,33 @@
                                     <span class="u-screen-reader-text">LinkedIn</span>
                                 </a>
                             </li>
+                        <li>
+                            <a href="https://github.com/kfzyqin" class="github-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                                <span class="u-screen-reader-text">GitHub</span>
+                            </a>
+                        </li>
                         </ul>
                     </div>
                     <div class="column lg-5 md-6 tab-12">
                         <div class="ss-copyright">
-                            <span><span style="display: inline-block; width: 1.5em;"><span
-                                        style="font-size: 1.15em;">♡</span></span>Celebrate life to the fullest</span>
-                            <span><span style="display: inline-block; width: 1.5em;">©</span>Copyright Zhenyue
-                                Qin</span>
-                            <span><span style="display: inline-block; width: 1.5em;">✎</span>Design by <a
-                                    href="https://www.styleshout.com/"
-                                    style="color: inherit; font-weight: inherit; text-decoration: none;">StyleShout</a></span>
+                            <span><span class="ss-copyright__glyph ss-copyright__glyph--heart" aria-hidden="true">♡</span>Celebrate life to the fullest</span>
+                            <span><span class="ss-copyright__glyph" aria-hidden="true">©</span>Zhenyue Qin</span>
+                            <span><span class="ss-copyright__glyph" aria-hidden="true">✎</span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
                         </div>
                     </div>
 
                 </div> <!-- end s-footer__bottom -->
 
                 <div class="ss-go-top">
-                    <a class="smoothscroll" title="Back to Top" href="#top">
-                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <a class="smoothscroll" aria-label="Back to top" href="#top">
+                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="1.5" d="M17.25 10.25L12 4.75L6.75 10.25" />
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -216,10 +235,6 @@
     </div> <!-- end s-pagewrap -->
 
 
-            <!-- Java Script
-    ================================================== -->
-            <script src="/js/plugins.js"></script>
-            <script src="/js/main.js?v=2026100307"></script>
 
 </body>
 

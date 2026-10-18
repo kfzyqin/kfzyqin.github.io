@@ -7,7 +7,7 @@
     ================================================== -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About - Qin Research</title>
+    <title>About – Zhenyue Qin</title>
     <meta name="description" content="About Zhenyue Qin: Researcher at NEC Laboratories America, previously at Yale University, Tencent, and Seeing Machines, with a PhD from the Australian National University.">
 
     <meta name="theme-color" content="#00356B">
@@ -16,10 +16,18 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Qin Research">
     <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="About - Qin Research">
+    <meta property="og:title" content="About – Zhenyue Qin">
     <meta property="og:description" content="About Zhenyue Qin: Researcher at NEC Laboratories America, previously at Yale University, Tencent, and Seeing Machines, with a PhD from the Australian National University.">
     <meta property="og:url" content="https://kfzyqin.github.io/about.html">
-    <meta property="og:image" content="https://kfzyqin.github.io/resources/zq/zq_wallpaper_hello.jpg">
+    <link rel="canonical" href="https://kfzyqin.github.io/about.html">
+    <link rel="alternate" hreflang="en" href="https://kfzyqin.github.io/about.html">
+    <link rel="alternate" hreflang="zh-Hans" href="https://kfzyqin.github.io/about-cn.html">
+    <link rel="alternate" hreflang="x-default" href="https://kfzyqin.github.io/about.html">
+    <meta property="og:locale:alternate" content="zh_CN">
+    <meta property="og:image" content="https://kfzyqin.github.io/resources/zq/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Zhenyue Qin">
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- Theme: the visitor's saved choice if there is one, otherwise the OS
@@ -45,23 +53,55 @@
     ================================================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;700&amp;display=swap">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;700&amp;display=swap"></noscript>
+
+    <link rel="preload" as="image" href="resources/zq/zq_wallpaper_hello.webp" type="image/webp">
 
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/styles.css?v=2026100307">
+    <link rel="stylesheet" href="css/styles.css?v=2026101808">
 
     <!-- favicons
     ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="resources/zq/zq_avatar.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="resources/zq/zq_avatar.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="resources/zq/zq_avatar.png">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="resources/favicon/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
 
+    <!-- scripts (deferred: they run after the document is parsed, in this order)
+    ================================================== -->
+    <script src="js/plugins-core.js?v=2026101808" defer></script>
+    <script src="js/main.js?v=2026101808" defer onerror="document.documentElement.classList.add('no-js')"></script>
+    <script src="js/visitor-map.js?v=2026101808" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Zhenyue Qin",
+        "alternateName": "秦震岳",
+        "url": "https://kfzyqin.github.io/",
+        "image": "https://kfzyqin.github.io/resources/zq/zq_avatar.png",
+        "jobTitle": "Researcher",
+        "worksFor": { "@type": "Organization", "name": "NEC Laboratories America" },
+        "alumniOf": [
+            { "@type": "CollegeOrUniversity", "name": "Australian National University" },
+            { "@type": "CollegeOrUniversity", "name": "Yale University" }
+        ],
+        "email": "mailto:kf.zy.qin@gmail.com",
+        "sameAs": [
+            "https://scholar.google.com/citations?user=z-fQRcUAAAAJ",
+            "https://www.linkedin.com/in/zhenyue-qin/",
+            "https://github.com/kfzyqin"
+        ]
+    }
+    </script>
 </head>
 
 <body id="top">
+
+    <a class="skip-link" href="#content">Skip to content</a>
 
 
     <!-- preloader
@@ -86,7 +126,7 @@
 
             <div class="s-header__branding">
                 <p class="site-title">
-                    <a href="index.html" rel="home">Qin Research</a>
+                    <a href="/" rel="home">Qin Research</a>
                 </p>
             </div>
 
@@ -94,13 +134,13 @@
 
                 <nav class="s-header__nav-wrap">
 
-                    <h3 class="s-header__nav-heading">Navigate to</h3>
+                    <p class="s-header__nav-heading">Navigate to</p>
 
-                    <ul class="s-header__nav">
-                        <li><a href="index.html" title="">Home</a></li>
-                        <li><a href="research.html" title="">Research</a></li>
+                    <ul class="s-header__nav" id="site-nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="research.html">Research</a></li>
                         <li class="has-children current-menu-item">
-                            <a href="about.html" title="">About</a>
+                            <a href="about.html">About</a>
                             <ul class="sub-menu">
                                 <li><a href="about.html">English</a></li>
                                 <li><a href="about-cn.html">Chinese</a></li>
@@ -124,14 +164,14 @@
                 </svg>
             </button>
 
-            <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+            <button class="s-header__menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span>Menu</span></button>
 
         </header> <!-- end s-header -->
 
 
         <!-- # site-content
         ================================================== -->
-        <div id="content" class="s-content">
+        <main id="content" class="s-content">
 
             <!-- pageheader -->
             <div class="s-pageheader">
@@ -145,25 +185,25 @@
             </div> <!-- end s-pageheader-->
 
             <!-- Hairline divider matching research.html -->
-            <div
-                style="display: block; width: min(60%, 600px); height: 1px; background: var(--color-border); margin: var(--vspace-1) auto var(--vspace-2) auto;">
-            </div>
+            <div class="hairline"></div>
 
             <div class="row entry-wrap">
                 <div class="column lg-12">
 
                     <article class="entry">
 
-                        <div class="entry__media" style="text-align: center;">
-                            <figure class="featured-image" style="margin: 0 auto; max-width: 900px;">
+
+                        <div class="content-primary">
+
+                        <div class="entry__media">
+                            <figure class="featured-image">
                                 <picture>
                                     <source srcset="resources/zq/zq_wallpaper_hello.webp" type="image/webp">
-                                    <img class="about-hero-img" src="resources/zq/zq_wallpaper_hello.jpg" loading="lazy" alt="">
+                                    <img class="about-hero-img" src="resources/zq/zq_wallpaper_hello.jpg" width="1537" height="1023" loading="eager" fetchpriority="high" alt="Zhenyue Qin">
                                 </picture>
                             </figure>
                         </div>
 
-                        <div class="content-primary">
 
                             <div class="entry__content">
 
@@ -179,7 +219,7 @@
                                     In industry, he worked as a Senior Researcher at Tencent XR Vision Labs, where he was
                                     grateful to learn from Prof. Hongdong Li, and as a Machine Intelligence Scientist at
                                     Seeing Machines, working directly with Principal Scientist Akshay Asthana.
-                                    He is now a Researcher at NEC Laboratories America San Jose, and is honored to work
+                                    He is now a Researcher at NEC Laboratories America in San Jose, and is honored to work
                                     with Prof. Manmohan Chandraker.
                                     His current research is on Physical AI, built on vision-language-action models, with
                                     applications including autonomous driving and robotics.
@@ -187,68 +227,68 @@
 
                                 <div class="row">
                                     <div class="column lg-7 tab-12">
-                                        <h3 class="about-section-title">Experience</h3>
+                                        <h2 class="about-section-title">Experience</h2>
                                         <ol class="timeline">
                                             <li class="timeline__item timeline__item--current">
                                                 <span class="timeline__time">2026 – Present</span>
                                                 <div class="timeline__body">
-                                                    <h5 class="timeline__org">NEC Laboratories America</h5>
+                                                    <h3 class="timeline__org">NEC Laboratories America</h3>
                                                     <p class="timeline__role">Researcher</p>
                                                 </div>
                                             </li>
                                             <li class="timeline__item timeline__item--current">
                                                 <span class="timeline__time">2025 – Present</span>
                                                 <div class="timeline__body">
-                                                    <h5 class="timeline__org">Australian National University</h5>
+                                                    <h3 class="timeline__org">Australian National University</h3>
                                                     <p class="timeline__role">Associate PhD Supervisor</p>
                                                 </div>
                                             </li>
                                             <li class="timeline__item">
                                                 <span class="timeline__time">2024 – 2026</span>
                                                 <div class="timeline__body">
-                                                    <h5 class="timeline__org">Yale University</h5>
+                                                    <h3 class="timeline__org">Yale University</h3>
                                                     <p class="timeline__role">Postdoctoral Associate</p>
                                                 </div>
                                             </li>
                                             <li class="timeline__item">
                                                 <span class="timeline__time">2023 – 2024</span>
                                                 <div class="timeline__body">
-                                                    <h5 class="timeline__org">Seeing Machines</h5>
+                                                    <h3 class="timeline__org">Seeing Machines</h3>
                                                     <p class="timeline__role">Machine Intelligence Scientist</p>
                                                 </div>
                                             </li>
                                             <li class="timeline__item">
                                                 <span class="timeline__time">2022 – 2023</span>
                                                 <div class="timeline__body">
-                                                    <h5 class="timeline__org">Tencent XR Vision Labs</h5>
+                                                    <h3 class="timeline__org">Tencent XR Vision Labs</h3>
                                                     <p class="timeline__role">Senior Researcher</p>
                                                 </div>
                                             </li>
                                             <li class="timeline__item">
                                                 <span class="timeline__time">2022</span>
                                                 <div class="timeline__body">
-                                                    <h5 class="timeline__org">Seeing Machines</h5>
+                                                    <h3 class="timeline__org">Seeing Machines</h3>
                                                     <p class="timeline__role">Algorithm Scientist</p>
                                                 </div>
                                             </li>
                                             <li class="timeline__item">
                                                 <span class="timeline__time">2016 – 2017</span>
                                                 <div class="timeline__body">
-                                                    <h5 class="timeline__org">CSIRO</h5>
+                                                    <h3 class="timeline__org">CSIRO</h3>
                                                     <p class="timeline__role">Research Intern</p>
                                                 </div>
                                             </li>
                                             <li class="timeline__item">
                                                 <span class="timeline__time">2016</span>
                                                 <div class="timeline__body">
-                                                    <h5 class="timeline__org">Australian National University</h5>
+                                                    <h3 class="timeline__org">Australian National University</h3>
                                                     <p class="timeline__role">Front-end Web Developer</p>
                                                 </div>
                                             </li>
                                             <li class="timeline__item">
                                                 <span class="timeline__time">2016</span>
                                                 <div class="timeline__body">
-                                                    <h5 class="timeline__org">InterfereX</h5>
+                                                    <h3 class="timeline__org">InterfereX</h3>
                                                     <p class="timeline__role">Software Engineering Intern</p>
                                                 </div>
                                             </li>
@@ -256,7 +296,7 @@
                                     </div>
 
                                     <div class="column lg-5 tab-12">
-                                        <h3 class="about-section-title">Services</h3>
+                                        <h2 class="about-section-title">Services</h2>
                                         <dl class="services">
                                             <div class="services__item">
                                                 <dt>Editorial</dt>
@@ -280,13 +320,22 @@
                                                 </dd>
                                             </div>
                                         </dl>
+
+                                        <h2 class="about-section-title">Contact</h2>
+                                        <ul class="contact">
+                                        <li><span class="contact__label">Email</span><span class="contact__value"><a href="mailto:kf.zy.qin@gmail.com">kf.zy.qin@gmail.com</a></span></li>
+                                        <li><span class="contact__label">Google Scholar</span><span class="contact__value"><a href="https://scholar.google.com/citations?user=z-fQRcUAAAAJ&amp;hl=en">Zhenyue Qin</a></span></li>
+                                        <li><span class="contact__label">GitHub</span><span class="contact__value"><a href="https://github.com/kfzyqin">kfzyqin</a></span></li>
+                                        <li><span class="contact__label">LinkedIn</span><span class="contact__value"><a href="https://www.linkedin.com/in/zhenyue-qin/">Zhenyue Qin</a></span></li>
+                                        <li><span class="contact__label">Location</span><span class="contact__value">San Jose, California, US</span></li>
+                                        </ul>
                                     </div>
                                 </div>
 
                                 <!-- Visitor Analytics -->
                                 <div class="analytics-section">
 
-                                    <h3 class="about-section-title">Visitor Analytics</h3>
+                                    <h2 class="about-section-title">Visitor Analytics</h2>
 
                                     <div class="analytics-stack">
 
@@ -296,12 +345,12 @@
                                              fills the card; js/visitor-map.js covers the failure case. -->
                                         <div class="analytics-card">
                                             <div class="analytics-card__header">
-                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                                                <h5>Live Visitor Map</h5>
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                                                <h3>Live Visitor Map</h3>
                                             </div>
                                             <div class="analytics-card__figure visitor-map-frame">
                                                 <a href="https://s01.flagcounter.com/gmap/a24d/" title="Visitor Map" target="_blank" rel="noopener">
-                                                    <img src="https://s01.flagcounter.com/map/a24d/size_l/txt_000000/border_CCCCCC/pageviews_1/viewers_0/flags_0/"
+                                                    <img src="https://s01.flagcounter.com/map/a24d/size_l/txt_151F28/border_DCE5F0/pageviews_1/viewers_0/flags_0/"
                                                         alt="Visitor Map" data-visitor-map decoding="async"
                                                         data-loading-text="Loading from Flag Counter…"
                                                         data-fallback-text="Visitor map is temporarily unavailable." />
@@ -314,12 +363,12 @@
                                              accumulated, which is what made the flags unreadable. -->
                                         <div class="analytics-card">
                                             <div class="analytics-card__header">
-                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                                                <h5>Country Breakdown</h5>
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                                <h3>Country Breakdown</h3>
                                             </div>
                                             <div class="analytics-card__figure visitor-map-frame">
                                                 <a href="https://s01.flagcounter.com/more/a24d/" title="Visitor Countries" target="_blank" rel="noopener">
-                                                    <img src="https://s01.flagcounter.com/count2/a24d/bg_FFFFFF/txt_000000/border_CCCCCC/columns_8/maxflags_250/viewers_Visitors/labels_0/pageviews_1/flags_1/percent_0/"
+                                                    <img src="https://s01.flagcounter.com/count2/a24d/bg_FFFFFF/txt_151F28/border_DCE5F0/columns_8/maxflags_250/viewers_Visitors/labels_0/pageviews_1/flags_1/percent_0/"
                                                         alt="Visitor Countries" data-visitor-map decoding="async"
                                                         data-loading-text="Loading from Flag Counter…"
                                                         data-fallback-text="Country breakdown is temporarily unavailable." />
@@ -338,7 +387,7 @@
                 </div>
             </div> <!-- end entry-wrap -->
 
-            </div> <!-- end s-content -->
+            </main> <!-- end s-content -->
 
 
             <!-- # site-footer
@@ -352,8 +401,8 @@
                             <li>
                                 <a href="mailto:kf.zy.qin@gmail.com" class="email-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" aria-hidden="true" focusable="false">
                                         <path
                                             d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
                                         </path>
@@ -366,8 +415,8 @@
                                 <a href="https://scholar.google.com/citations?user=z-fQRcUAAAAJ&hl=en"
                                     class="scholar-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" aria-hidden="true" focusable="false">
                                         <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
                                         <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
                                     </svg>
@@ -377,8 +426,8 @@
                             <li>
                                 <a href="https://www.linkedin.com/in/zhenyue-qin/" class="linkedin-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" aria-hidden="true" focusable="false">
                                         <path
                                             d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
                                         </path>
@@ -388,25 +437,33 @@
                                     <span class="u-screen-reader-text">LinkedIn</span>
                                 </a>
                             </li>
+                        <li>
+                            <a href="https://github.com/kfzyqin" class="github-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                                <span class="u-screen-reader-text">GitHub</span>
+                            </a>
+                        </li>
                         </ul>
                     </div>
                     <div class="column lg-5 md-6 tab-12">
                         <div class="ss-copyright">
-                            <span><span style="display: inline-block; width: 1.5em;"><span
-                                        style="font-size: 1.15em;">♡</span></span>Celebrate life to the fullest</span>
-                            <span><span style="display: inline-block; width: 1.5em;">©</span>Copyright Zhenyue
-                                Qin</span>
-                            <span><span style="display: inline-block; width: 1.5em;">✎</span>Design by <a
-                                    href="https://www.styleshout.com/"
-                                    style="color: inherit; font-weight: inherit; text-decoration: none;">StyleShout</a></span>
+                            <span><span class="ss-copyright__glyph ss-copyright__glyph--heart" aria-hidden="true">♡</span>Celebrate life to the fullest</span>
+                            <span><span class="ss-copyright__glyph" aria-hidden="true">©</span>Zhenyue Qin</span>
+                            <span><span class="ss-copyright__glyph" aria-hidden="true">✎</span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
                         </div>
                     </div>
 
                 </div> <!-- end s-footer__bottom -->
 
                 <div class="ss-go-top">
-                    <a class="smoothscroll" title="Back to Top" href="#top">
-                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <a class="smoothscroll" aria-label="Back to top" href="#top">
+                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="1.5" d="M17.25 10.25L12 4.75L6.75 10.25" />
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -420,11 +477,6 @@
     </div> <!-- end s-pagewrap -->
 
 
-            <!-- Java Script
-    ================================================== -->
-            <script src="js/plugins.js"></script>
-            <script src="js/main.js?v=2026100307"></script>
-            <script src="js/visitor-map.js?v=2026100307"></script>
 
 </body>
 
