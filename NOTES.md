@@ -1,6 +1,6 @@
 # 站点维护备忘
 
-更新于 2026-10-19。
+更新于 2026-10-24。
 
 ## 卡片数量与分页
 
@@ -19,5 +19,4 @@
 ## 待确认
 
 - `about-cn.html`：金东祐（Dongwoo Kim）的「祐」字、「视觉机器」（Seeing Machines）译名、InterfereX 的中文名，均未经本人核实。
-- SoVTR（EMNLP Findings 2026）尚无公开链接，卡片显示 Coming Soon；有 arXiv 后替换。
 - ANUBIS 与 LMOD+ 的卡片标题已改为发表版全称，若想用简称可改回。
