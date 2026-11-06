@@ -1,6 +1,6 @@
 # 站点维护备忘
 
-更新于 2026-10-24。
+更新于 2026-11-06。
 
 ## 卡片数量与分页
 
@@ -13,6 +13,7 @@
 ## 新增一张卡片时
 
 - 封面图按 4:5 裁切，生成 webp（质量 72–80），卡片用 `<picture>`；首页 hero 用的图另存全尺寸。
+- 会议只写「会议名 + 年份」（EMNLP 2026、AACL 2026），不标 Findings / Main / Long；workshop 保留原标记（如 ECCV-RWS 2022）。
 - Research 卡片的链接固定为 Paper / arXiv / Code / Project 四种，有才写，顺序不变；作者行加粗 Zhenyue Qin，`*` 共同一作、`†` 通讯，图例在网格下方。
 - 改了 `css/styles.css` 或 `js/main.js` 后，把所有页面里的 `?v=` 版本号换成当天日期序号。
 
