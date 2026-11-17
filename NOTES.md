@@ -1,6 +1,6 @@
 # 站点维护备忘
 
-更新于 2026-11-06。
+更新于 2026-11-17。
 
 ## 卡片数量与分页
 
@@ -16,6 +16,13 @@
 - 会议只写「会议名 + 年份」（EMNLP 2026、AACL 2026），不标 Findings / Main / Long；workshop 保留原标记（如 ECCV-RWS 2022）。
 - Research 卡片的链接固定为 Paper / arXiv / Code / Project 四种，有才写，顺序不变；作者行加粗 Zhenyue Qin，`*` 共同一作、`†` 通讯，图例在网格下方。
 - 改了 `css/styles.css` 或 `js/main.js` 后，把所有页面里的 `?v=` 版本号换成当天日期序号。
+
+## Talks 页
+
+- `talks.html` 收报告、专访、专栏文章，全部按时间倒序排在一条列表里，按年份分段，不按类型分组。
+- 每行以场合为主、题目为辅；同一题目讲多场就各占一行。类型标签只用 Talk / Lecture / Interview / Article。
+- 只有英文版；About 页不再有 Media 栏。
+- 耶鲁科学杂志专访的文章刊出后，把「Article forthcoming」换成文章链接。
 
 ## 待确认
 

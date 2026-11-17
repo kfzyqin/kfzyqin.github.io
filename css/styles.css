@@ -4393,6 +4393,14 @@ html[lang="zh"] .entry__content .lead {
     font-style: italic;
 }
 
+.services dd a {
+    color: var(--color-accent);
+}
+
+.services dd a:hover {
+    color: var(--color-2);
+}
+
 /* Venue chips: wrap freely, read as a set rather than a sentence. */
 .chips {
     list-style: none;
@@ -5413,6 +5421,127 @@ button.s-header__theme-toggle:focus {
 :root[data-theme="dark"] .bricks-wrapper .entry__tip {
     background: var(--color-gray-9);
     box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ---- Talks page -----------------------------------------------------------------
+   One list, newest first, grouped by year. Each row: month, kind, where (large)
+   with the title underneath (small), and a link on the right when there is one.
+   The place leads because it is what differs when a talk is given more than once. */
+.talks {
+    max-width: 960px;
+    padding-bottom: var(--vspace-3);
+}
+
+.talks-year + .talks-year {
+    margin-top: var(--vspace-1_5);
+}
+
+.talks-year__label {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 500;
+    line-height: 1.24;
+    letter-spacing: -0.01em;
+    font-variant-numeric: lining-nums;
+    color: var(--color-accent);
+    margin: 0 0 1.2rem;
+}
+
+.talks-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(var(--tint-rgb), 0.16);
+}
+
+.talk {
+    display: grid;
+    grid-template-columns: 4.4rem 9rem minmax(0, 1fr) auto;
+    column-gap: 2rem;
+    align-items: baseline;
+    margin: 0;
+    padding: 1.8rem 0.4rem;
+    border-bottom: 1px solid rgba(var(--tint-rgb), 0.16);
+    transition: background-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.talk:hover {
+    background-color: rgba(var(--tint-rgb), 0.04);
+}
+
+.talk__date {
+    font-family: var(--font-1);
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--color-text-light);
+}
+
+.talk__kind {
+    font-family: var(--font-1);
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+}
+
+.talk__venue {
+    font-family: var(--font-1);
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--color-text-dark);
+    margin: 0;
+}
+
+.talk__title {
+    font-size: 1.5rem;
+    line-height: 1.55;
+    color: var(--color-text-light);
+    margin: 0.3rem 0 0;
+    text-wrap: pretty;
+}
+
+.talk__more {
+    font-family: var(--font-1);
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    color: var(--color-accent);
+}
+
+.talk__more span[aria-hidden] {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.talk__more:hover span[aria-hidden] {
+    transform: translateX(3px);
+}
+
+.talk__more--pending {
+    color: var(--color-gray-14);
+}
+
+@media screen and (max-width: 600px) {
+    .talk {
+        grid-template-columns: auto minmax(0, 1fr);
+        column-gap: 1.2rem;
+        row-gap: 0.4rem;
+    }
+
+    .talk__body,
+    .talk__more {
+        grid-column: 1 / -1;
+    }
+
+    .talk__more {
+        justify-self: start;
+    }
 }
 
 /* ---- menu toggle as a <button> -------------------------------------------------

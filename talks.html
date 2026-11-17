@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Talks – Zhenyue Qin</title>
+    <meta name="description" content="Talks, interviews and articles by Zhenyue Qin, a Researcher at NEC Laboratories America.">
+
+    <meta name="theme-color" content="#00356B">
+
+    <!-- link previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Qin Research">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Talks – Zhenyue Qin">
+    <meta property="og:description" content="Talks, interviews and articles by Zhenyue Qin, a Researcher at NEC Laboratories America.">
+    <meta property="og:url" content="https://kfzyqin.github.io/talks.html">
+    <link rel="canonical" href="https://kfzyqin.github.io/talks.html">
+    <meta property="og:image" content="https://kfzyqin.github.io/resources/zq/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Zhenyue Qin">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Theme: the visitor's saved choice if there is one, otherwise the OS
+         setting. Runs before the stylesheet so the page never paints in the
+         wrong theme; js/main.js wires up the header toggle afterwards. -->
+    <script>
+        (function (root) {
+            root.classList.remove('no-js');
+            root.classList.add('js');
+            var theme = null;
+            try { theme = localStorage.getItem('theme'); } catch (e) {}
+            if (theme !== 'light' && theme !== 'dark') {
+                theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+            }
+            root.setAttribute('data-theme', theme);
+            var meta = document.querySelector('meta[name="theme-color"]');
+            if (meta && theme === 'dark') meta.setAttribute('content', '#0d1420');
+        })(document.documentElement);
+    </script>
+    <style>html[data-theme="dark"]{background:#0d1420;color-scheme:dark}</style>
+
+    <!-- fonts
+    ================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;700&amp;display=swap"></noscript>
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/styles.css?v=2026111701">
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="resources/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- scripts (deferred: they run after the document is parsed, in this order)
+    ================================================== -->
+    <script src="js/plugins-core.js?v=2026111701" defer></script>
+    <script src="js/main.js?v=2026111701" defer onerror="document.documentElement.classList.add('no-js')"></script>
+</head>
+
+<body id="top">
+
+    <a class="skip-link" href="#content">Skip to content</a>
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <!-- page wrap
+    ================================================== -->
+    <div id="page" class="s-pagewrap">
+
+
+        <!-- # site header 
+        ================================================== -->
+        <header id="masthead" class="s-header">
+
+            <div class="s-header__branding">
+                <p class="site-title">
+                    <a href="/" rel="home">Qin Research</a>
+                </p>
+            </div>
+
+            <div class="row s-header__navigation">
+
+                <nav class="s-header__nav-wrap">
+
+                    <p class="s-header__nav-heading">Navigate to</p>
+
+                    <ul class="s-header__nav" id="site-nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li class="current-menu-item"><a href="talks.html">Talks</a></li>
+                        <li class="has-children">
+                            <a href="about.html">About</a>
+                            <ul class="sub-menu">
+                                <li><a href="about.html">English</a></li>
+                                <li><a href="about-cn.html">Chinese</a></li>
+                            </ul>
+                        </li>
+                    </ul> <!-- end s-header__nav -->
+
+                </nav> <!-- end s-header__nav-wrap -->
+
+            </div> <!-- end s-header__navigation -->
+
+            <button class="s-header__theme-toggle" type="button" aria-label="Switch theme">
+                <svg class="icon-moon" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="icon-sun" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.5"></circle>
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M12 1.75v2M12 20.25v2M4.75 4.75l1.4 1.4M17.85 17.85l1.4 1.4M1.75 12h2M20.25 12h2M4.75 19.25l1.4-1.4M17.85 6.15l1.4-1.4"></path>
+                </svg>
+            </button>
+
+            <button class="s-header__menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span>Menu</span></button>
+
+        </header> <!-- end s-header -->
+
+
+        <!-- # site-content
+        ================================================== -->
+        <main id="content" class="s-content">
+
+
+            <!-- pageheader -->
+            <div class="s-pageheader">
+                <div class="row">
+                    <div class="column large-12">
+                        <h1 class="page-title">
+                            Talks
+                        </h1>
+                    </div>
+                </div>
+            </div> <!-- end s-pageheader-->
+
+
+            <div class="hairline"></div>
+
+            <div class="row talks">
+                <div class="column lg-12">
+
+                    <section class="talks-year" aria-labelledby="talks-2026">
+                        <h2 class="talks-year__label" id="talks-2026">2026</h2>
+                        <ol class="talks-list">
+                            <li class="talk">
+                                <time class="talk__date" datetime="2026-11">Nov</time>
+                                <span class="talk__kind">Interview</span>
+                                <div class="talk__body">
+                                    <h3 class="talk__venue">Yale Scientific Magazine</h3>
+                                    <p class="talk__title">On our survey of skeleton-based action recognition and the ANUBIS benchmark.</p>
+                                </div>
+                                <span class="talk__more talk__more--pending">Article forthcoming</span>
+                            </li>
+                        </ol>
+                    </section>
+
+                    <section class="talks-year" aria-labelledby="talks-2025">
+                        <h2 class="talks-year__label" id="talks-2025">2025</h2>
+                        <ol class="talks-list">
+                            <li class="talk">
+                                <time class="talk__date" datetime="2025-10">Oct</time>
+                                <span class="talk__kind">Talk</span>
+                                <div class="talk__body">
+                                    <h3 class="talk__venue">NEC Laboratories America</h3>
+                                    <p class="talk__title">Landing Large Models</p>
+                                </div>
+                            </li>
+                            <li class="talk">
+                                <time class="talk__date" datetime="2025-10">Oct</time>
+                                <span class="talk__kind">Talk</span>
+                                <div class="talk__body">
+                                    <h3 class="talk__venue">Lucid Motors</h3>
+                                    <p class="talk__title">Landing Large Models</p>
+                                </div>
+                            </li>
+                            <li class="talk">
+                                <time class="talk__date" datetime="2025-08">Aug</time>
+                                <span class="talk__kind">Lecture</span>
+                                <div class="talk__body">
+                                    <h3 class="talk__venue">Sino-American Pharmaceutical Professionals Association (SAPA)</h3>
+                                    <p class="talk__title">Trends of Generative AI</p>
+                                </div>
+                            </li>
+                            <li class="talk">
+                                <time class="talk__date" datetime="2025-05">May</time>
+                                <span class="talk__kind">Talk</span>
+                                <div class="talk__body">
+                                    <h3 class="talk__venue">Envisioning AI at Yale</h3>
+                                    <p class="talk__title">Multimodal Large Language Models for Ophthalmology</p>
+                                </div>
+                            </li>
+                            <li class="talk">
+                                <time class="talk__date" datetime="2025-04">Apr</time>
+                                <span class="talk__kind">Talk</span>
+                                <div class="talk__body">
+                                    <h3 class="talk__venue">Zoom</h3>
+                                    <p class="talk__title">Landing Large Models</p>
+                                </div>
+                            </li>
+                            <li class="talk">
+                                <time class="talk__date" datetime="2025-02">Feb</time>
+                                <span class="talk__kind">Talk</span>
+                                <div class="talk__body">
+                                    <h3 class="talk__venue">Yale Clinical NLP Seminars</h3>
+                                    <p class="talk__title">Landing Large Models</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </section>
+
+                    <section class="talks-year" aria-labelledby="talks-2024">
+                        <h2 class="talks-year__label" id="talks-2024">2024</h2>
+                        <ol class="talks-list">
+                            <li class="talk">
+                                <time class="talk__date" datetime="2024-12">Dec</time>
+                                <span class="talk__kind">Lecture</span>
+                                <div class="talk__body">
+                                    <h3 class="talk__venue">Zhixingxing AI Young Scholars Lecture Series</h3>
+                                    <p class="talk__title">Lecture No. 261, on HandCraft: restoring malformed hands in diffusion-generated images.</p>
+                                </div>
+                                <a class="talk__more" href="https://www.bilibili.com/video/BV1z9CnYzEJK/">Video<span aria-hidden="true"> →</span><span class="u-screen-reader-text">: Zhixingxing AI Young Scholars Lecture Series</span></a>
+                            </li>
+                        </ol>
+                    </section>
+
+                    <section class="talks-year" aria-labelledby="talks-2023">
+                        <h2 class="talks-year__label" id="talks-2023">2023</h2>
+                        <ol class="talks-list">
+                            <li class="talk">
+                                <time class="talk__date" datetime="2023-08">Aug</time>
+                                <span class="talk__kind">Lecture</span>
+                                <div class="talk__body">
+                                    <h3 class="talk__venue">Australian National University</h3>
+                                    <p class="talk__title">Architectures of Neural Networks</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </section>
+
+                    <section class="talks-year" aria-labelledby="talks-2021">
+                        <h2 class="talks-year__label" id="talks-2021">2021</h2>
+                        <ol class="talks-list">
+                            <li class="talk">
+                                <time class="talk__date" datetime="2021-04">Apr</time>
+                                <span class="talk__kind">Article</span>
+                                <div class="talk__body">
+                                    <h3 class="talk__venue">Jiangmen Column</h3>
+                                    <p class="talk__title">On invertible neural networks that preserve information for image restoration.</p>
+                                </div>
+                                <a class="talk__more" href="https://www.sohu.com/a/424001523_610522">Read<span aria-hidden="true"> →</span><span class="u-screen-reader-text">: Jiangmen Column</span></a>
+                            </li>
+                        </ol>
+                    </section>
+
+                </div>
+            </div> <!-- end talks -->
+
+        </main> <!-- end s-content -->
+
+
+        <!-- # site-footer
+        ================================================== -->
+        <footer id="colophon" class="s-footer">
+
+            <div class="row s-footer__bottom">
+
+                <div class="column lg-7 md-6 tab-12">
+                    <ul class="s-footer__social">
+                        <li>
+                            <a href="mailto:kf.zy.qin@gmail.com" class="email-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <span class="u-screen-reader-text">Email</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://scholar.google.com/citations?user=z-fQRcUAAAAJ&hl=en" class="scholar-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true" focusable="false">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                                </svg>
+                                <span class="u-screen-reader-text">Google Scholar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/zhenyue-qin/" class="linkedin-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                    </path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                                <span class="u-screen-reader-text">LinkedIn</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/kfzyqin" class="github-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                                <span class="u-screen-reader-text">GitHub</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column lg-5 md-6 tab-12">
+                    <div class="ss-copyright">
+                        <span><span class="ss-copyright__glyph ss-copyright__glyph--heart" aria-hidden="true">♡</span>Celebrate life to the fullest</span>
+                        <span><span class="ss-copyright__glyph" aria-hidden="true">©</span>Zhenyue Qin</span>
+                        <span><span class="ss-copyright__glyph" aria-hidden="true">✎</span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
+                    </div>
+                </div>
+
+            </div> <!-- end s-footer__bottom -->
+
+            <div class="ss-go-top">
+                <a class="smoothscroll" aria-label="Back to top" href="#top">
+                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M17.25 10.25L12 4.75L6.75 10.25" />
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M12 19.25V5.75" />
+                    </svg>
+                </a>
+            </div> <!-- end ss-go-top -->
+
+        </footer><!-- end s-footer -->
+
+    </div> <!-- end s-pagewrap -->
+
+
+
+    <!-- Hidden Visitor Tracker -->
+        <img class="u-hidden" fetchpriority="low" decoding="async" src="https://github-visitor-counter-tau.vercel.app/api?username=kfzyqin" alt="">
+        <!-- Registers the page view against the same Flag Counter counter (a24d) the
+     about page displays. Replaced a mapmyvisitors.com pixel in Aug 2026: that
+     service is dead, so only about-page visits were being counted. -->
+    <img class="u-hidden" fetchpriority="low" decoding="async" src="https://s01.flagcounter.com/count/a24d/bg_FFFFFF/txt_000000/border_CCCCCC/columns_1/maxflags_1/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="">
+</body>
+
+</html>
