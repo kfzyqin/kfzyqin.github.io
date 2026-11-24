@@ -1,6 +1,6 @@
 # 站点维护备忘
 
-更新于 2026-11-17。
+更新于 2026-11-24。
 
 ## 卡片数量与分页
 
@@ -23,6 +23,12 @@
 - 每行以场合为主、题目为辅；同一题目讲多场就各占一行。类型标签只用 Talk / Lecture / Interview / Article。
 - 只有英文版；About 页不再有 Media 栏。
 - 耶鲁科学杂志专访的文章刊出后，把「Article forthcoming」换成文章链接。
+
+## 招聘页
+
+- `hiring.html`（2027 年 1 月自动驾驶 VLA 实习生）不进导航，入口是首页 hero 第一张和海报上的二维码；地址已印在海报上，不能改名。
+- 招满后：页面保留，顶部改成「This position has been filled」，撤掉 hero 那张，把 ANUBIS 或更新的论文补回 hero。
+- 海报文件在 `resources/hiring/`，换图时把引用处的 `?v=` 加一。
 
 ## 待确认
 

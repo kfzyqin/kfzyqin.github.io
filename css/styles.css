@@ -5544,6 +5544,428 @@ button.s-header__theme-toggle:focus {
     }
 }
 
+/* ---- Hiring page ----------------------------------------------------------------
+   An editorial sheet: a centred title, a ribbon of road drawn in hairlines, then
+   placard rows (small label on the left, content on the right) between rules.
+   No panels and no pictures; the one filled shape on the page is the button. */
+.hiring-head .page-title {
+    margin-bottom: 1.6rem;
+}
+
+.hiring-head .page-title__small-type {
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 2.4rem;
+}
+
+.hiring-head__sub {
+    font-family: var(--font-2);
+    font-style: italic;
+    font-size: 2rem;
+    line-height: 1.5;
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+.hiring-ribbon {
+    width: 100%;
+    max-width: 1300px;
+    margin: var(--vspace-0_75) auto var(--vspace-1);
+    color: var(--color-accent);
+    pointer-events: none;
+}
+
+.hiring-ribbon svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+/* Cut-outs take the page colour so they read as holes in either theme. */
+.hiring-ribbon__glass,
+.hiring-ribbon__way {
+    fill: var(--color-body);
+}
+
+.hiring {
+    max-width: 980px;
+    padding-bottom: var(--vspace-3);
+}
+
+.hiring p {
+    font-size: 1.65rem;
+    line-height: 1.75;
+    margin: 0 0 1.2rem;
+}
+
+.hiring .hiring__lead {
+    max-width: 76rem;
+    margin: 0 auto var(--vspace-1_5);
+    font-family: var(--font-2);
+    font-size: 2.2rem;
+    line-height: 1.7;
+    text-align: center;
+    color: var(--color-text-dark);
+    text-wrap: balance;
+}
+
+.hiring a:not(.hiring__apply) {
+    color: var(--color-accent);
+}
+
+/* four facts on one line, divided by hairlines */
+.hiring-facts {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: 0 0 var(--vspace-1_5);
+    padding: 2.8rem 0;
+    border-top: 1px solid rgba(var(--tint-rgb), 0.18);
+    border-bottom: 1px solid rgba(var(--tint-rgb), 0.18);
+    text-align: center;
+}
+
+.hiring-facts > div {
+    padding: 0.4rem 1.2rem;
+}
+
+.hiring-facts > div + div {
+    border-left: 1px solid rgba(var(--tint-rgb), 0.18);
+}
+
+.hiring-facts dt,
+.hiring-sec__label {
+    font-family: var(--font-1);
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+}
+
+.hiring-facts dt {
+    margin: 0 0 0.8rem;
+}
+
+/* Sans here: the figures and the dollar sign stay plain and even. */
+.hiring-facts dd {
+    font-family: var(--font-1);
+    font-size: 2.1rem;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    font-variant-numeric: lining-nums tabular-nums;
+    color: var(--color-text-dark);
+    margin: 0;
+}
+
+.hiring-facts dd small {
+    display: block;
+    margin-top: 0.7rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.45;
+    letter-spacing: 0;
+    color: var(--color-text-light);
+}
+
+/* placard rows */
+.hiring-sec {
+    display: grid;
+    grid-template-columns: 17rem minmax(0, 1fr);
+    column-gap: 4rem;
+    padding: 3.6rem 0;
+    border-bottom: 1px solid rgba(var(--tint-rgb), 0.12);
+}
+
+.hiring-sec:last-of-type {
+    border-bottom: 0;
+}
+
+.hiring-sec__label {
+    margin: 0;
+    padding-top: 0.6rem;      /* sits on the first line of the body text */
+    color: var(--color-accent);
+}
+
+.hiring-sec__no {
+    display: inline-block;
+    min-width: 3.2rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    font-variant-numeric: lining-nums tabular-nums;
+    color: var(--color-gray-14);
+}
+
+.hiring-sec__body > :last-child {
+    margin-bottom: 0;
+}
+
+.hiring-person + .hiring-person {
+    margin-top: 3.2rem;
+    padding-top: 3.2rem;
+    border-top: 1px solid rgba(var(--tint-rgb), 0.10);
+}
+
+.hiring-person__name {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.5rem;
+}
+
+.hiring .hiring-person__name a {
+    color: var(--color-text-dark);
+    transition: color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.hiring .hiring-person__name a:hover,
+.hiring .hiring-person__name a:focus-visible {
+    color: var(--color-accent);
+}
+
+.hiring .hiring-person__role {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+.hiring-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hiring-list li {
+    position: relative;
+    font-size: 1.65rem;
+    line-height: 1.75;
+    margin: 0;
+    padding: 0.3rem 0 0.3rem 2.4rem;
+}
+
+.hiring-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1.75rem;
+    width: 1.1rem;
+    height: 1px;
+    background: var(--color-accent);
+}
+
+/* the mentor's four honours, set like the foot of the poster */
+.hiring-awards {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: 2.4rem 0 0;
+    padding: 0;
+}
+
+.hiring-awards li {
+    margin: 0;
+    padding: 0.2rem 1.6rem;
+    border-left: 1px solid rgba(var(--tint-rgb), 0.18);
+}
+
+.hiring-awards li:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+.hiring-awards strong,
+.hiring-awards span,
+.hiring-awards small {
+    display: block;
+    font-family: var(--font-1);
+}
+
+.hiring-awards strong {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    font-variant-numeric: lining-nums;
+    color: var(--color-text-dark);
+    margin-bottom: 0.4rem;
+}
+
+.hiring-awards span {
+    font-size: 1.35rem;
+    line-height: 1.45;
+    color: var(--color-text);
+}
+
+.hiring-awards small {
+    font-size: 1.25rem;
+    line-height: 1.45;
+    color: var(--color-text-light);
+    margin-top: 0.2rem;
+}
+
+/* two steps, each led by a display numeral */
+.hiring-steps {
+    list-style: none;
+    counter-reset: step;
+    margin: 2.8rem 0 0;
+    padding: 0;
+}
+
+.hiring-steps > li {
+    counter-increment: step;
+    position: relative;
+    margin: 0;
+    padding: 0 0 3.2rem 6.4rem;
+}
+
+.hiring-steps > li:last-child {
+    padding-bottom: 0;
+}
+
+.hiring-steps > li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: -0.9rem;
+    font-family: var(--font-display);
+    font-size: 5.2rem;
+    font-weight: 400;
+    line-height: 1;
+    font-variant-numeric: lining-nums;
+    color: var(--color-accent);
+    opacity: 0.55;
+}
+
+.hiring-steps__title {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--color-text-dark);
+    margin: 0 0 0.6rem;
+}
+
+.hiring-steps li > :last-child {
+    margin-bottom: 0;
+}
+
+.hiring__apply {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 0.6rem;
+    padding: 1rem 3rem;
+    border-radius: 50rem;
+    font-family: var(--font-1);
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    background: var(--color-1);
+    border: 1px solid var(--color-1);
+    transition: background-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+                border-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.hiring__apply:hover,
+.hiring__apply:focus-visible {
+    color: #ffffff;
+    background: var(--color-1-light);
+    border-color: var(--color-1-light);
+}
+
+.hiring__apply span {
+    display: inline-block;
+    margin-left: 0.4em;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hiring__apply:hover span {
+    transform: translateX(3px);
+}
+
+.hiring code {
+    font-family: var(--font-mono);
+    font-size: 1.35rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    background: rgba(var(--tint-rgb), 0.08);
+    color: var(--color-text-dark);
+    overflow-wrap: anywhere;
+}
+
+.hiring .hiring__example {
+    font-size: 1.4rem;
+    color: var(--color-text-light);
+}
+
+/* A quiet sign-off under a short rule. */
+.hiring .hiring__coda {
+    margin: var(--vspace-1) 0 0;
+    padding-top: var(--vspace-1_5);
+    font-family: var(--font-2);
+    font-style: italic;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    text-align: center;
+    color: var(--color-text-light);
+    background: linear-gradient(rgba(var(--tint-rgb), 0.3), rgba(var(--tint-rgb), 0.3)) top center / 6rem 1px no-repeat;
+}
+
+@media screen and (max-width: 800px) {
+    .hiring-facts,
+    .hiring-awards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 2.4rem;
+    }
+
+    .hiring-facts > div:nth-child(odd),
+    .hiring-awards li:nth-child(odd) {
+        border-left: 0;
+    }
+
+    .hiring-awards li:nth-child(odd) {
+        padding-left: 0;
+    }
+
+    .hiring-sec {
+        grid-template-columns: 1fr;
+        row-gap: 1.2rem;
+        padding: 2.8rem 0;
+    }
+
+    .hiring-sec__label {
+        padding-top: 0;
+    }
+
+    .hiring .hiring__lead {
+        font-size: 1.9rem;
+    }
+
+    .hiring-head__sub {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .hiring-steps > li {
+        padding-left: 4.8rem;
+    }
+
+    .hiring-steps > li::before {
+        font-size: 4.2rem;
+        top: -0.6rem;
+    }
+}
+
 /* ---- menu toggle as a <button> -------------------------------------------------
    The theme's blanket button rules (fill, 2px border, padding, caps) must not
    reach the hamburger; everything it needs is on .s-header__menu-toggle. */
