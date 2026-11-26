@@ -78,7 +78,7 @@
 }
 /* Hollywood: black velvet, marquee gold */
 :root[data-route="B"] {
-    --bg: #0e0d0c; --surface: #1b1917; --surface-2: #161513; --ink: #f7efe2; --ink-2: #cbbfad; --ink-3: #8d8475;
+    --bg: #110b0a; --surface: #1d1715; --surface-2: #161513; --ink: #f7efe2; --ink-2: #cbbfad; --ink-3: #8d8475;
     --line: rgba(242, 193, 78, 0.15); --line-2: rgba(242, 193, 78, 0.32); --accent: #f2c14e; --gold: #f2c14e;
     --hot: #ff5a52; --eye: #7fd6ef; --lA: #c2a5ff; --lB: #ffb04d; --lC: #6fe39a;
     --case: #000; --node: #0e0d0c; --radius: 3px;
@@ -123,7 +123,21 @@ button { font: inherit; color: inherit; -webkit-tap-highlight-color: transparent
 :root[data-route="A"] .fx-A, :root[data-route="B"] .fx-B, :root[data-route="C"] .fx-C { opacity: 1; }
 .star { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #fff6dc; animation: twinkle 3.6s ease-in-out infinite; }
 @keyframes twinkle { 0%, 100% { opacity: .15; } 50% { opacity: .9; } }
-.fx-B { background: radial-gradient(60% 40% at 20% 0%, rgba(242, 193, 78, 0.10), transparent 70%), radial-gradient(50% 40% at 85% 10%, rgba(255, 90, 82, 0.07), transparent 70%); }
+/* each world paints its own full-page backdrop, so the page itself changes, not only the hero */
+.fx-A {
+    background:
+        radial-gradient(70% 55% at 85% 0%, rgba(120, 90, 230, 0.38), transparent 70%),
+        radial-gradient(60% 50% at 0% 100%, rgba(70, 50, 170, 0.40), transparent 70%),
+        linear-gradient(180deg, #0c0a1b 0%, #18113a 100%);
+}
+.fx-B {
+    background:
+        radial-gradient(35% 75% at 18% -12%, rgba(255, 214, 130, 0.20), transparent 70%),
+        radial-gradient(35% 75% at 82% -12%, rgba(255, 214, 130, 0.16), transparent 70%),
+        radial-gradient(110% 55% at 50% 115%, rgba(160, 22, 34, 0.45), transparent 70%),
+        #110b0a;
+}
+.fx-C { background: linear-gradient(180deg, #7fd0ff 0%, #bfe8ff 55%, #e4f6ff 100%); }
 .fx-C .cloud { position: absolute; width: 180px; opacity: .55; animation: drift 70s linear infinite; }
 @keyframes drift { from { transform: translateX(-30vw); } to { transform: translateX(130vw); } }
 
