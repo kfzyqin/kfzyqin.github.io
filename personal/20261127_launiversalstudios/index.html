@@ -15,7 +15,7 @@
             theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
         }
         root.setAttribute('data-theme', theme);
-        root.setAttribute('data-route', ['all', 'A', 'B', 'C'].indexOf(route) > -1 ? route : 'A');
+        root.setAttribute('data-route', ['A', 'B', 'C'].indexOf(route) > -1 ? route : 'A');
     })(document.documentElement);
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -798,7 +798,6 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 <nav class="toolbar" aria-label="线路与视图">
     <div class="wrap">
         <div class="seg" id="seg-route" role="group" aria-label="线路">
-            <button type="button" data-r="all">全部</button>
             <button type="button" data-r="A"><span class="d" style="background:var(--lA)"></span>魔法</button>
             <button type="button" data-r="B"><span class="d" style="background:var(--lB)"></span>好莱坞</button>
             <button type="button" data-r="C"><span class="d" style="background:var(--lC)"></span>任天堂</button>
@@ -998,8 +997,8 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         done: load('ush26-done', []),
         pack: load('ush26-pack', [])
     };
-    if (['all', 'A', 'B', 'C'].indexOf(state.route) < 0) state.route = 'A';
-    if (state.view !== 'single' || state.route === 'all') state.view = 'map';
+    if (['A', 'B', 'C'].indexOf(state.route) < 0) state.route = 'A';
+    if (state.view !== 'single') state.view = 'map';
     if (!Array.isArray(state.done)) state.done = [];
     if (!Array.isArray(state.pack)) state.pack = [];
 
@@ -1180,7 +1179,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     });
     map.addEventListener('click', function (e) {
         var hd = e.target.closest('.mh');
-        if (hd) { var r = hd.getAttribute('data-r'); setRoute(state.route === r ? 'all' : r); return; }
+        if (hd) { setRoute(hd.getAttribute('data-r')); return; }
         var st = e.target.closest('.st');
         if (st) openSheet(st.getAttribute('data-k'));
     });
@@ -1228,10 +1227,9 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     }
     function setRoute(r) {
         state.route = r;
-        if (r === 'all') state.view = 'map';
         save('ush26-route2', r);
         save('ush26-view2', state.view);
-        animateRoute = r !== 'all';
+        animateRoute = true;
         paintControls();
         render();
         setTimeout(redraw, 400);   // the new world's fonts can change card heights
@@ -1239,8 +1237,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     segRoute.forEach(function (b) { b.addEventListener('click', function () { setRoute(b.getAttribute('data-r')); }); });
     tileBtns.forEach(function (b) {
         b.addEventListener('click', function () {
-            var r = b.getAttribute('data-r');
-            setRoute(state.route === r ? 'all' : r);
+            setRoute(b.getAttribute('data-r'));
         });
     });
     segView.forEach(function (b) {

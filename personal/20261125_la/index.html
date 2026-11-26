@@ -236,6 +236,20 @@ section { margin-top: 46px; }
 .btn svg { width: 14px; height: 14px; }
 .btn.primary { border: 0; color: #fff; background: var(--sun); box-shadow: 0 6px 18px rgba(232, 73, 122, 0.28); }
 
+/* ================= addresses ================= */
+.loc { margin-top: 12px; padding: 10px 12px; border-radius: 12px; background: color-mix(in srgb, var(--ink) 4%, transparent); }
+.loc-a { display: flex; gap: 8px; font-size: 13.5px; line-height: 1.5; color: var(--ink); text-decoration: none; }
+.loc-a svg { flex: none; width: 16px; height: 16px; margin-top: 2px; color: var(--coral); }
+.loc-a b { font-weight: 600; color: var(--ink-2); }
+.loc-a:hover span { text-decoration: underline; text-underline-offset: 3px; }
+.loc-b { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.loc-b .btn { height: 30px; padding: 0 11px; font-size: 12px; background: var(--paper); }
+.loc-b .btn.ok { border-color: var(--teal); color: var(--teal); }
+.stay { margin-bottom: 2px; }
+.loc-big { margin-top: 0; padding: 14px 16px; background: var(--paper); border: 1px solid var(--line); box-shadow: var(--shadow); border-radius: 18px; }
+.loc-big .loc-a { font-size: 16px; font-weight: 600; }
+.loc-in .loc { margin: 0 0 14px; }
+
 /* ================= wallet ================= */
 .wallet { display: grid; gap: 12px; }
 .stub {
@@ -517,6 +531,8 @@ footer .sig { display: block; margin-bottom: 8px; font-family: var(--f-retro); f
         <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
         <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
         <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 12l8-8M16 7l3 3M14 9l2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+        <symbol id="i-nav" viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+        <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
         <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-6 8 6v8a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
     </defs>
 </svg>
@@ -677,9 +693,17 @@ footer .sig { display: block; margin-bottom: 8px; font-family: var(--f-retro); f
                 <p class="kicker">Check-in</p>
                 <h2>入住</h2>
             </div>
-            <p>到了住处怎么停车、怎么进门，点开看图。门锁密码入住当天 15:00 前发来，先截图存好。</p>
+            <p>住 Airbnb，在 Pasadena 东边。怎么停车、怎么进门，点开看图。门锁密码入住当天 15:00 前发来，先截图存好。</p>
         </div>
         <div class="wallet">
+            <div class="stay"><div class="loc loc-big">
+                    <a class="loc-a" href="https://www.google.com/maps/dir/?api=1&amp;destination=3244%20East%20Green%20Street%2C%20Pasadena%2C%20CA%2091107"><svg><use href="#i-pin"/></svg><span>3244 East Green Street, Pasadena, CA 91107</span></a>
+                    <div class="loc-b">
+                        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=3244%20East%20Green%20Street%2C%20Pasadena%2C%20CA%2091107"><svg><use href="#i-nav"/></svg>导航</a>
+                        <button class="btn" type="button" data-copy="3244 East Green Street, Pasadena, CA 91107"><svg><use href="#i-copy"/></svg>复制地址</button>
+                    </div>
+                </div>
+            </div>
             <button class="stub stub-key" type="button" data-open="checkin" style="--sc:#f2603c">
                 <span class="stub-main">
                     <span class="stub-k">Check-in · Unit D</span>
@@ -723,7 +747,13 @@ footer .sig { display: block; margin-bottom: 8px; font-family: var(--f-retro); f
             <li class="ti" data-t="15:00"><div class="t">15:00</div><div class="tcard">
                 <h3>Santa Monica Pier</h3>
                 <p>下午 3 点左右到码头，逛 Pier、看海，在日落前把想玩的先玩了。</p>
-                <div class="addr"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Santa%20Monica%20Pier"><svg><use href="#i-pin"/></svg>地图</a></div>
+                <div class="loc">
+                    <a class="loc-a" href="https://www.google.com/maps/dir/?api=1&amp;destination=200%20Santa%20Monica%20Pier%2C%20Santa%20Monica%2C%20CA%2090401"><svg><use href="#i-pin"/></svg><span>200 Santa Monica Pier, Santa Monica, CA 90401</span></a>
+                    <div class="loc-b">
+                        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=200%20Santa%20Monica%20Pier%2C%20Santa%20Monica%2C%20CA%2090401"><svg><use href="#i-nav"/></svg>导航</a>
+                        <button class="btn" type="button" data-copy="200 Santa Monica Pier, Santa Monica, CA 90401"><svg><use href="#i-copy"/></svg>复制地址</button>
+                    </div>
+                </div>
             </div></li>
             <li class="ti key" data-t="16:44"><div class="t">16:44</div><div class="tcard">
                 <h3>日落：摩天轮 + West Coaster</h3>
@@ -737,15 +767,26 @@ footer .sig { display: block; margin-bottom: 8px; font-family: var(--f-retro); f
                 <h3>晚餐：李老三 Xi'an Foodie，腊牛肉夹馍</h3>
                 <div class="tags"><span class="tag call">📞 先打电话确认感恩节营业</span></div>
                 <p>从 Santa Monica 开去 Arcadia，约 45 分钟到 1 小时。清真腊牛肉用 30 多种陕西香料慢卤，朋友认证是全美最正宗的西安味道之一。腊牛肉夹馍 $7.99，还有孜然羊肉夹馍、羊肉泡馍、牛肉泡馍。周四营业到 21:00，周一休息。</p>
-                <div class="addr">
-                    <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=56%20E%20Duarte%20Rd%20Ste%20106%20Arcadia%20CA%2091006"><svg><use href="#i-pin"/></svg>56 E Duarte Rd, Arcadia</a>
-                    <a class="btn" href="tel:+16263488580"><svg><use href="#i-phone"/></svg>(626) 348-8580</a>
+                <div class="loc">
+                    <a class="loc-a" href="https://www.google.com/maps/dir/?api=1&amp;destination=56%20E%20Duarte%20Rd%2C%20Ste%20106%2C%20Arcadia%2C%20CA%2091006"><svg><use href="#i-pin"/></svg><span>56 E Duarte Rd, Ste 106, Arcadia, CA 91006</span></a>
+                    <div class="loc-b">
+                        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=56%20E%20Duarte%20Rd%2C%20Ste%20106%2C%20Arcadia%2C%20CA%2091006"><svg><use href="#i-nav"/></svg>导航</a>
+                        <button class="btn" type="button" data-copy="56 E Duarte Rd, Ste 106, Arcadia, CA 91006"><svg><use href="#i-copy"/></svg>复制地址</button>
+                        <a class="btn" href="tel:+16263488580"><svg><use href="#i-phone"/></svg>(626) 348-8580</a>
+                    </div>
                 </div>
             </div></li>
             <li class="ti" data-t="21:30"><div class="t">21:30</div><div class="tcard">
                 <h3>回住处入住，早点睡</h3>
                 <p>第二天环球 9 点开园，今晚不要熬夜。门锁密码当天 15:00 前会发来。</p>
                 <div class="acts"><button class="btn" type="button" data-open="checkin"><svg><use href="#i-key"/></svg>入住指南：怎么进门</button></div>
+                <div class="loc">
+                    <a class="loc-a" href="https://www.google.com/maps/dir/?api=1&amp;destination=3244%20East%20Green%20Street%2C%20Pasadena%2C%20CA%2091107"><svg><use href="#i-pin"/></svg><span>3244 East Green Street, Pasadena, CA 91107</span></a>
+                    <div class="loc-b">
+                        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=3244%20East%20Green%20Street%2C%20Pasadena%2C%20CA%2091107"><svg><use href="#i-nav"/></svg>导航</a>
+                        <button class="btn" type="button" data-copy="3244 East Green Street, Pasadena, CA 91107"><svg><use href="#i-copy"/></svg>复制地址</button>
+                    </div>
+                </div>
             </div></li>
         </ol>
     </section>
@@ -781,6 +822,13 @@ footer .sig { display: block; margin-bottom: 8px; font-family: var(--f-retro); f
                 <h3>开园入园</h3>
                 <div class="tags"><span class="tag ticket">🎫 门票提前买好</span></div>
                 <p>9 点开园尽量赶早入园，热门项目上午排队最短。如果酒店住在 SGV 一片，早上要多留约 40 分钟车程。过闸机带本人带照片的证件。</p>
+                <div class="loc">
+                    <a class="loc-a" href="https://www.google.com/maps/dir/?api=1&amp;destination=100%20Universal%20City%20Plaza%2C%20Universal%20City%2C%20CA%2091608"><svg><use href="#i-pin"/></svg><span>100 Universal City Plaza, Universal City, CA 91608</span></a>
+                    <div class="loc-b">
+                        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=100%20Universal%20City%20Plaza%2C%20Universal%20City%2C%20CA%2091608"><svg><use href="#i-nav"/></svg>导航</a>
+                        <button class="btn" type="button" data-copy="100 Universal City Plaza, Universal City, CA 91608"><svg><use href="#i-copy"/></svg>复制地址</button>
+                    </div>
+                </div>
             </div></li>
             <li class="ti"><div class="t word">全天</div><div class="tcard">
                 <h3>重点：哈利波特魔法世界</h3>
@@ -820,26 +868,48 @@ footer .sig { display: block; margin-bottom: 8px; font-family: var(--f-retro); f
             <li class="ti" data-t="10:00"><div class="t">10:00</div><div class="tcard">
                 <h3>比弗利山庄</h3>
                 <p>10:00 到 12:30，逛 Rodeo Drive 加 Beverly Gardens Park，半天足够，拍照和散步为主。</p>
-                <div class="addr"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Rodeo%20Drive%20Beverly%20Hills"><svg><use href="#i-pin"/></svg>地图</a></div>
+                <div class="loc">
+                    <a class="loc-a" href="https://www.google.com/maps/dir/?api=1&amp;destination=Rodeo%20Drive%2C%20Beverly%20Hills%2C%20CA%2090210"><svg><use href="#i-pin"/></svg><span>Rodeo Drive, Beverly Hills, CA 90210</span></a>
+                    <div class="loc-b">
+                        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=Rodeo%20Drive%2C%20Beverly%20Hills%2C%20CA%2090210"><svg><use href="#i-nav"/></svg>导航</a>
+                        <button class="btn" type="button" data-copy="Rodeo Drive, Beverly Hills, CA 90210"><svg><use href="#i-copy"/></svg>复制地址</button>
+                    </div>
+                </div>
             </div></li>
             <li class="ti" data-t="13:30"><div class="t">13:30</div><div class="tcard">
                 <h3>好莱坞：星光大道 + 沉浸式</h3>
                 <div class="tags"><span class="tag ticket">🎫 Illusions 建议提前买票</span></div>
                 <p>13:30 到 15:30，先逛 Walk of Fame，再去 Museum of Illusions / WonderWalk（Hollywood Blvd 6751 号），三个体验共 60 到 90 分钟，和星光大道顺路。</p>
-                <div class="addr"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=6751%20Hollywood%20Blvd%20Los%20Angeles"><svg><use href="#i-pin"/></svg>6751 Hollywood Blvd</a></div>
+                <div class="loc">
+                    <a class="loc-a" href="https://www.google.com/maps/dir/?api=1&amp;destination=6751%20Hollywood%20Blvd%2C%20Los%20Angeles%2C%20CA%2090028"><svg><use href="#i-pin"/></svg><span>6751 Hollywood Blvd, Los Angeles, CA 90028</span></a>
+                    <div class="loc-b">
+                        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=6751%20Hollywood%20Blvd%2C%20Los%20Angeles%2C%20CA%2090028"><svg><use href="#i-nav"/></svg>导航</a>
+                        <button class="btn" type="button" data-copy="6751 Hollywood Blvd, Los Angeles, CA 90028"><svg><use href="#i-copy"/></svg>复制地址</button>
+                    </div>
+                </div>
             </div></li>
             <li class="ti key" data-t="16:00"><div class="t">16:00</div><div class="tcard">
                 <h3>Griffith Observatory 看日落</h3>
                 <p>下午 4 点左右到，赶 16:44 日落。<b>提前到，山上停车很难抢。</b>看完日落还能在馆里看望远镜和展览，它周六开到 22:00，不用赶着下山，但晚餐订了位，别拖太晚。</p>
-                <div class="addr"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Griffith%20Observatory"><svg><use href="#i-pin"/></svg>地图</a></div>
+                <div class="loc">
+                    <a class="loc-a" href="https://www.google.com/maps/dir/?api=1&amp;destination=2800%20E%20Observatory%20Rd%2C%20Los%20Angeles%2C%20CA%2090027"><svg><use href="#i-pin"/></svg><span>2800 E Observatory Rd, Los Angeles, CA 90027</span></a>
+                    <div class="loc-b">
+                        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=2800%20E%20Observatory%20Rd%2C%20Los%20Angeles%2C%20CA%2090027"><svg><use href="#i-nav"/></svg>导航</a>
+                        <button class="btn" type="button" data-copy="2800 E Observatory Rd, Los Angeles, CA 90027"><svg><use href="#i-copy"/></svg>复制地址</button>
+                    </div>
+                </div>
             </div></li>
             <li class="ti key" data-t="19:00"><div class="t">19:00</div><div class="tcard">
                 <h3>晚餐：Bistro Na's 那家小館</h3>
                 <div class="tags"><span class="tag ticket">🎫 烤鸭提前 15 天订</span></div>
                 <p>5:30 左右从天文台下山，开去 Temple City 约 45 分钟到 1 小时，19:00 左右到正好。宫廷菜，2019 和 2021 年都上过米其林指南，招牌脆皮虾和北京烤鸭。周六晚餐时段 17:00 到 21:15。</p>
-                <div class="addr">
-                    <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=9055%20E%20Las%20Tunas%20Dr%20Ste%20105%20Temple%20City%20CA%2091780"><svg><use href="#i-pin"/></svg>9055 E Las Tunas Dr, Temple City</a>
-                    <a class="btn" href="tel:+16262861999"><svg><use href="#i-phone"/></svg>+1 626-286-1999</a>
+                <div class="loc">
+                    <a class="loc-a" href="https://www.google.com/maps/dir/?api=1&amp;destination=9055%20E%20Las%20Tunas%20Dr%2C%20Ste%20105%2C%20Temple%20City%2C%20CA%2091780"><svg><use href="#i-pin"/></svg><span>9055 E Las Tunas Dr, Ste 105, Temple City, CA 91780</span></a>
+                    <div class="loc-b">
+                        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=9055%20E%20Las%20Tunas%20Dr%2C%20Ste%20105%2C%20Temple%20City%2C%20CA%2091780"><svg><use href="#i-nav"/></svg>导航</a>
+                        <button class="btn" type="button" data-copy="9055 E Las Tunas Dr, Ste 105, Temple City, CA 91780"><svg><use href="#i-copy"/></svg>复制地址</button>
+                        <a class="btn" href="tel:+16262861999"><svg><use href="#i-phone"/></svg>+1 626-286-1999</a>
+                    </div>
                 </div>
             </div></li>
         </ol>
@@ -872,19 +942,36 @@ footer .sig { display: block; margin-bottom: 8px; font-family: var(--f-retro); f
             <li class="ti" data-t="09:30"><div class="t">09:30</div><div class="tcard">
                 <h3>退房，Pasadena 喝杯咖啡</h3>
                 <p>退房后如果时间宽裕，在 Pasadena Old Town 喝个咖啡再过去，不用特意早起。</p>
+                <div class="loc">
+                    <a class="loc-a" href="https://www.google.com/maps/dir/?api=1&amp;destination=Old%20Pasadena%2C%20E%20Colorado%20Blvd%2C%20Pasadena%2C%20CA%2091105"><svg><use href="#i-pin"/></svg><span>Old Pasadena, E Colorado Blvd, Pasadena, CA 91105</span></a>
+                    <div class="loc-b">
+                        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=Old%20Pasadena%2C%20E%20Colorado%20Blvd%2C%20Pasadena%2C%20CA%2091105"><svg><use href="#i-nav"/></svg>导航</a>
+                        <button class="btn" type="button" data-copy="Old Pasadena, E Colorado Blvd, Pasadena, CA 91105"><svg><use href="#i-copy"/></svg>复制地址</button>
+                    </div>
+                </div>
             </div></li>
             <li class="ti key" data-t="10:00"><div class="t">10:00</div><div class="tcard">
                 <h3>Huntington Library and Gardens</h3>
                 <div class="tags"><span class="tag ticket">🎫 周末票提前网上订 · $34</span></div>
                 <p>10:00 到 11:45，只看<b>中国园、日本园和沙漠园</b>这三个，2 小时够了。全园 120 英亩，全逛要 3 到 4 小时，这次逛不完也不要硬赶。周日开放到 17:00，停车免费。</p>
-                <div class="addr"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Huntington%20Library%20San%20Marino"><svg><use href="#i-pin"/></svg>地图</a></div>
+                <div class="loc">
+                    <a class="loc-a" href="https://www.google.com/maps/dir/?api=1&amp;destination=1151%20Oxford%20Rd%2C%20San%20Marino%2C%20CA%2091108"><svg><use href="#i-pin"/></svg><span>1151 Oxford Rd, San Marino, CA 91108</span></a>
+                    <div class="loc-b">
+                        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=1151%20Oxford%20Rd%2C%20San%20Marino%2C%20CA%2091108"><svg><use href="#i-nav"/></svg>导航</a>
+                        <button class="btn" type="button" data-copy="1151 Oxford Rd, San Marino, CA 91108"><svg><use href="#i-copy"/></svg>复制地址</button>
+                    </div>
+                </div>
             </div></li>
             <li class="ti" data-t="12:00"><div class="t">12:00</div><div class="tcard">
                 <h3>午餐：Sun Nong Dan 韩餐</h3>
                 <p>去 SGV 这家，不要去 Koreatown 那家。招牌芝士排骨 Galbi Jjim、Galbi Tang 牛排骨汤、Seolleongtang 牛骨汤。这家基本全天开，周日 06:00 到次日 05:00，中午去没问题，不用订位。</p>
-                <div class="addr">
-                    <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=927%20E%20Las%20Tunas%20Dr%20Ste%20J%20San%20Gabriel%20CA"><svg><use href="#i-pin"/></svg>927 E Las Tunas Dr, San Gabriel</a>
-                    <a class="btn" href="tel:+16262861234"><svg><use href="#i-phone"/></svg>+1 626-286-1234</a>
+                <div class="loc">
+                    <a class="loc-a" href="https://www.google.com/maps/dir/?api=1&amp;destination=927%20E%20Las%20Tunas%20Dr%2C%20Ste%20J%2C%20San%20Gabriel%2C%20CA"><svg><use href="#i-pin"/></svg><span>927 E Las Tunas Dr, Ste J, San Gabriel, CA</span></a>
+                    <div class="loc-b">
+                        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=927%20E%20Las%20Tunas%20Dr%2C%20Ste%20J%2C%20San%20Gabriel%2C%20CA"><svg><use href="#i-nav"/></svg>导航</a>
+                        <button class="btn" type="button" data-copy="927 E Las Tunas Dr, Ste J, San Gabriel, CA"><svg><use href="#i-copy"/></svg>复制地址</button>
+                        <a class="btn" href="tel:+16262861234"><svg><use href="#i-phone"/></svg>+1 626-286-1234</a>
+                    </div>
                 </div>
             </div></li>
             <li class="ti" data-t="13:00"><div class="t">13:00</div><div class="tcard">
@@ -912,9 +999,13 @@ footer .sig { display: block; margin-bottom: 8px; font-family: var(--f-retro); f
                 <p>1989 年创立的老字号。招牌清真腊牛肉夹馍 $7.99，孜然羊肉夹馍也是 $7.99，还有羊肉泡馍、牛肉泡馍。</p>
                 <dl><dt>🕚</dt><dd>周四 11:00 到 21:00，周一休息</dd></dl>
                 <span class="warn">感恩节营业待电话确认</span>
-                <div class="acts">
-                    <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=56%20E%20Duarte%20Rd%20Ste%20106%20Arcadia%20CA%2091006"><svg><use href="#i-pin"/></svg>56 E Duarte Rd</a>
-                    <a class="btn" href="tel:+16263488580"><svg><use href="#i-phone"/></svg>电话</a>
+                <div class="loc">
+                    <a class="loc-a" href="https://www.google.com/maps/dir/?api=1&amp;destination=56%20E%20Duarte%20Rd%2C%20Ste%20106%2C%20Arcadia%2C%20CA%2091006"><svg><use href="#i-pin"/></svg><span>56 E Duarte Rd, Ste 106, Arcadia, CA 91006</span></a>
+                    <div class="loc-b">
+                        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=56%20E%20Duarte%20Rd%2C%20Ste%20106%2C%20Arcadia%2C%20CA%2091006"><svg><use href="#i-nav"/></svg>导航</a>
+                        <button class="btn" type="button" data-copy="56 E Duarte Rd, Ste 106, Arcadia, CA 91006"><svg><use href="#i-copy"/></svg>复制地址</button>
+                        <a class="btn" href="tel:+16263488580"><svg><use href="#i-phone"/></svg>(626) 348-8580</a>
+                    </div>
                 </div>
             </article>
             <article class="fc" style="--fcc:#8a4fd0">
@@ -923,9 +1014,13 @@ footer .sig { display: block; margin-bottom: 8px; font-family: var(--f-retro); f
                 <div class="cui">宫廷菜 · 米其林指南</div>
                 <p>招牌脆皮虾和北京烤鸭。烤鸭要提前 15 天电话预订，不要只写 OpenTable 备注。</p>
                 <dl><dt>🕔</dt><dd>周六晚餐 17:00 到 21:15</dd></dl>
-                <div class="acts">
-                    <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=9055%20E%20Las%20Tunas%20Dr%20Ste%20105%20Temple%20City%20CA%2091780"><svg><use href="#i-pin"/></svg>9055 E Las Tunas Dr</a>
-                    <a class="btn" href="tel:+16262861999"><svg><use href="#i-phone"/></svg>电话</a>
+                <div class="loc">
+                    <a class="loc-a" href="https://www.google.com/maps/dir/?api=1&amp;destination=9055%20E%20Las%20Tunas%20Dr%2C%20Ste%20105%2C%20Temple%20City%2C%20CA%2091780"><svg><use href="#i-pin"/></svg><span>9055 E Las Tunas Dr, Ste 105, Temple City, CA 91780</span></a>
+                    <div class="loc-b">
+                        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=9055%20E%20Las%20Tunas%20Dr%2C%20Ste%20105%2C%20Temple%20City%2C%20CA%2091780"><svg><use href="#i-nav"/></svg>导航</a>
+                        <button class="btn" type="button" data-copy="9055 E Las Tunas Dr, Ste 105, Temple City, CA 91780"><svg><use href="#i-copy"/></svg>复制地址</button>
+                        <a class="btn" href="tel:+16262861999"><svg><use href="#i-phone"/></svg>+1 626-286-1999</a>
+                    </div>
                 </div>
             </article>
             <article class="fc" style="--fcc:#3f8a5f">
@@ -934,9 +1029,13 @@ footer .sig { display: block; margin-bottom: 8px; font-family: var(--f-retro); f
                 <div class="cui">韩餐 · 排骨汤</div>
                 <p>招牌芝士排骨 Galbi Jjim、Galbi Tang、Seolleongtang 牛骨汤。基本全天营业，不用订位。</p>
                 <dl><dt>🕕</dt><dd>周日 06:00 到次日 05:00</dd></dl>
-                <div class="acts">
-                    <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=927%20E%20Las%20Tunas%20Dr%20Ste%20J%20San%20Gabriel%20CA"><svg><use href="#i-pin"/></svg>927 E Las Tunas Dr</a>
-                    <a class="btn" href="tel:+16262861234"><svg><use href="#i-phone"/></svg>电话</a>
+                <div class="loc">
+                    <a class="loc-a" href="https://www.google.com/maps/dir/?api=1&amp;destination=927%20E%20Las%20Tunas%20Dr%2C%20Ste%20J%2C%20San%20Gabriel%2C%20CA"><svg><use href="#i-pin"/></svg><span>927 E Las Tunas Dr, Ste J, San Gabriel, CA</span></a>
+                    <div class="loc-b">
+                        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=927%20E%20Las%20Tunas%20Dr%2C%20Ste%20J%2C%20San%20Gabriel%2C%20CA"><svg><use href="#i-nav"/></svg>导航</a>
+                        <button class="btn" type="button" data-copy="927 E Las Tunas Dr, Ste J, San Gabriel, CA"><svg><use href="#i-copy"/></svg>复制地址</button>
+                        <a class="btn" href="tel:+16262861234"><svg><use href="#i-phone"/></svg>+1 626-286-1234</a>
+                    </div>
                 </div>
             </article>
         </div>
@@ -977,6 +1076,13 @@ footer .sig { display: block; margin-bottom: 8px; font-family: var(--f-retro); f
         <button class="x" type="button" data-close aria-label="关闭">×</button>
     </div>
     <div class="modal-body">
+        <div class="loc-in"><div class="loc">
+                    <a class="loc-a" href="https://www.google.com/maps/dir/?api=1&amp;destination=3244%20East%20Green%20Street%2C%20Pasadena%2C%20CA%2091107"><svg><use href="#i-pin"/></svg><span>3244 East Green Street, Pasadena, CA 91107</span></a>
+                    <div class="loc-b">
+                        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=3244%20East%20Green%20Street%2C%20Pasadena%2C%20CA%2091107"><svg><use href="#i-nav"/></svg>导航</a>
+                        <button class="btn" type="button" data-copy="3244 East Green Street, Pasadena, CA 91107"><svg><use href="#i-copy"/></svg>复制地址</button>
+                    </div>
+                </div></div>
         <p class="pass"><svg><use href="#i-key"/></svg><span><b>门锁密码</b>入住当天 15:00 前房东会发来，到了再找就晚了，先截图存好。</span></p>
         <ol class="steps">
                 <li class="step">
@@ -1106,6 +1212,24 @@ footer .sig { display: block; margin-bottom: 8px; font-family: var(--f-retro); f
         }
         var m = e.target.closest('[data-close]') ? e.target.closest('dialog') : (e.target.tagName === 'DIALOG' ? e.target : null);
         if (m) { if (m.close) m.close(); else m.removeAttribute('open'); }
+    });
+
+    // ---------- copy an address
+    document.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-copy]');
+        if (!b) return;
+        var text = b.getAttribute('data-copy'), label = b.lastChild;
+        function done() {
+            var old = label.textContent;
+            label.textContent = '已复制';
+            b.classList.add('ok');
+            setTimeout(function () { label.textContent = old; b.classList.remove('ok'); }, 1600);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done, function () { window.prompt('复制这个地址', text); });
+        } else {
+            window.prompt('复制这个地址', text);
+        }
     });
 
     // ---------- nav follows the section in view
