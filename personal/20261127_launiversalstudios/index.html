@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Personal page: not linked from the site, not in the sitemap, kept out of search. -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>环球影城一日</title>
+<meta name="theme-color" content="#00356B">
+<script>
+    (function (root) {
+        var theme = null;
+        try { theme = localStorage.getItem('theme'); } catch (e) {}
+        if (theme !== 'light' && theme !== 'dark') {
+            theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+        }
+        root.setAttribute('data-theme', theme);
+    })(document.documentElement);
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;1,500&amp;display=swap">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<style>
+:root {
+    --bg: #f6f4ef;
+    --surface: #ffffff;
+    --ink: #14213a;
+    --ink-2: #4a5872;
+    --ink-3: #7d8aa1;
+    --rule: rgba(0, 53, 107, 0.12);
+    --accent: #00356b;
+    --accent-2: #286dc0;
+    --accent-soft: rgba(0, 53, 107, 0.07);
+    --red: #c4302b;    --red-soft: rgba(196, 48, 43, 0.09);
+    --amber: #c98a00;  --amber-soft: rgba(201, 138, 0, 0.11);
+    --green: #2f8a5b;  --green-soft: rgba(47, 138, 91, 0.10);
+    --eye: #5b4bb7;    --eye-soft: rgba(91, 75, 183, 0.08);
+    --shadow: 0 1px 2px rgba(10, 30, 60, 0.05), 0 8px 28px rgba(10, 30, 60, 0.06);
+    --hero-a: #00264d;
+    --hero-b: #1d4f8f;
+    color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --bg: #0d1420; --surface: #152033; --ink: #eef2f8; --ink-2: #b4c0d3; --ink-3: #8393ab;
+        --rule: rgba(160, 190, 230, 0.14); --accent: #8db8ec; --accent-2: #a9c9f2; --accent-soft: rgba(141, 184, 236, 0.10);
+        --red: #ff7a6e; --red-soft: rgba(255, 122, 110, 0.12); --amber: #f0b847; --amber-soft: rgba(240, 184, 71, 0.12);
+        --green: #6fcf97; --green-soft: rgba(111, 207, 151, 0.11); --eye: #b3a6ff; --eye-soft: rgba(179, 166, 255, 0.10);
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 30px rgba(0, 0, 0, 0.3);
+        --hero-a: #08172b; --hero-b: #183a66; color-scheme: dark;
+    }
+}
+:root[data-theme="dark"] {
+    --bg: #0d1420; --surface: #152033; --ink: #eef2f8; --ink-2: #b4c0d3; --ink-3: #8393ab;
+    --rule: rgba(160, 190, 230, 0.14); --accent: #8db8ec; --accent-2: #a9c9f2; --accent-soft: rgba(141, 184, 236, 0.10);
+    --red: #ff7a6e; --red-soft: rgba(255, 122, 110, 0.12); --amber: #f0b847; --amber-soft: rgba(240, 184, 71, 0.12);
+    --green: #6fcf97; --green-soft: rgba(111, 207, 151, 0.11); --eye: #b3a6ff; --eye-soft: rgba(179, 166, 255, 0.10);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 30px rgba(0, 0, 0, 0.3);
+    --hero-a: #08172b; --hero-b: #183a66; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 76px; }
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 15px/1.65 "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+b, strong { font-weight: 600; }
+button { font: inherit; color: inherit; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+/* ---------- hero ---------- */
+.hero {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    background: linear-gradient(160deg, var(--hero-a) 0%, var(--hero-b) 100%);
+    padding: 44px 0 30px;
+}
+.hero svg.globe {
+    position: absolute;
+    right: -70px;
+    top: -40px;
+    width: 300px;
+    height: 300px;
+    opacity: 0.16;
+    pointer-events: none;
+}
+.eyebrow {
+    margin: 0 0 14px;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+.hero h1 {
+    margin: 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(34px, 9vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+}
+.hero h1 i { font-style: italic; opacity: 0.85; }
+.hero .sub { margin: 12px 0 0; font-size: 15px; opacity: 0.85; }
+.status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 22px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    font-size: 14px;
+    line-height: 1.5;
+    backdrop-filter: blur(6px);
+}
+.status .pulse {
+    flex: none;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #7fe0a8;
+    box-shadow: 0 0 0 0 rgba(127, 224, 168, 0.6);
+    animation: pulse 2s infinite;
+}
+.status b { font-weight: 600; }
+@keyframes pulse { 70% { box-shadow: 0 0 0 9px rgba(127, 224, 168, 0); } 100% { box-shadow: 0 0 0 0 rgba(127, 224, 168, 0); } }
+
+/* ---------- route strip ---------- */
+.route { margin: 22px 0 0; }
+.route h2, .section h2 {
+    margin: 0 0 10px;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+}
+.legs { display: flex; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.legs li {
+    flex: var(--w) 1 0;
+    min-width: 0;
+    padding: 9px 10px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 1.35;
+}
+.legs li b { display: block; font-size: 13px; }
+.legs li span { color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.legs .U { background: var(--accent-soft); color: var(--accent); }
+.legs .L { background: var(--surface); color: var(--ink); box-shadow: inset 0 0 0 1px var(--rule); }
+
+/* ---------- toolbar ---------- */
+.toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    margin-top: 18px;
+    padding: 10px 0;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+}
+.toolbar .wrap { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 999px;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-2);
+    cursor: pointer;
+    transition: background .2s, color .2s, border-color .2s;
+}
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.chip .d { width: 8px; height: 8px; border-radius: 50%; }
+.spacer { flex: 1; }
+.progress { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.bar { width: 64px; height: 4px; border-radius: 4px; background: var(--rule); overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; background: var(--accent-2); transition: width .4s; }
+.now-btn[hidden] { display: none; }
+
+/* ---------- timeline ---------- */
+.plan { list-style: none; margin: 18px 0 0; padding: 0; }
+.item {
+    --c: var(--ink-3); --soft: transparent;
+    position: relative;
+    display: grid;
+    grid-template-columns: 48px 26px minmax(0, 1fr);
+    column-gap: 8px;
+}
+.item.r { --c: var(--red); --soft: var(--red-soft); }
+.item.y { --c: var(--amber); --soft: var(--amber-soft); }
+.item.g { --c: var(--green); --soft: var(--green-soft); }
+.time {
+    padding-top: 15px;
+    text-align: right;
+    font-size: 13px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-2);
+}
+.rail { position: relative; }
+.rail::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--rule);
+}
+.item:first-child .rail::before { top: 22px; }
+.item:last-child .rail::before { bottom: calc(100% - 22px); }
+.tick {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    margin: 12px auto 0;
+    padding: 0;
+    border-radius: 50%;
+    border: 1.5px solid var(--c);
+    background: var(--bg);
+    cursor: pointer;
+    transition: background .2s, transform .2s;
+}
+.tick svg { width: 12px; height: 12px; opacity: 0; transform: scale(.6); transition: opacity .2s, transform .2s; }
+.tick:active { transform: scale(.9); }
+.item.done .tick { background: var(--c); }
+.item.done .tick svg { opacity: 1; transform: none; color: var(--bg); }
+.item:not(.r):not(.y):not(.g) .tick { border-style: dashed; }
+
+.card {
+    margin: 4px 0 10px;
+    padding: 12px 14px 13px;
+    border-radius: 12px;
+    transition: opacity .3s, background .3s, box-shadow .3s;
+}
+.item.ride .card {
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--rule);
+}
+.item.ride.r .card { border-left: 3px solid var(--red); }
+.item.done .card { opacity: .5; }
+.item.now .card { box-shadow: 0 0 0 2px var(--accent-2), var(--shadow); opacity: 1; }
+.item.now .time { color: var(--accent-2); }
+
+.head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.title { margin: 0; font-size: 15px; font-weight: 600; line-height: 1.4; }
+.item.ride .title { font-size: 17px; letter-spacing: -0.01em; }
+.tag {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+.tag.lot { background: var(--accent-soft); color: var(--accent); }
+.tag.lot.L { background: transparent; color: var(--ink-2); box-shadow: inset 0 0 0 1px var(--rule); }
+.tag.opt { background: transparent; color: var(--ink-3); box-shadow: inset 0 0 0 1px var(--rule); }
+.tag.nowtag { background: var(--accent-2); color: #fff; }
+.lvl {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    padding: 2px 9px 2px 7px;
+    border-radius: 6px;
+    background: var(--soft);
+    color: var(--c);
+    font-size: 12.5px;
+    font-weight: 500;
+}
+.lvl::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--c); flex: none; }
+.why { margin: 7px 0 0; color: var(--ink-2); font-size: 14px; }
+.eye {
+    display: flex;
+    gap: 9px;
+    margin: 10px 0 0;
+    padding: 9px 11px;
+    border-radius: 9px;
+    background: var(--eye-soft);
+    color: var(--ink);
+    font-size: 13.5px;
+    line-height: 1.6;
+}
+.eye svg { flex: none; width: 17px; height: 17px; margin-top: 2px; color: var(--eye); }
+.eye b { color: var(--eye); }
+.item[hidden] { display: none; }
+
+/* ---------- sections ---------- */
+.section { margin: 34px 0 0; }
+.panel {
+    padding: 16px 18px;
+    border-radius: 14px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    box-shadow: var(--shadow);
+}
+.panel.warn { border-left: 3px solid var(--red); }
+.panel ul { margin: 0; padding: 0; list-style: none; }
+.panel li { position: relative; padding: 6px 0 6px 18px; font-size: 14px; color: var(--ink-2); }
+.panel li::before { content: ""; position: absolute; left: 2px; top: 16px; width: 7px; height: 1.5px; background: var(--red); }
+.panel li b { color: var(--ink); }
+.panel .alert { margin-top: 6px; padding: 10px 12px; border-radius: 9px; background: var(--red-soft); color: var(--ink); font-size: 13.5px; }
+
+.pack { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; }
+.pack button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 12px;
+    border-radius: 11px;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+    text-align: left;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background .2s, border-color .2s;
+}
+.pack .box {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    border: 1.5px solid var(--ink-3);
+}
+.pack .box svg { width: 11px; height: 11px; opacity: 0; color: var(--bg); }
+.pack button[aria-pressed="true"] { background: var(--accent-soft); border-color: transparent; color: var(--ink-2); }
+.pack button[aria-pressed="true"] .box { background: var(--accent-2); border-color: var(--accent-2); }
+.pack button[aria-pressed="true"] .box svg { opacity: 1; }
+
+footer { margin: 34px 0 0; padding: 18px 0 calc(34px + env(safe-area-inset-bottom)); border-top: 1px solid var(--rule); color: var(--ink-3); font-size: 12.5px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.link { padding: 0; border: 0; background: none; color: var(--accent-2); cursor: pointer; font-size: 12.5px; }
+
+@media (min-width: 640px) {
+    body { font-size: 16px; }
+    .hero { padding: 64px 0 40px; }
+    .item { grid-template-columns: 58px 30px minmax(0, 1fr); column-gap: 12px; }
+    .card { padding: 14px 18px 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <svg class="globe" viewBox="0 0 200 200" aria-hidden="true">
+        <g fill="none" stroke="#fff" stroke-width="1">
+            <circle cx="100" cy="100" r="90"/>
+            <ellipse cx="100" cy="100" rx="45" ry="90"/>
+            <ellipse cx="100" cy="100" rx="78" ry="90"/>
+            <line x1="100" y1="10" x2="100" y2="190"/>
+            <ellipse cx="100" cy="100" rx="90" ry="30"/>
+            <ellipse cx="100" cy="100" rx="90" ry="62"/>
+            <line x1="10" y1="100" x2="190" y2="100"/>
+            <ellipse cx="100" cy="100" rx="99" ry="22" transform="rotate(-18 100 100)" stroke-width="2.5"/>
+        </g>
+    </svg>
+    <div class="wrap">
+        <p class="eyebrow">Fri · Nov 27, 2026 · Los Angeles</p>
+        <h1>Universal Studios<br><i>Hollywood</i></h1>
+        <p class="sub">环球影城一日计划 · 开园 9:00–21:00</p>
+        <div class="status" id="status" aria-live="polite"><span class="pulse"></span><span>…</span></div>
+    </div>
+</header>
+
+<div class="wrap">
+
+    <section class="route" aria-label="路线">
+        <h2>路线</h2>
+        <ol class="legs">
+            <li class="U" style="--w:5.7"><b>Upper Lot</b><span>9:00–14:40</span></li>
+            <li class="L" style="--w:2.5"><b>Lower</b><span>15:00–17:30</span></li>
+            <li class="U" style="--w:1.5"><b>Upper</b><span>17:45</span></li>
+            <li class="L" style="--w:1.8"><b>Lower</b><span>19:15</span></li>
+        </ol>
+    </section>
+
+</div>
+
+<nav class="toolbar" aria-label="筛选">
+    <div class="wrap">
+        <button class="chip" type="button" data-f="all" aria-pressed="true">全部</button>
+        <button class="chip" type="button" data-f="r" aria-pressed="false"><span class="d" style="background:var(--red)"></span>剧烈</button>
+        <button class="chip" type="button" data-f="y" aria-pressed="false"><span class="d" style="background:var(--amber)"></span>晃动</button>
+        <button class="chip" type="button" data-f="g" aria-pressed="false"><span class="d" style="background:var(--green)"></span>平缓</button>
+        <button class="chip" type="button" data-f="eye" aria-pressed="false"><span class="d" style="background:var(--eye)"></span>眼镜</button>
+        <span class="spacer"></span>
+        <button class="chip now-btn" type="button" id="jump" hidden>跳到现在</button>
+        <span class="progress"><span class="bar"><i id="barfill"></i></span><span id="count">0/0</span></span>
+    </div>
+</nav>
+
+<main class="wrap">
+
+    <ol class="plan" id="plan"></ol>
+
+    <section class="section">
+        <h2>剧烈项目的总注意 · Drift、Jurassic、Mummy</h2>
+        <div class="panel warn">
+            <ul>
+                <li>如果你<b>做过视网膜手术或激光，或者眼科医生说过你视网膜有问题</b>（比如视网膜变薄、格子样变性），这三个就跳过，时间留给其他项目。没有这些情况就照常玩。</li>
+                <li>戴框架的话，这三个排队前<b>先把眼镜绳绑好</b>，别等到上车才弄。</li>
+            </ul>
+            <p class="alert">当天或之后如果看到<b>闪光、一大片新的飞蚊，或者视野边上有像窗帘一样的黑影</b>，尽快去看眼科急诊。</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>出门前</h2>
+        <ul class="pack" id="pack"></ul>
+    </section>
+
+</main>
+
+<footer>
+    <div class="wrap">
+        <span>勾选只存在这台设备的浏览器里。</span>
+        <button class="link" type="button" id="reset">清除勾选</button>
+    </div>
+</footer>
+
+<script>
+(function () {
+    'use strict';
+
+    var DAY = '2026-11-27';
+    var CHECK = '<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.2l2.3 2.3 4.7-5"/></svg>';
+    var EYE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>';
+
+    // lvl: r / y / g / '' (logistics) · lot: U / L / move / '' · ride: bold rows in the plan
+    var PLAN = [
+        { t: '7:30', title: '到停车场', why: '停车楼和安检排队时间说不准，留出余量',
+          eye: '当天最好戴隐形，再带一副框架眼镜和润眼液' },
+        { t: '8:15', title: '在入口闸口排队',
+          why: '8:00 只放 Early Access 的人进去，他们只能去 Super Nintendo World。8:15 到就能排在普通游客前面，再早也不会提前放你进去' },
+        { t: '9:00', title: 'Fast &amp; Furious: Hollywood Drift', ride: 1, lvl: 'r', lvlNote: '高速 / 剧烈', lot: 'U',
+          why: '在 Upper Lot，离大门最近；新项目，9:00 是全天排队最短的时候',
+          eye: '<b>全天最容易甩飞眼镜的项目。</b>戴框架必须用眼镜绳；被要求摘眼镜就放进拉链口袋' },
+        { t: '9:50', title: 'Harry Potter Forbidden Journey', ride: 1, lvl: 'y', lvlNote: '机械臂大幅倾斜、翻转，配合屏幕', lot: 'U',
+          why: '全园最好的项目，10 点前排队还没到高峰',
+          eye: '眼镜可以戴，建议也用眼镜绳。容易晕的话少盯屏幕边缘' },
+        { t: '10:50', title: '逛霍格莫德，喝黄油啤酒', lvl: 'g', lot: 'U',
+          why: '就在旁边，人还不多，适合拍照' },
+        { t: '11:15', title: 'Three Broomsticks 吃午饭', lvl: 'g', lot: 'U',
+          why: '赶在 11:30–13:30 饭点高峰之前' },
+        { t: '11:50', title: 'Studio Tour', ride: 1, lvl: 'g', lvlNote: '其中一段有轻微晃动的模拟', lot: 'U',
+          why: '运量大，坐着游览，用它躲过中午排队最长的时段',
+          eye: '有一段是 3D 模拟，眼镜戴着就行' },
+        { t: '13:45', title: 'WaterWorld 现场秀', ride: 1, lvl: 'g', lvlNote: '坐着看', lot: 'U',
+          why: '也在 Upper Lot，看完下楼不走回头路；坐着看，歇歇脚',
+          eye: '前几排会被泼水，坐中后排' },
+        { t: '14:40', title: '坐扶梯下 Lower Lot', lot: 'move',
+          why: '第一次下楼，路上留 15 分钟' },
+        { t: '15:00', title: 'Jurassic World', ride: 1, lvl: 'r', lvlNote: '最后有大落差', lot: 'L',
+          why: '运量大，下午排队也走得快',
+          eye: '落差时会溅水，<b>擦镜布放手边</b>，镜片湿了出来会看不清' },
+        { t: '15:50', title: 'Transformers', ride: 1, lvl: 'y', lvlNote: '3D 模拟，急停急转', lot: 'L',
+          why: '有单人通道，分开坐能省一大半时间',
+          eye: '3D 眼镜套在自己眼镜外面即可，转得急时扶好' },
+        { t: '16:40', title: 'Revenge of the Mummy', ride: 1, lvl: 'r', lvlNote: '室内高速过山车，有急加速和倒退段', lot: 'L',
+          why: '有单人通道；室内黑暗，节奏很快',
+          eye: '<b>第二个容易甩飞眼镜的项目。</b>黑暗中掉了眼镜很难找，眼镜绳一定绑好' },
+        { t: '17:30', title: '坐扶梯回 Upper Lot', lot: 'move',
+          why: '天已经黑了（日落约 16:45），城堡灯光和节日装饰正好',
+          eye: '晚上光线暗，上下扶梯和台阶看清脚下' },
+        { t: '17:45', title: '晚饭 + 霍格沃茨城堡夜景', lvl: 'g', lot: 'U',
+          why: '错开 18:30 以后的饭点高峰' },
+        { t: '18:45', title: 'Simpsons 或 Minions', opt: 1, lvl: 'y', lvlNote: 'Simpsons 晃得比较厉害', lot: 'U',
+          why: '排队不超过 30 分钟才玩，不想玩就跳过',
+          eye: '3D 加晃动，眼睛累了就跳过' },
+        { t: '19:15', title: '下 Lower Lot，进 Super Nintendo World', lvl: 'g', lot: 'L',
+          why: '最后一次走扶梯；晚上园区灯光好看，先逛再说；Yoshi’s Adventure 排队短就玩' },
+        { t: '20:15', title: 'Mario Kart', ride: 1, lvl: 'g', lvlNote: '车速很慢，主要是 AR 互动', lot: 'L',
+          why: '闭园前队伍变短，21:00 前排进去一定能坐上',
+          eye: 'AR 护目镜扣在额头上，眼镜戴在里面；镜框太大会有点挤' },
+        { t: '21:15', title: '离园',
+          why: '出园和停车楼都堵，可以在 CityWalk（开到 22:00）缓一缓再走',
+          eye: '开夜车回去注意，长时间戴隐形的话先摘掉换框架' }
+    ];
+
+    var PACK = ['隐形眼镜（当天戴）', '备用框架眼镜', '眼镜绳', '润眼液', '擦镜布', '带拉链的口袋 / 小包'];
+    var LOT = { U: 'Upper Lot', L: 'Lower Lot', move: '扶梯' };
+
+    // ---- storage (per device; the page works without it)
+    function load(key) {
+        try { return JSON.parse(localStorage.getItem(key)) || []; } catch (e) { return []; }
+    }
+    function save(key, val) {
+        try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) {}
+    }
+    var KD = 'ush-20261127-done', KP = 'ush-20261127-pack';
+    var done = load(KD), packed = load(KP);
+
+    function mins(t) { var p = t.split(':'); return +p[0] * 60 + +p[1]; }
+
+    // ---- render the plan
+    var list = document.getElementById('plan');
+    PLAN.forEach(function (it, i) {
+        var li = document.createElement('li');
+        li.className = 'item' + (it.lvl ? ' ' + it.lvl : '') + (it.ride ? ' ride' : '');
+        li.id = 'i' + i;
+        li.dataset.lvl = it.lvl || '';
+        li.dataset.eye = it.eye ? '1' : '';
+        var tags = '';
+        if (it.lot) tags += '<span class="tag lot ' + (it.lot === 'L' ? 'L' : '') + '">' + LOT[it.lot] + '</span>';
+        if (it.opt) tags += '<span class="tag opt">可选</span>';
+        var lvlName = { r: '剧烈', y: '晃动', g: '平缓' }[it.lvl];
+        li.innerHTML =
+            '<div class="time">' + it.t + '</div>' +
+            '<div class="rail"><button class="tick" type="button" aria-pressed="false" aria-label="标记完成：' + it.title.replace(/&amp;/g, '&') + '">' + CHECK + '</button></div>' +
+            '<div class="card">' +
+                '<div class="head"><h3 class="title">' + it.title + '</h3>' + tags + '</div>' +
+                (it.lvl && (it.ride || it.lvlNote) ? '<div class="lvl">' + lvlName + (it.lvlNote ? ' · ' + it.lvlNote : '') + '</div>' : '') +
+                '<p class="why">' + it.why + '</p>' +
+                (it.eye ? '<p class="eye">' + EYE + '<span>' + it.eye + '</span></p>' : '') +
+            '</div>';
+        list.appendChild(li);
+    });
+    var items = Array.prototype.slice.call(list.children);
+
+    function paintDone() {
+        items.forEach(function (li, i) {
+            var on = done.indexOf(i) > -1;
+            li.classList.toggle('done', on);
+            li.querySelector('.tick').setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        var rides = items.filter(function (li) { return li.classList.contains('ride'); });
+        var n = rides.filter(function (li) { return li.classList.contains('done'); }).length;
+        document.getElementById('count').textContent = n + '/' + rides.length + ' 项目';
+        document.getElementById('barfill').style.width = (100 * n / rides.length) + '%';
+    }
+    list.addEventListener('click', function (e) {
+        var b = e.target.closest('.tick');
+        if (!b) return;
+        var i = items.indexOf(b.closest('.item'));
+        var k = done.indexOf(i);
+        if (k > -1) done.splice(k, 1); else done.push(i);
+        save(KD, done);
+        paintDone();
+    });
+    paintDone();
+
+    // ---- packing list
+    var pack = document.getElementById('pack');
+    PACK.forEach(function (name, i) {
+        var li = document.createElement('li');
+        li.innerHTML = '<button type="button" aria-pressed="false"><span class="box">' + CHECK + '</span>' + name + '</button>';
+        pack.appendChild(li);
+    });
+    var packBtns = Array.prototype.slice.call(pack.querySelectorAll('button'));
+    function paintPack() {
+        packBtns.forEach(function (b, i) { b.setAttribute('aria-pressed', packed.indexOf(i) > -1 ? 'true' : 'false'); });
+    }
+    pack.addEventListener('click', function (e) {
+        var b = e.target.closest('button');
+        if (!b) return;
+        var i = packBtns.indexOf(b), k = packed.indexOf(i);
+        if (k > -1) packed.splice(k, 1); else packed.push(i);
+        save(KP, packed);
+        paintPack();
+    });
+    paintPack();
+
+    // ---- filters
+    var chips = Array.prototype.slice.call(document.querySelectorAll('.chip[data-f]'));
+    chips.forEach(function (c) {
+        c.addEventListener('click', function () {
+            var f = c.dataset.f;
+            chips.forEach(function (x) { x.setAttribute('aria-pressed', x === c ? 'true' : 'false'); });
+            items.forEach(function (li) {
+                li.hidden = f === 'all' ? false : f === 'eye' ? !li.dataset.eye : li.dataset.lvl !== f;
+            });
+        });
+    });
+
+    // ---- where we are in the day (Los Angeles time)
+    var status = document.getElementById('status').lastChild;
+    var jump = document.getElementById('jump');
+    var current = -1;
+    function la() {
+        var o = {};
+        new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit',
+            day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })
+            .formatToParts(new Date()).forEach(function (p) { o[p.type] = p.value; });
+        return { date: o.year + '-' + o.month + '-' + o.day, m: (+o.hour % 24) * 60 + +o.minute };
+    }
+    function plain(s) { return s.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&'); }
+    function tick() {
+        var now = la(), html;
+        items.forEach(function (li) { li.classList.remove('now'); var t = li.querySelector('.nowtag'); if (t) t.remove(); });
+        current = -1;
+        if (now.date < DAY) {
+            var d = Math.round((Date.parse(DAY) - Date.parse(now.date)) / 864e5);
+            html = d === 1 ? '<b>明天</b>出发。今晚把眼镜绳、擦镜布和润眼液准备好。'
+                           : '还有 <b>' + d + ' 天</b>。7:30 到停车场。';
+        } else if (now.date > DAY) {
+            html = '这一天已经过去了，希望玩得开心。';
+        } else if (now.m < mins(PLAN[0].t)) {
+            var left = mins(PLAN[0].t) - now.m;
+            html = '今天！距到停车场还有 <b>' + (left >= 60 ? Math.floor(left / 60) + ' 小时 ' : '') + (left % 60) + ' 分钟</b>。';
+        } else {
+            PLAN.forEach(function (it, i) { if (now.m >= mins(it.t)) current = i; });
+            var next = PLAN[current + 1];
+            html = '现在：<b>' + plain(PLAN[current].title) + '</b>' +
+                   (next ? '<br>下一项 ' + next.t + ' ' + plain(next.title) + '（' + (mins(next.t) - now.m) + ' 分钟后）' : '');
+            var li = items[current];
+            li.classList.add('now');
+            var tag = document.createElement('span');
+            tag.className = 'tag nowtag';
+            tag.textContent = '现在';
+            li.querySelector('.head').appendChild(tag);
+        }
+        status.innerHTML = html;
+        jump.hidden = current < 0;
+    }
+    jump.addEventListener('click', function () {
+        if (current > -1) items[current].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+    tick();
+    setInterval(tick, 30000);
+
+    document.getElementById('reset').addEventListener('click', function () {
+        done = []; packed = [];
+        save(KD, done); save(KP, packed);
+        paintDone(); paintPack();
+    });
+})();
+</script>
+</body>
+</html>
