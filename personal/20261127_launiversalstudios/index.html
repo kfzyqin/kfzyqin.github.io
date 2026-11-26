@@ -9,13 +9,13 @@
 <meta name="theme-color" content="#071433">
 <script>
     (function (root) {
-        var theme = null, route = 'all';
-        try { theme = localStorage.getItem('theme'); route = JSON.parse(localStorage.getItem('ush26-route')) || 'all'; } catch (e) {}
+        var theme = null, route = 'A';
+        try { theme = localStorage.getItem('theme'); route = JSON.parse(localStorage.getItem('ush26-route2')) || 'A'; } catch (e) {}
         if (theme !== 'light' && theme !== 'dark') {
             theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
         }
         root.setAttribute('data-theme', theme);
-        root.setAttribute('data-route', ['A', 'B', 'C'].indexOf(route) > -1 ? route : 'all');
+        root.setAttribute('data-route', ['all', 'A', 'B', 'C'].indexOf(route) > -1 ? route : 'A');
     })(document.documentElement);
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -993,12 +993,12 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     function load(k, d) { try { var v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch (e) { return d; } }
     function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
     var state = {
-        route: load('ush26-route', 'all'),
+        route: load('ush26-route2', 'A'),
         view: load('ush26-view2', 'map'),
         done: load('ush26-done', []),
         pack: load('ush26-pack', [])
     };
-    if (['all', 'A', 'B', 'C'].indexOf(state.route) < 0) state.route = 'all';
+    if (['all', 'A', 'B', 'C'].indexOf(state.route) < 0) state.route = 'A';
     if (state.view !== 'single' || state.route === 'all') state.view = 'map';
     if (!Array.isArray(state.done)) state.done = [];
     if (!Array.isArray(state.pack)) state.pack = [];
@@ -1229,7 +1229,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     function setRoute(r) {
         state.route = r;
         if (r === 'all') state.view = 'map';
-        save('ush26-route', r);
+        save('ush26-route2', r);
         save('ush26-view2', state.view);
         animateRoute = r !== 'all';
         paintControls();
