@@ -66,15 +66,15 @@
 }
 /* Wizarding: midnight, parchment ink, gold hairlines */
 :root[data-route="A"] {
-    --bg: #0c0a1b; --surface: #1a1533; --surface-2: #16122c; --ink: #f2ead8; --ink-2: #c4b9d8; --ink-3: #8e84a9;
+    --bg: #150608; --surface: #2a0d13; --surface-2: #220a0f; --ink: #f4e9d4; --ink-2: #dcc6ad; --ink-3: #a68b78;
     --line: rgba(216, 180, 90, 0.18); --line-2: rgba(216, 180, 90, 0.34); --accent: #e0bd63; --gold: #e0bd63;
     --hot: #ff8378; --eye: #7fd6ef; --lA: #c2a5ff; --lB: #ffb36b; --lC: #74e3a0;
-    --case: #0c0a1b; --node: #0c0a1b; --radius: 6px;
+    --case: #150608; --node: #150608; --radius: 6px;
     --border: 1px solid rgba(216, 180, 90, 0.24);
     --shadow: 0 12px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 240, 200, 0.05);
     --shadow-hover: 0 0 0 1px rgba(224, 189, 99, 0.5), 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(224, 189, 99, 0.12);
     --f-display: "Cinzel", "Playfair Display", "Songti SC", serif;
-    --bar: rgba(12, 10, 27, 0.82); color-scheme: dark;
+    --bar: rgba(21, 6, 8, 0.84); color-scheme: dark;
 }
 /* Hollywood: black velvet, marquee gold */
 :root[data-route="B"] {
@@ -110,7 +110,6 @@ body {
     color: var(--ink);
     font: 15px/1.6 var(--f-body);
     -webkit-font-smoothing: antialiased;
-    transition: background-color .7s ease, color .7s ease;
     overflow-x: hidden;
 }
 b, strong { font-weight: 600; }
@@ -119,16 +118,16 @@ button { font: inherit; color: inherit; -webkit-tap-highlight-color: transparent
 .kicker { margin: 0 0 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-3); }
 
 /* ---------------- page-wide atmosphere ---------------- */
-.fx { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .9s ease; overflow: hidden; }
+.fx { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: 0; overflow: hidden; }
 :root[data-route="A"] .fx-A, :root[data-route="B"] .fx-B, :root[data-route="C"] .fx-C { opacity: 1; }
 .star { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #fff6dc; animation: twinkle 3.6s ease-in-out infinite; }
 @keyframes twinkle { 0%, 100% { opacity: .15; } 50% { opacity: .9; } }
 /* each world paints its own full-page backdrop, so the page itself changes, not only the hero */
 .fx-A {
     background:
-        radial-gradient(70% 55% at 85% 0%, rgba(120, 90, 230, 0.38), transparent 70%),
-        radial-gradient(60% 50% at 0% 100%, rgba(70, 50, 170, 0.40), transparent 70%),
-        linear-gradient(180deg, #0c0a1b 0%, #18113a 100%);
+        radial-gradient(60% 45% at 85% 0%, rgba(255, 190, 90, 0.16), transparent 70%),
+        radial-gradient(70% 55% at 0% 100%, rgba(150, 18, 32, 0.45), transparent 70%),
+        linear-gradient(180deg, #150608 0%, #2a0a10 100%);
 }
 .fx-B {
     background:
@@ -143,7 +142,7 @@ button { font: inherit; color: inherit; -webkit-tap-highlight-color: transparent
 
 /* ---------------- hero ---------------- */
 .hero { position: relative; min-height: 470px; overflow: hidden; color: #fff; isolation: isolate; }
-.art { position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .9s ease; overflow: hidden; }
+.art { position: absolute; inset: 0; z-index: -1; opacity: 0; overflow: hidden; }
 :root[data-route="all"] .art-all, :root[data-route="A"] .art-A, :root[data-route="B"] .art-B, :root[data-route="C"] .art-C { opacity: 1; }
 .hero-in { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: 470px; padding-top: 40px; padding-bottom: 64px; }
 .hero .kicker { color: rgba(255, 255, 255, 0.75); }
@@ -201,8 +200,8 @@ button { font: inherit; color: inherit; -webkit-tap-highlight-color: transparent
 @keyframes turn { from { transform: scaleX(1); } to { transform: scaleX(-1); } }
 
 /* Wizarding: castle under a moon, floating candles */
-.art-A { background: linear-gradient(180deg, #06041a 0%, #160f3a 50%, #2c1d5a 100%); }
-.moon { position: absolute; right: 12%; top: 46px; width: 64px; height: 64px; border-radius: 50%; background: #fff3cf; box-shadow: 0 0 40px 10px rgba(255, 236, 180, 0.35), 0 0 120px 40px rgba(180, 150, 255, 0.15); }
+.art-A { background: linear-gradient(180deg, #070b14 0%, #142030 45%, #3a1a1c 80%, #6e2318 100%); }
+.moon { position: absolute; right: 12%; top: 46px; width: 64px; height: 64px; border-radius: 50%; background: #fff3cf; box-shadow: 0 0 40px 10px rgba(255, 236, 180, 0.35), 0 0 120px 40px rgba(255, 200, 130, 0.12); }
 .castle { position: absolute; right: -40px; bottom: 0; width: min(620px, 118%); }
 .castle .win { fill: #ffd98a; animation: twinkle 4s ease-in-out infinite; }
 .candle { position: absolute; width: 5px; height: 16px; border-radius: 2px; background: linear-gradient(#fff8e6, #e9dcc0); animation: float 6s ease-in-out infinite; }
@@ -344,7 +343,7 @@ button { font: inherit; color: inherit; -webkit-tap-highlight-color: transparent
     border-radius: 50%;
     border: 1.5px solid currentColor;
     opacity: .5;
-    transition: opacity .3s, background .3s;
+    transition: opacity .3s;
 }
 .tile .t-pick svg { width: 13px; height: 13px; opacity: 0; }
 .tile[aria-pressed="true"] { transform: translateY(-4px); }
@@ -355,8 +354,8 @@ button { font: inherit; color: inherit; -webkit-tap-highlight-color: transparent
     color: #f2ead8;
     border-radius: 8px;
     border: 1px solid rgba(224, 189, 99, 0.4);
-    background: radial-gradient(120% 90% at 90% 0%, #4a3590 0%, #1a1238 55%, #0c0a1b 100%);
-    box-shadow: 0 16px 40px rgba(20, 10, 50, 0.35);
+    background: radial-gradient(120% 90% at 90% 0%, #8a1a26 0%, #4a0c16 55%, #1c0609 100%);
+    box-shadow: 0 16px 40px rgba(50, 8, 14, 0.4);
 }
 .tile[data-r="A"]::after {
     content: "";
@@ -370,8 +369,8 @@ button { font: inherit; color: inherit; -webkit-tap-highlight-color: transparent
 }
 .tile[data-r="A"] .t-en { font-family: "Cinzel", serif; font-weight: 700; color: #e9c66f; }
 .tile[data-r="A"] .t-pick { color: #e0bd63; }
-.tile[data-r="A"][aria-pressed="true"] { box-shadow: 0 0 0 2px #e0bd63, 0 18px 46px rgba(20, 10, 50, 0.45), 0 0 40px rgba(224, 189, 99, 0.25); }
-.tile[data-r="A"][aria-pressed="true"] .t-pick { background: #e0bd63; color: #1a1238; }
+.tile[data-r="A"][aria-pressed="true"] { box-shadow: 0 0 0 2px #e0bd63, 0 18px 46px rgba(50, 8, 14, 0.5), 0 0 40px rgba(224, 189, 99, 0.25); }
+.tile[data-r="A"][aria-pressed="true"] .t-pick { background: #e0bd63; color: #3a0a12; }
 
 .tile[data-r="B"] {
     color: #f7efe2;
@@ -423,7 +422,6 @@ button { font: inherit; color: inherit; -webkit-tap-highlight-color: transparent
     backdrop-filter: blur(14px) saturate(1.3);
     -webkit-backdrop-filter: blur(14px) saturate(1.3);
     border-bottom: 1px solid var(--line);
-    transition: background-color .7s;
 }
 :root[data-route="C"] .toolbar { border-bottom: 2.5px solid #1b2233; }
 .toolbar .wrap { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; min-height: 54px; padding-top: 8px; padding-bottom: 8px; }
@@ -442,7 +440,6 @@ button { font: inherit; color: inherit; -webkit-tap-highlight-color: transparent
     font-weight: 600;
     color: var(--ink-2);
     cursor: pointer;
-    transition: background .25s, color .25s;
 }
 .seg button .d { width: 7px; height: 7px; border-radius: 50%; }
 .seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
@@ -537,7 +534,7 @@ button { font: inherit; color: inherit; -webkit-tap-highlight-color: transparent
     box-shadow: var(--shadow);
     text-align: left;
     cursor: pointer;
-    transition: opacity .45s, transform .3s cubic-bezier(.2, .8, .2, 1), box-shadow .3s, background-color .7s, border-color .7s;
+    transition: opacity .45s, transform .3s cubic-bezier(.2, .8, .2, 1), box-shadow .3s;
 }
 .st:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
 .st:active { transform: scale(.985); }
@@ -559,7 +556,6 @@ button { font: inherit; color: inherit; -webkit-tap-highlight-color: transparent
     border-radius: 999px;
     background: var(--node);
     border: 2px solid var(--ink);
-    transition: background-color .7s, border-color .7s;
 }
 :root[data-route="A"] .cap, :root[data-route="B"] .cap { border-color: var(--gold); }
 .st:not(.shared):not(.duo) .cap { padding: 0; border: 0; background: transparent; }
@@ -669,7 +665,7 @@ button { font: inherit; color: inherit; -webkit-tap-highlight-color: transparent
 :root[data-route="A"] .section h2 { color: var(--gold); font-size: 21px; letter-spacing: 0.04em; }
 :root[data-route="B"] .section h2 { color: var(--gold); font-size: 30px; letter-spacing: 0.05em; font-weight: 400; }
 :root[data-route="C"] .section h2 { font-weight: 700; }
-.panel { padding: 16px 18px; border-radius: var(--radius); background: var(--surface); border: var(--border); box-shadow: var(--shadow); transition: background-color .7s, border-color .7s; }
+.panel { padding: 16px 18px; border-radius: var(--radius); background: var(--surface); border: var(--border); box-shadow: var(--shadow); }
 .panel ul { margin: 0; padding: 0; list-style: none; }
 .panel li { position: relative; padding: 6px 0 6px 18px; font-size: 14px; color: var(--ink-2); }
 .panel li::before { content: ""; position: absolute; left: 2px; top: 16px; width: 7px; height: 1.5px; background: var(--accent); }
@@ -753,7 +749,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     <div class="art art-A" aria-hidden="true" id="art-A">
         <div class="moon"></div>
         <svg class="castle" viewBox="0 0 400 220" preserveAspectRatio="xMaxYMax meet">
-            <g fill="#05030f">
+            <g fill="#0a0507">
                 <path d="M0 220 L0 192 Q90 162 200 172 T400 176 L400 220 Z"/>
                 <rect x="110" y="140" width="214" height="50"/>
                 <rect x="120" y="118" width="22" height="72"/><polygon points="116,118 131,82 146,118"/>
@@ -1236,7 +1232,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         document.getElementById('hero-title').innerHTML = HERO[state.route].title;
         document.getElementById('hero-sub').textContent = HERO[state.route].sub;
         var meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute('content', { all: '#071433', A: '#0c0a1b', B: '#0e0d0c', C: '#3aa9ff' }[state.route]);
+        if (meta) meta.setAttribute('content', { all: '#071433', A: '#070b14', B: '#0e0d0c', C: '#3aa9ff' }[state.route]);
         measure();
     }
     function setRoute(r) {
