@@ -64,17 +64,17 @@
     --shadow-hover: 0 16px 36px rgba(0, 0, 0, 0.45);
     --bar: rgba(11, 17, 29, 0.82); color-scheme: dark;
 }
-/* Wizarding: midnight, parchment ink, gold hairlines */
+/* Wizarding: cold stone, mist and candlelight, tarnished gold (the first film) */
 :root[data-route="A"] {
-    --bg: #150608; --surface: #2a0d13; --surface-2: #220a0f; --ink: #f4e9d4; --ink-2: #dcc6ad; --ink-3: #a68b78;
-    --line: rgba(216, 180, 90, 0.18); --line-2: rgba(216, 180, 90, 0.34); --accent: #e0bd63; --gold: #e0bd63;
-    --hot: #ff8378; --eye: #7fd6ef; --lA: #c2a5ff; --lB: #ffb36b; --lC: #74e3a0;
-    --case: #150608; --node: #150608; --radius: 6px;
-    --border: 1px solid rgba(216, 180, 90, 0.24);
-    --shadow: 0 12px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 240, 200, 0.05);
-    --shadow-hover: 0 0 0 1px rgba(224, 189, 99, 0.5), 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(224, 189, 99, 0.12);
+    --bg: #090b0a; --surface: #141816; --surface-2: #101311; --ink: #e8ddc3; --ink-2: #b3a991; --ink-3: #7b7566;
+    --line: rgba(196, 160, 92, 0.15); --line-2: rgba(196, 160, 92, 0.30); --accent: #c9a45c; --gold: #c9a45c;
+    --hot: #e0705f; --eye: #8fc4cf; --lA: #b39ae6; --lB: #e8a060; --lC: #6fcf95;
+    --case: #090b0a; --node: #090b0a; --radius: 4px;
+    --border: 1px solid rgba(196, 160, 92, 0.20);
+    --shadow: 0 14px 34px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(230, 210, 170, 0.04);
+    --shadow-hover: 0 0 0 1px rgba(201, 164, 92, 0.45), 0 18px 42px rgba(0, 0, 0, 0.7), 0 0 26px rgba(255, 180, 90, 0.08);
     --f-display: "Cinzel", "Playfair Display", "Songti SC", serif;
-    --bar: rgba(21, 6, 8, 0.84); color-scheme: dark;
+    --bar: rgba(9, 11, 10, 0.86); color-scheme: dark;
 }
 /* Hollywood: black velvet, marquee gold */
 :root[data-route="B"] {
@@ -125,9 +125,10 @@ button { font: inherit; color: inherit; -webkit-tap-highlight-color: transparent
 /* each world paints its own full-page backdrop, so the page itself changes, not only the hero */
 .fx-A {
     background:
-        radial-gradient(60% 45% at 85% 0%, rgba(255, 190, 90, 0.16), transparent 70%),
-        radial-gradient(70% 55% at 0% 100%, rgba(150, 18, 32, 0.45), transparent 70%),
-        linear-gradient(180deg, #150608 0%, #2a0a10 100%);
+        radial-gradient(45% 35% at 88% 0%, rgba(255, 176, 80, 0.10), transparent 70%),
+        radial-gradient(90% 45% at 30% 105%, rgba(140, 160, 160, 0.10), transparent 70%),
+        radial-gradient(120% 90% at 50% 40%, transparent 55%, rgba(0, 0, 0, 0.55) 100%),
+        linear-gradient(180deg, #090b0a 0%, #0e1211 100%);
 }
 .fx-B {
     background:
@@ -200,14 +201,16 @@ button { font: inherit; color: inherit; -webkit-tap-highlight-color: transparent
 @keyframes turn { from { transform: scaleX(1); } to { transform: scaleX(-1); } }
 
 /* Wizarding: castle under a moon, floating candles */
-.art-A { background: linear-gradient(180deg, #070b14 0%, #142030 45%, #3a1a1c 80%, #6e2318 100%); }
-.moon { position: absolute; right: 12%; top: 46px; width: 64px; height: 64px; border-radius: 50%; background: #fff3cf; box-shadow: 0 0 40px 10px rgba(255, 236, 180, 0.35), 0 0 120px 40px rgba(255, 200, 130, 0.12); }
+.art-A { background: linear-gradient(180deg, #030405 0%, #0a0f10 40%, #141c1b 75%, #1d2422 100%); }
+.art-A::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 45%; pointer-events: none;
+    background: linear-gradient(to top, rgba(9, 11, 10, 1) 0%, rgba(120, 135, 132, 0.16) 45%, transparent 100%); }
+.moon { position: absolute; right: 12%; top: 46px; width: 58px; height: 58px; border-radius: 50%; background: #d9d6c8; opacity: .8; box-shadow: 0 0 30px 6px rgba(210, 215, 205, 0.22), 0 0 110px 40px rgba(160, 175, 170, 0.08); }
 .castle { position: absolute; right: -40px; bottom: 0; width: min(620px, 118%); }
-.castle .win { fill: #ffd98a; animation: twinkle 4s ease-in-out infinite; }
+.castle .win { fill: #f0a948; animation: twinkle 4s ease-in-out infinite; }
 .candle { position: absolute; width: 5px; height: 16px; border-radius: 2px; background: linear-gradient(#fff8e6, #e9dcc0); animation: float 6s ease-in-out infinite; }
 .candle::before { content: ""; position: absolute; left: 50%; top: -9px; width: 6px; height: 9px; margin-left: -3px; border-radius: 50% 50% 40% 40%; background: #ffcf5a; box-shadow: 0 0 12px 5px rgba(255, 200, 90, 0.55); }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
-.art-A .star { background: #fff; }
+.art-A .star { background: #cfd4cc; }
 
 /* Hollywood: velvet dark, gold searchlights, a moving film strip */
 .art-B { background: radial-gradient(90% 70% at 50% 110%, #4a3414 0%, #140f0a 55%, #050404 100%); }
@@ -249,11 +252,11 @@ button { font: inherit; color: inherit; -webkit-tap-highlight-color: transparent
 :root[data-route="A"] .hero h1 {
     font-weight: 700;
     letter-spacing: 0.03em;
-    background: linear-gradient(180deg, #fff6da 0%, #e3c06a 70%, #b88d2e 100%);
+    background: linear-gradient(180deg, #e6cf94 0%, #c29a4e 45%, #8a6528 85%, #5e4319 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    filter: drop-shadow(0 2px 14px rgba(224, 189, 99, 0.35));
+    filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.8));
 }
 :root[data-route="A"] .hero h1 i { font-style: normal; }
 :root[data-route="B"] .hero h1 {
@@ -353,9 +356,9 @@ button { font: inherit; color: inherit; -webkit-tap-highlight-color: transparent
 .tile[data-r="A"] {
     color: #f2ead8;
     border-radius: 8px;
-    border: 1px solid rgba(224, 189, 99, 0.4);
-    background: radial-gradient(120% 90% at 90% 0%, #8a1a26 0%, #4a0c16 55%, #1c0609 100%);
-    box-shadow: 0 16px 40px rgba(50, 8, 14, 0.4);
+    border: 1px solid rgba(201, 164, 92, 0.35);
+    background: radial-gradient(120% 90% at 90% 0%, #2a332f 0%, #121614 55%, #060707 100%);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
 }
 .tile[data-r="A"]::after {
     content: "";
@@ -367,10 +370,10 @@ button { font: inherit; color: inherit; -webkit-tap-highlight-color: transparent
     opacity: .6;
     pointer-events: none;
 }
-.tile[data-r="A"] .t-en { font-family: "Cinzel", serif; font-weight: 700; color: #e9c66f; }
-.tile[data-r="A"] .t-pick { color: #e0bd63; }
-.tile[data-r="A"][aria-pressed="true"] { box-shadow: 0 0 0 2px #e0bd63, 0 18px 46px rgba(50, 8, 14, 0.5), 0 0 40px rgba(224, 189, 99, 0.25); }
-.tile[data-r="A"][aria-pressed="true"] .t-pick { background: #e0bd63; color: #3a0a12; }
+.tile[data-r="A"] .t-en { font-family: "Cinzel", serif; font-weight: 700; color: #c9a45c; }
+.tile[data-r="A"] .t-pick { color: #c9a45c; }
+.tile[data-r="A"][aria-pressed="true"] { box-shadow: 0 0 0 2px #c9a45c, 0 18px 46px rgba(0, 0, 0, 0.6), 0 0 36px rgba(255, 176, 80, 0.12); }
+.tile[data-r="A"][aria-pressed="true"] .t-pick { background: #c9a45c; color: #090b0a; }
 
 .tile[data-r="B"] {
     color: #f7efe2;
@@ -749,7 +752,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     <div class="art art-A" aria-hidden="true" id="art-A">
         <div class="moon"></div>
         <svg class="castle" viewBox="0 0 400 220" preserveAspectRatio="xMaxYMax meet">
-            <g fill="#0a0507">
+            <g fill="#020303">
                 <path d="M0 220 L0 192 Q90 162 200 172 T400 176 L400 220 Z"/>
                 <rect x="110" y="140" width="214" height="50"/>
                 <rect x="120" y="118" width="22" height="72"/><polygon points="116,118 131,82 146,118"/>
@@ -1232,7 +1235,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         document.getElementById('hero-title').innerHTML = HERO[state.route].title;
         document.getElementById('hero-sub').textContent = HERO[state.route].sub;
         var meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute('content', { all: '#071433', A: '#070b14', B: '#0e0d0c', C: '#3aa9ff' }[state.route]);
+        if (meta) meta.setAttribute('content', { all: '#071433', A: '#030405', B: '#0e0d0c', C: '#3aa9ff' }[state.route]);
         measure();
     }
     function setRoute(r) {
